@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Genopfriskning asp.net.props" />
+</Project>

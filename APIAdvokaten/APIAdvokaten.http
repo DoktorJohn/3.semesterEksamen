@@ -1,0 +1,6 @@
+@APIAdvokaten_HostAddress = http://localhost:5131
+
+GET {{APIAdvokaten_HostAddress}}/api/account/login
+Accept: application/json
+
+###

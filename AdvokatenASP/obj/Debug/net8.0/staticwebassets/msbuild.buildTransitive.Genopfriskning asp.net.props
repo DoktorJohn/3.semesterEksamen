@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Genopfriskning asp.net.props" />
+</Project>
