@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ylh40ZVdkn7+hujbxv7yFpVXWDvgLCMzrGc/E+X5k3LWi0wjbH/zJUHmHaqOzl0wQg4ajiVtNRhWvn4lHrbcpQ==",
+  "dgSpecHash": "sVn1ozAfjjt3iiYgZmS1Ep4OIVcrAPfS1OYG/ZEiS7RadJRuJtM4U1wRcztkaIU5Ik7z/0ljw9cEiVZEMHPv8w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\APIAdvokaten\\APIAdvokaten.csproj",
+  "projectFilePath": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3. semester eksamen\\APIAdvokaten\\APIAdvokaten.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jonat\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.10\\microsoft.aspnetcore.authentication.jwtbearer.8.0.10.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\APIAdvokaten\\APIAdvokaten.csproj": {}
+    "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3. semester eksamen\\APIAdvokaten\\APIAdvokaten.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\APIAdvokaten\\APIAdvokaten.csproj": {
+    "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3. semester eksamen\\APIAdvokaten\\APIAdvokaten.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\APIAdvokaten\\APIAdvokaten.csproj",
+        "projectUniqueName": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3. semester eksamen\\APIAdvokaten\\APIAdvokaten.csproj",
         "projectName": "APIAdvokaten",
-        "projectPath": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\APIAdvokaten\\APIAdvokaten.csproj",
+        "projectPath": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3. semester eksamen\\APIAdvokaten\\APIAdvokaten.csproj",
         "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\APIAdvokaten\\obj\\",
+        "outputPath": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3. semester eksamen\\APIAdvokaten\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -86,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
