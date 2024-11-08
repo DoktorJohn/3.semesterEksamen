@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\AdvokatenBlazor\\AdvokatenBlazor.csproj": {}
+    "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3. semester eksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\AdvokatenBlazor\\AdvokatenBlazor.csproj": {
+    "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3. semester eksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\AdvokatenBlazor\\AdvokatenBlazor.csproj",
+        "projectUniqueName": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3. semester eksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj",
         "projectName": "AdvokatenBlazor",
-        "projectPath": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\AdvokatenBlazor\\AdvokatenBlazor.csproj",
+        "projectPath": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3. semester eksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj",
         "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\AdvokatenBlazor\\obj\\",
+        "outputPath": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3. semester eksamen\\AdvokatenBlazor\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
