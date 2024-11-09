@@ -9,6 +9,14 @@ main[b-xkcyhzx3l1] {
     flex: 1;
 }
 
+
+.container[b-xkcyhzx3l1] {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-color: lightgrey;
+}
+
 .sidebar[b-xkcyhzx3l1] {
     background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
 }

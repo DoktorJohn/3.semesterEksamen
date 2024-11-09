@@ -1,17 +1,168 @@
 ﻿@page "/Stamtræ"
+@rendermode InteractiveServer
 
-
-@if (vis)
-{
-    <h3>Stamtræ</h3>
-}
-
-
-
-
-
-
+<link rel="stylesheet" href="Stamtræ.css" />
 
 @code {
-    bool vis = false;
+
+    public Heir Spouse = new Heir();
+
+    private void GenerateHeirs(HeirType type)
+    {
+
+        if (type == HeirType.Kid)
+        {
+            HeirRepository.Instance.Heirs.RemoveAll(h => h.HeirType == HeirType.Kid);
+
+            for (int i = 0; i < Client.KidsAmount; i++)
+            {
+                Heir h = new Heir { HeirType = HeirType.Kid };
+                HeirRepository.Instance.Heirs.Add(h);
+            }
+        }
+
+        else
+        {
+            if (!HeirRepository.Instance.Heirs.Any(s => s.HeirType == HeirType.Spouse))
+            {
+                Heir h = new Heir { HeirType = HeirType.Spouse };
+                HeirRepository.Instance.Heirs.Add(h);
+                Spouse = h;
+            }
+        }
+
+    }
+
+    private void DeleteSpouse()
+    {
+        HeirRepository.Instance.Heirs.Remove(Spouse);
+    }
+
+    private void OnKidsAmountChanged(ChangeEventArgs e)
+    {
+        int newKidsAmount = int.Parse(e.Value.ToString() ?? "0");
+        Client.KidsAmount = newKidsAmount;
+        GenerateHeirs(HeirType.Kid);
+    }
+
+    private void OnMarriedChanged(ChangeEventArgs e)
+    {
+        bool isMarried = (bool)e.Value;
+        Client.Married = isMarried;
+
+        if (isMarried)
+        {
+            GenerateHeirs(HeirType.Spouse);
+        }
+
+        else if (!isMarried)
+        {
+            DeleteSpouse();
+        }
+    }
+}
+
+<div class="oversigt-container">
+    <label style="font-size: 25px">
+        Oversigt over arvinger
+        <br />
+
+        @if (HeirRepository.Instance.Heirs.Count > 0)
+        {
+            @foreach (var heir in HeirRepository.Instance.Heirs)
+            {
+                @if (!string.IsNullOrEmpty(heir.Name))
+                {
+                    <div class="heir-info">
+                        <span>Navn på arving: @heir.Name</span>
+                        <span>Arvingetype: @heir.HeirType.ToString()</span>
+                        <span>Arveprocent: @heir.InheritancePercentage</span>
+                    </div>
+                }
+            }
+        }
+
+        <button class="eksportBtn">
+            Gem & eksporter
+        </button>
+
+    </label>
+</div>
+
+<div class="form-section">
+    <label class="labelClass">
+        Hvad er dit navn?
+        <input type="text" id="nameField" @bind="Client.Name" />
+    </label>
+
+    <label class="labelClass">
+        Har du en ægtefælle?
+        <input type="checkbox" id="marriageField" @onchange="OnMarriedChanged" />
+    </label>
+
+    <label class="labelClass">
+        Hvor mange børn har du?
+        <input type="number" id="childrenField" @onchange="OnKidsAmountChanged" />
+    </label>
+
+    <label class="labelClass">
+        Har du et testamente?
+        <input type="checkbox" id="testamentField" @bind="Client.Testament" />
+    </label>
+</div>
+
+@if (Client.KidsAmount > 0 || Client.Married == true)
+{
+    <h4 class="StamtræTitle" style="text-align: center; color: #444;">Dit genererede stamtræ:</h4>
+
+
+    <div class="inheritance-tree">
+        @{
+            var kids = HeirRepository.Instance.Heirs.Where(s => s.HeirType == HeirType.Kid).ToList();
+        }
+
+        @foreach (var spouse in HeirRepository.Instance.Heirs.Where(s => s.HeirType == HeirType.Spouse))
+        {
+            <div class="married-grid">
+                <div class="inheritor-box">
+                    <h5>Ægtefælle</h5>
+                    <label>
+                        Navn:
+                        <input type="text" class="nameTxt" @bind="Spouse.Name" />
+                        Arveprocent:
+                        <label style="color:blue">
+                            @InheritanceCalc.CalculateInheritancePercentageForMarried()%
+                        </label>
+                    </label>
+                </div>
+            </div>
+
+        }
+
+        <div class="divider"></div>
+
+        @for (int i = 0; i < kids.Count; i++)
+        {
+            var heir = kids[i];
+            heir.InheritancePercentage = InheritanceCalc.CalculateInheritancePercentageForKid();
+
+            <div class="kids-grid">
+                <div class="inheritor-box">
+                    <h5>Barn @(i + 1)</h5>
+                    <label>
+                        Navn:
+                        <input type="text" class="nameTxt" @bind="heir.Name" />
+                        Arveprocent:
+                        <label class="PercentageTxt" style="color:blue">
+                            @InheritanceCalc.CalculateInheritancePercentageForKid()%
+                        </label>
+                    </label>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p class="StamtræTitle" style="text-align: center;">Du har ikke registreret nogen arvinger.</p>
 }
