@@ -52,6 +52,7 @@ namespace AdvokatenBlazor.ViewModel
                 for (int i = 0; i < Client.KidsAmount; i++)
                 {
                     Heir h = new Heir { HeirType = HeirType.Kid };
+                    h.InheritancePercentage = InheritanceCalc.CalculateInheritancePercentageForKid();
                     Heirs.Add(h);
                 }
             }
@@ -61,6 +62,7 @@ namespace AdvokatenBlazor.ViewModel
                 if (!Heirs.Any(s => s.HeirType == HeirType.Spouse))
                 {
                     Heir h = new Heir { HeirType = HeirType.Spouse };
+                    h.InheritancePercentage = InheritanceCalc.CalculateInheritancePercentageForMarried();
                     Heirs.Add(h);
                     Spouse = h;
                 }
