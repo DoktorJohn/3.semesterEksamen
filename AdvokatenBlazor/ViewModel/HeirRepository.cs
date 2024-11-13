@@ -7,12 +7,7 @@ namespace AdvokatenBlazor.ViewModel
         public List<Heir> Heirs { get; set; }
         public Heir Spouse { get; set; }
         
-        HeirRepository()
-        {
-            Heirs = new List<Heir>();
-            Spouse = new Heir();
-        }
-
+        
         private static HeirRepository instance;
         public static HeirRepository Instance
         {
@@ -27,7 +22,13 @@ namespace AdvokatenBlazor.ViewModel
             }
         }
 
-        
+        HeirRepository()
+        {
+            Heirs = new List<Heir>();
+            Spouse = new Heir();
+        }
+
+
         public List<Heir> ReturnKids()
         {
             return Heirs.Where(s => s.HeirType == HeirType.Kid).ToList();
