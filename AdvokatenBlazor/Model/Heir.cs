@@ -2,12 +2,32 @@
 
 namespace AdvokatenBlazor.Model
 {
-    public enum HeirType {Spouse, Kid};
+    public enum HeirType { Spouse, Kid };
 
     public class Heir
     {
         [Required]
-        public string Name { get; set; }
+        private string _name;
+
+        public string Name
+        {
+            get
+            {
+                if (_name == null)
+                {
+                    return "";
+                }
+                return _name;
+            }
+            set
+            {
+                if (value != null)
+                {
+                    _name = value;
+                }
+            }
+        }
+
         [Required]
         public double InheritancePercentage { get; set; }
         [Required]

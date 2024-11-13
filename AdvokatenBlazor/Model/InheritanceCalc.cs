@@ -1,4 +1,5 @@
 ﻿using AdvokatenBlazor.Model;
+using System.Diagnostics;
 
 namespace AdvokatenBlazor.Model
 {
@@ -19,7 +20,17 @@ namespace AdvokatenBlazor.Model
 
         public static double CalculateInheritancePercentageForKid()
         {
-            return 50 / (double)Client.KidsAmount;
+            if (!Client.Married && Client.KidsAmount > 0)
+            {
+                return 100 / (double)Client.KidsAmount;
+            }
+
+            else if (Client.Married)
+            {
+                return 50 / (double)Client.KidsAmount;
+            }
+
+            return 0;
         }
     }
 }
