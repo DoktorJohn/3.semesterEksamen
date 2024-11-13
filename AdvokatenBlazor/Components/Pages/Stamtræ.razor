@@ -3,75 +3,6 @@
 
 <link rel="stylesheet" href="Stamtrae.css" />
 
-@code {
-    string HtmlToConvert = string.Empty;
-
-    private void MakePDF()
-    {
-        var converter = new HtmlToPdf();
-        PdfDocument doc = converter.ConvertHtmlString(HtmlToConvert);
-        doc.Save("Arvinger.pdf");
-        doc.Close();
-    }
-
-
-    public Heir Spouse = new Heir();
-
-    private void GenerateHeirs(HeirType type)
-    {
-
-        if (type == HeirType.Kid)
-        {
-            HeirRepository.Instance.Heirs.RemoveAll(h => h.HeirType == HeirType.Kid);
-
-            for (int i = 0; i < Client.KidsAmount; i++)
-            {
-                Heir h = new Heir { HeirType = HeirType.Kid };
-                HeirRepository.Instance.Heirs.Add(h);
-            }
-        }
-
-        else
-        {
-            if (!HeirRepository.Instance.Heirs.Any(s => s.HeirType == HeirType.Spouse))
-            {
-                Heir h = new Heir { HeirType = HeirType.Spouse };
-                HeirRepository.Instance.Heirs.Add(h);
-                Spouse = h;
-            }
-        }
-
-    }
-
-    private void DeleteSpouse()
-    {
-        HeirRepository.Instance.Heirs.Remove(Spouse);
-    }
-
-    private void OnKidsAmountChanged(ChangeEventArgs e)
-    {
-        int newKidsAmount = int.Parse(e.Value.ToString() ?? "0");
-        Client.KidsAmount = newKidsAmount;
-        GenerateHeirs(HeirType.Kid);
-    }
-
-    private void OnMarriedChanged(ChangeEventArgs e)
-    {
-        bool isMarried = (bool)e.Value;
-        Client.Married = isMarried;
-
-        if (isMarried)
-        {
-            GenerateHeirs(HeirType.Spouse);
-        }
-
-        else if (!isMarried)
-        {
-            DeleteSpouse();
-        }
-    }
-}
-
 
 <div class="form-section">
     <label class="labelClass">
@@ -102,33 +33,28 @@
 
 
     <div class="inheritance-tree">
-        @{
-            var kids = HeirRepository.Instance.Heirs.Where(s => s.HeirType == HeirType.Kid).ToList();
-        }
-
-        @foreach (var spouse in HeirRepository.Instance.Heirs.Where(s => s.HeirType == HeirType.Spouse))
-        {
             <div class="married-grid">
                 <div class="inheritor-box">
                     <h5>Ægtefælle</h5>
                     <label>
                         Navn:
-                        <input type="text" class="nameTxt" @bind="Spouse.Name" />
+                    <input type="text" class="nameTxt" @bind="HeirRepository.Instance.Spouse.Name" />
                         Arveprocent:
                         <label style="color:blue">
                             @InheritanceCalc.CalculateInheritancePercentageForMarried()%
+                        @{
+                            HeirRepository.Instance.Spouse.InheritancePercentage = InheritanceCalc.CalculateInheritancePercentageForMarried();
+                        }
                         </label>
                     </label>
                 </div>
             </div>
 
-        }
-
         <div class="divider"></div>
 
-        @for (int i = 0; i < kids.Count; i++)
+        @for (int i = 0; i < HeirRepository.Instance.ReturnKids().Count; i++)
         {
-            var heir = kids[i];
+            var heir = HeirRepository.Instance.ReturnKids()[i];
             heir.InheritancePercentage = InheritanceCalc.CalculateInheritancePercentageForKid();
 
             <div class="kids-grid">
@@ -148,32 +74,29 @@
     </div>
 }
 
-<div class="oversigt-container">
+@code {
 
-    <label style="font-size: 25px">
-        Oversigt over arvinger
-        <br />
+    private void OnKidsAmountChanged(ChangeEventArgs input)
+    {
+        int newKidsAmount = int.Parse(input.Value.ToString() ?? "0");
+        Client.KidsAmount = newKidsAmount;
 
-        @if (HeirRepository.Instance.Heirs.Count > 0)
+        HeirRepository.Instance.GenerateHeirs(HeirType.Kid);
+    }
+
+    private void OnMarriedChanged(ChangeEventArgs input)
+    {
+        bool isMarried = (bool)input.Value;
+        Client.Married = isMarried;
+
+        if (isMarried)
         {
-            @foreach (var heir in HeirRepository.Instance.Heirs)
-            {
-                @if (!string.IsNullOrEmpty(heir.Name))
-                {
-                    <div class="heir-info">
-                        <span>Navn på arving: @heir.Name</span>
-                        <span>Arvingetype: @heir.HeirType.ToString()</span>
-                        <span>Arveprocent: @heir.InheritancePercentage</span>
-                    </div>
-
-                    HtmlToConvert += "Navn på arving: " + @heir.Name + " Arvingetype: " + @heir.HeirType.ToString() + " Arveprocent: " + @heir.InheritancePercentage + "<br>";
-                }
-            }
+            HeirRepository.Instance.GenerateHeirs(HeirType.Spouse);
         }
 
-        <button class="eksportBtn" @onclick="MakePDF">
-            Gem & eksporter
-        </button>
-
-    </label>
-</div>
+        else if (!isMarried)
+        {
+            HeirRepository.Instance.DeleteSpouse();
+        }
+    }
+}

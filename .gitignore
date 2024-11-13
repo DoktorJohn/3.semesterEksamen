@@ -13,6 +13,7 @@
 
 # Ignore VS Code settings folder
 .vscode/
+.vsidx
 
 # Ignore specific Visual Studio FileContentIndex files
-AdvokatenBlazor/.vs/AdvokatenBlazor/FileContentIndex/*
+C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\.vs\AdvokatenBlazor\FileContentIndex

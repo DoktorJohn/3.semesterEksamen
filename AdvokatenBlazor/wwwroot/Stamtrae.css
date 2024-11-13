@@ -1,33 +1,4 @@
-﻿/* Container for the overview section */
-.oversigt-container {
-    position: relative;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    overflow-y: auto;
-    max-height: 500px;
-}
-
-    /* Main title styling */
-    .oversigt-container label {
-        font-size: 24px;
-        color: #444;
-        font-weight: bold;
-        text-align: center;
-        display: block;
-        margin-bottom: 20px;
-    }
-
-/* Main form container with grid layout */
-/* Main form container with grid layout */
-/* Main form container with grid layout */
-/* Main form container with grid layout */
-/* Main form container */
-/* Main form container */
-.form-section {
+﻿.form-section {
     display: flex;
     flex-direction: column; /* Stack the labels vertically */
     gap: 15px; /* Space between each label */
@@ -133,26 +104,6 @@
     .inheritor-box:hover {
         transform: translateY(-5px);
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
-/* Styling for button to export */
-.eksportBtn {
-    display: block;
-    margin: 2% auto;
-    padding: 1% 5%;
-    background-color: #4caf50;
-    color: #fff;
-    font-size: 1em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-
-    /* Button hover effect */
-    .eksportBtn:hover {
-        background-color: #45a049;
     }
 
 /* Styling for each heir's information display */
