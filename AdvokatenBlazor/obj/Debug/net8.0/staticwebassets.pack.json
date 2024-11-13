@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\AdvokatenBlazor.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Aktiver.css",
+      "PackagePath": "staticwebassets\\Aktiver.css"
+    },
+    {
       "Id": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Stamtrae.css",
       "PackagePath": "staticwebassets\\Stamtrae.css"
     },

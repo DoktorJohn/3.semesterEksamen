@@ -1,7 +1,42 @@
 ﻿@page "/Aktiver"
+@rendermode InteractiveServer
+
+<link rel="stylesheet" href="Aktiver.css" />
 
 <h3>Aktiver</h3>
 
-@code {
+<div>
+    <label>
+        Hvis du ikke har et testamente eller særeje, så kan du blot skrive i dette felt, hvor meget værdi du ejer når alle aktiver gøres op.
+        <input type="text" />
+    </label>
 
+    <label>
+        <input type="checkbox" @bind="testamente" />
+        Klik her hvis du har et testamente eller særeje i din ægtepagt.
+    </label>
+</div>
+
+@if (testamente)
+{
+    <div>
+        <label>Opret aktiv</label>
+
+        <label>
+            Vælg en aktivtype i dropdown-menuen
+            <select @bind="type">
+                <option value="Property">Ejendom</option>
+                <option value="Vehicle">Køretøj</option>
+                <option value="Item">Ejendele</option>
+                <option value="Stock">Værdipapir</option>
+                <option value="Money">Penge</option>
+            </select>
+        </label>
+    </div>
+}
+
+
+@code {
+    bool testamente = false;
+    string type = string.Empty;
 }

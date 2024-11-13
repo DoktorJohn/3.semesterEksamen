@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mwfShj9nsuevi1fgwqkTiinW7qZjMxa85eem4e+OuzM=",
+  "Hash": "8cQwGAvXxRM04QrM+vCORu+7YS6FycTHTfFcG7Vp2qE=",
   "Source": "AdvokatenBlazor",
   "BasePath": "_content/AdvokatenBlazor",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\AdvokatenBlazor.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Aktiver.css",
+      "SourceId": "AdvokatenBlazor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\",
+      "BasePath": "_content/AdvokatenBlazor",
+      "RelativePath": "Aktiver.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Aktiver.css"
     },
     {
       "Identity": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\app.css",
