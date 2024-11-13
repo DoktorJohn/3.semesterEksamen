@@ -2,4 +2,17 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/AdvokatenBlazor/.vs/AdvokatenBlazor/FileContentIndex/ca315caa-ad1c-4a15-a85d-00cfa5a02626.vsidx
+# Ignore Visual Studio files
+.vs/
+.vs2019/
+.vs2022/
+
+# Ignore version control files (SourceSafe)
+*.vspscc
+*.vssscc
+
+# Ignore VS Code settings folder
+.vscode/
+
+# Ignore specific Visual Studio FileContentIndex files
+AdvokatenBlazor/.vs/AdvokatenBlazor/FileContentIndex/*

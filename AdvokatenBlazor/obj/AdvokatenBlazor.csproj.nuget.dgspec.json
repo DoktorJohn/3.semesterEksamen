@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\Eksamensprojekt Advokat\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj": {}
+    "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\Eksamensprojekt Advokat\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj": {
+    "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\Eksamensprojekt Advokat\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj",
+        "projectUniqueName": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj",
         "projectName": "AdvokatenBlazor",
-        "projectPath": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\Eksamensprojekt Advokat\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj",
+        "projectPath": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj",
         "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\Eksamensprojekt Advokat\\3.semesterEksamen\\AdvokatenBlazor\\obj\\",
+        "outputPath": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,16 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Select.HtmlToPdf.NetCore": {
+              "target": "Package",
+              "version": "[24.1.0, )"
+            },
+            "Select.Pdf": {
+              "target": "Package",
+              "version": "[24.1.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

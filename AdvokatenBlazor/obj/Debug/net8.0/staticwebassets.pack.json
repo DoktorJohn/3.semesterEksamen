@@ -1,27 +1,27 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\Eksamensprojekt Advokat\\3.semesterEksamen\\AdvokatenBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\AdvokatenBlazor.bundle.scp.css",
+      "Id": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\AdvokatenBlazor.bundle.scp.css",
       "PackagePath": "staticwebassets\\AdvokatenBlazor.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\Eksamensprojekt Advokat\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Stamtræ.css",
-      "PackagePath": "staticwebassets\\Stamtræ.css"
+      "Id": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Stamtrae.css",
+      "PackagePath": "staticwebassets\\Stamtrae.css"
     },
     {
-      "Id": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\Eksamensprojekt Advokat\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\app.css",
+      "Id": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },
     {
-      "Id": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\Eksamensprojekt Advokat\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Id": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\Eksamensprojekt Advokat\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\Eksamensprojekt Advokat\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\favicon.png",
+      "Id": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {

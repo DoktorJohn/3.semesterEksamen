@@ -1,9 +1,19 @@
 ﻿@page "/Stamtræ"
 @rendermode InteractiveServer
 
-<link rel="stylesheet" href="Stamtræ.css" />
+<link rel="stylesheet" href="Stamtrae.css" />
 
 @code {
+    string HtmlToConvert = string.Empty;
+
+    private void MakePDF()
+    {
+        var converter = new HtmlToPdf();
+        PdfDocument doc = converter.ConvertHtmlString(HtmlToConvert);
+        doc.Save("Arvinger.pdf");
+        doc.Close();
+    }
+
 
     public Heir Spouse = new Heir();
 
@@ -62,32 +72,6 @@
     }
 }
 
-<div class="oversigt-container">
-    <label style="font-size: 25px">
-        Oversigt over arvinger
-        <br />
-
-        @if (HeirRepository.Instance.Heirs.Count > 0)
-        {
-            @foreach (var heir in HeirRepository.Instance.Heirs)
-            {
-                @if (!string.IsNullOrEmpty(heir.Name))
-                {
-                    <div class="heir-info">
-                        <span>Navn på arving: @heir.Name</span>
-                        <span>Arvingetype: @heir.HeirType.ToString()</span>
-                        <span>Arveprocent: @heir.InheritancePercentage</span>
-                    </div>
-                }
-            }
-        }
-
-        <button class="eksportBtn">
-            Gem & eksporter
-        </button>
-
-    </label>
-</div>
 
 <div class="form-section">
     <label class="labelClass">
@@ -110,6 +94,7 @@
         <input type="checkbox" id="testamentField" @bind="Client.Testament" />
     </label>
 </div>
+
 
 @if (Client.KidsAmount > 0 || Client.Married == true)
 {
@@ -162,7 +147,33 @@
         }
     </div>
 }
-else
-{
-    <p class="StamtræTitle" style="text-align: center;">Du har ikke registreret nogen arvinger.</p>
-}
+
+<div class="oversigt-container">
+
+    <label style="font-size: 25px">
+        Oversigt over arvinger
+        <br />
+
+        @if (HeirRepository.Instance.Heirs.Count > 0)
+        {
+            @foreach (var heir in HeirRepository.Instance.Heirs)
+            {
+                @if (!string.IsNullOrEmpty(heir.Name))
+                {
+                    <div class="heir-info">
+                        <span>Navn på arving: @heir.Name</span>
+                        <span>Arvingetype: @heir.HeirType.ToString()</span>
+                        <span>Arveprocent: @heir.InheritancePercentage</span>
+                    </div>
+
+                    HtmlToConvert += "Navn på arving: " + @heir.Name + " Arvingetype: " + @heir.HeirType.ToString() + " Arveprocent: " + @heir.InheritancePercentage + "<br>";
+                }
+            }
+        }
+
+        <button class="eksportBtn" @onclick="MakePDF">
+            Gem & eksporter
+        </button>
+
+    </label>
+</div>
