@@ -1,4 +1,10 @@
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\bin\Debug\net8.0\CoverletSourceRootsMapping_Krav 1 - tests
+C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.csproj.AssemblyReference.cache
+C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.AssemblyInfoInputs.cache
+C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.AssemblyInfo.cs
+C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.csproj.CoreCompileInputs.cache
+C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.sourcelink.json
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\bin\Debug\net8.0\testhost.dll
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\bin\Debug\net8.0\AdvokatenBlazor.deps.json
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\bin\Debug\net8.0\AdvokatenBlazor.runtimeconfig.json
@@ -116,12 +122,6 @@ C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\bin\Debug\net8.0\AdvokatenBlazor.pdb
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
-C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.csproj.AssemblyReference.cache
-C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.AssemblyInfoInputs.cache
-C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.AssemblyInfo.cs
-C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.csproj.CoreCompileInputs.cache
-C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.sourcelink.json
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.csproj.CopyComplete
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.dll
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\refint\Krav 1 - tests.dll
