@@ -4,26 +4,27 @@
 <link rel="stylesheet" href="Stamtrae.css" />
 
 
-<div class="form-section">
-    <label class="labelClass">
+<div class="card bg-black text-white mb-3" style="max-width: 30rem; height: 15rem; left: 565px;">
+    <label class="NameClass">
         Hvad er dit navn?
-        <input type="text" id="nameField" @bind="Client.Name" />
+        <input type="text"  id="nameField" @bind="Client.Name" />
     </label>
 
-    <label class="labelClass">
+    <label class="MarriedClass">
         Har du en ægtefælle?
         <input type="checkbox" id="marriageField" @onchange="OnMarriedChanged" />
     </label>
 
-    <label class="labelClass">
+    <label class="ChildrenClass">
         Hvor mange børn har du?
         <input type="number" id="childrenField" @onchange="OnKidsAmountChanged" />
     </label>
 
-    <label class="labelClass">
+    <label class="WillClass">
         Har du et testamente?
         <input type="checkbox" id="testamentField" @bind="Client.Testament" />
     </label>
+    
 </div>
 
 

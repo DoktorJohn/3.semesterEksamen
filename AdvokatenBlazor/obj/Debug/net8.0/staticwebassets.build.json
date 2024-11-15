@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8cQwGAvXxRM04QrM+vCORu+7YS6FycTHTfFcG7Vp2qE=",
+  "Hash": "vGQdUxl/1ETrB15xnbIvU0EELeseVzNTpOE/KDxUaQ4=",
   "Source": "AdvokatenBlazor",
   "BasePath": "_content/AdvokatenBlazor",
   "Mode": "Default",
@@ -167,6 +167,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Stamtrae.css"
+    },
+    {
+      "Identity": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Treetrans.png",
+      "SourceId": "AdvokatenBlazor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jonat\\OneDrive\\Skrivebord\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\",
+      "BasePath": "_content/AdvokatenBlazor",
+      "RelativePath": "Treetrans.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Treetrans.png"
     }
   ]
 }

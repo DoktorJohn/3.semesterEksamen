@@ -12,7 +12,7 @@ namespace AdvokatenBlazor.Model
         None
     }
 
-    public abstract class Asset
+    public class Asset
     {
         public double Value { get; set; }
         private int _percentageOwned;
@@ -38,29 +38,9 @@ namespace AdvokatenBlazor.Model
         }
 
         public AssetType AssetType { get; set; }
-    }
 
-    public class Property : Asset
-    {
-        public string Location { get; set; }
-    }
-
-    public class Vehicle : Asset
-    {
-        public string Brand { get; set; }
-    }
-
-    public class Item : Asset
-    {
-        public string Name { get; set; }
-    }
-
-    public class Stock : Asset
-    {
-        public string Name { get; set; }
-    }
-
-    public class Money : Asset
-    {
+        public string? Location { get; set; }
+        public string? Brand { get; set; }
+        public string? Name { get; set; }
     }
 }

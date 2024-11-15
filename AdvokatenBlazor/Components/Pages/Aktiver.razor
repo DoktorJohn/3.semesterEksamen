@@ -3,33 +3,44 @@
 
 <link rel="stylesheet" href="Aktiver.css" />
 
-<h3></h3>
 
+<div class="row">
+    <div class="col-3">
+        <div class="card bg-black text-white mb-3" style="max-width: 18rem;">
+            <div class="card-header" style="font-size:30px">Dine aktiver</div>
+            <div class="card-body text-white mb-3">
+                <label class="text-white mb-3">Samlet formueværdi: @TotalValue</label>
+                <label class="text-white mb-3">Samlet friarvværdi: @TotalInheritance</label>
+            </div>
+        </div>
+    </div>
 
-<div class="card bg-dark text-white mb-3" style="max-width: 18rem;">
-    <div class="card-header" style="font-size:30px">Dine aktiver</div>
-    <div class="card-body text-white mb-3">
-        <label class="text-white mb-3">Samlet formueværdi: @TotalValue</label>
-        <label class="text-white mb-3">Samlet friarv: @TotalInheritance</label>
-  </div>
+    <div class="col-9">
+        <div class="card bg-black text-white mb-3" style="max-width: 50rem;">
+            <div class="card-header" style="font-size:30px">Oversigt over aktiver</div>
+            <div class="card-body text-white mb-3">
+                <label class="text-white mb-3">@AssetOverview</label>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="card-footer">
-    <button type="submit" @onclick="AddAsset" class="btn btn-primary btn-block">Tilføj et aktiv til din formue</button>
-    <button type="submit" @onclick="Update" class="btn btn-primary btn-block">Opdater</button>
+<div class="BtnForAdd">
+    <button type="submit" @onclick="AddAsset" class="btn bg-black btn-block text-white">Tilføj et aktiv til din formue</button>
 </div>
 
 <div class="container mt-4">
+
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-5 g-4">
-        @foreach (var asset in assets)
+        @foreach (var asset in AssetRepository.Instance.assets)
         {
             <div class="col">
                 <EditForm Model="asset">
                     <DataAnnotationsValidator />
-                    <div class="card h-100" style="position: relative;">
-                        <div class="card-header bg-primary text-white">
+                    <div class="card h-100 border-0" style="position: relative;">
+                        <div class="card-header bg-black text-white">
                             <h5 class="card-title">Rediger Aktiv</h5>
-                            <button type="button" @onclick="() => DeleteCard(asset)" class="btn-close" style="position: absolute; top: 0; right: 0; background: transparent; border: none; color: black; font-size: 1.5rem;">
+                            <button type="button" @onclick="() => DeleteCard(asset)" class="btn-close" style="position: absolute; top: -3px; right: 0; background: transparent; border: none; color: red; font-size: 1.5rem;">
                                 X
                             </button>
                         </div>
@@ -44,60 +55,47 @@
                                     <option value="Money">Likvide midler</option>
                                 </select>
                             </div>
-                            @if (asset.AssetType == AssetType.Property)
+
+                            @switch (asset.AssetType)
                             {
-                                var property = asset as Property;
-                                if (property != null)
-                                {
+                                case AssetType.Property:
                                     <div class="form-group">
                                         <label for="Location">Addresse</label>
-                                        <input type="text" id="Location" class="form-control" @bind="property.Location" />
+                                        <input type="text" id="Location" class="form-control" @bind="asset.Location" />
                                     </div>
-                                }
-                            }
+                                    break;
 
-                            @if (asset.AssetType == AssetType.Vehicle)
-                            {
-                                var property = asset as Vehicle;
-                                if (property != null)
-                                {
+                                case AssetType.Vehicle:
+
                                     <div class="form-group">
                                         <label for="Brand">Brand</label>
-                                        <input type="text" id="Brand" class="form-control" @bind="property.Brand" />
+                                        <input type="text" id="Brand" class="form-control" @bind="asset.Brand" />
                                     </div>
-                                }
-                            }
+                                    break;
 
-                            @if (asset.AssetType == AssetType.Item)
-                            {
-                                var property = asset as Item;
-                                if (property != null)
-                                {
+                                case AssetType.Item:
+
                                     <div class="form-group">
                                         <label for="Name">Navn</label>
-                                        <input type="text" id="Name" class="form-control" @bind="property.Name" />
+                                        <input type="text" id="Name" class="form-control" @bind="asset.Name" />
                                     </div>
-                                }
-                            }
+                                    break;
 
-                            @if (asset.AssetType == AssetType.Stock)
-                            {
-                                var property = asset as Stock;
-                                if (property != null)
-                                {
+                                case AssetType.Stock:
                                     <div class="form-group">
                                         <label for="Name">Værdipapir</label>
-                                        <input type="text" id="Name" class="form-control" @bind="property.Name" />
+                                        <input type="text" id="Name" class="form-control" @bind="asset.Name" />
                                     </div>
-                                }
+                                    break;
                             }
+
                             <div class="form-group">
                                 <label for="Value">Samlet værdi</label>
-                                <input type="number" id="Value" class="form-control" @bind="asset.Value" />
+                                <input type="number" id="Value" class="form-control" @bind="asset.Value" @onblur="() => Update(asset)" />
                             </div>
                             <div class="form-group">
                                 <label for="PercentageOwned">Ejerandel i procent</label>
-                                <input type="number" id="PercentageOwned" class="form-control" @bind="asset.PercentageOwned" />
+                                <input type="number" id="PercentageOwned" class="form-control" @bind-value="asset.PercentageOwned" @onblur="() => Update(asset)" />
                                 <ValidationMessage For="@(() => asset.PercentageOwned)" />
                             </div>
                         </div>
@@ -112,32 +110,44 @@
 @code {
     double TotalValue = 0;
     double TotalInheritance = 0;
+    string AssetOverview = string.Empty;
+    List<Asset> usedAssets = new List<Asset>();
 
-    void Update()
+    void UpdateOverviewString(Asset a)
+    {
+        if (!usedAssets.Contains(a))
+        {
+            AssetOverview += $"Navn på aktiv: {a.Name}{a.Brand}{a.Location} | Aktivs værdi: {a.Value} | Andel af aktiv: {a.PercentageOwned}";
+        }
+        
+        usedAssets.Add(a);
+    }
+
+    void Update(Asset a)
     {
         TotalValue = 0;
         TotalInheritance = 0;
 
-        foreach(var asset in assets)
+        foreach (var asset in AssetRepository.Instance.assets)
         {
             double percentageOwnedAsDecimal = asset.PercentageOwned / 100.0;
 
             TotalValue += asset.Value * percentageOwnedAsDecimal;
             TotalInheritance += asset.Value * percentageOwnedAsDecimal * 0.75;
         }
+
+        UpdateOverviewString(a);
     }
 
     void DeleteCard(Asset asset)
     {
-        assets.Remove(asset);
-        Update();
+        AssetRepository.Instance.assets.Remove(asset);
+        Update(asset);
     }
-
-    private List<Asset> assets = AssetRepository.Instance.assets;
 
     private void AddAsset()
     {
-        assets.Add(new Property { AssetType = AssetType.None, Value = 0, PercentageOwned = 100});
+        AssetRepository.Instance.assets.Add(new Asset { AssetType = AssetType.None, Value = 0, PercentageOwned = 100 });
     }
 
 

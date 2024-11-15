@@ -1,19 +1,5 @@
-﻿/* General page styling */
-body {
-    padding-bottom: 60px; /* Adds space at the bottom of the body content, adjust based on footer height */
-}
-
-/* Container for form elements */
-div {
-    margin-bottom: 15px;
-}
-
+﻿
 /* Style for headers */
-h3 {
-    font-size: 24px;
-    color: #4a90e2;
-    margin-bottom: 20px;
-}
 
 .btn {
     width: auto; /* Ensure the width is auto or use a fixed width */
@@ -22,6 +8,10 @@ h3 {
     display: inline-block; /* Make sure it behaves as a block element */
     position: relative;
 }
+
+    .btn:hover {
+        background-color: #3d0000 !important;
+    }
 
 /* Label styling */
 label {
@@ -140,21 +130,21 @@ form {
 }
 
 .card {
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden; /* Prevent content from overflowing the card */
+    height:100%;
 }
 
 .card-header {
     font-size: 1.1rem;
     font-weight: bold;
+    text-align:center;
 }
 
 .card-body {
     padding: 15px;
 }
 
-.card-footer {
+.BtnForAdd {
     padding: 10px;
     text-align: center;
 }
