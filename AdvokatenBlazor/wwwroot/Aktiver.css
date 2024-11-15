@@ -1,21 +1,17 @@
-﻿/* General page styling */
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    color: #333;
-}
-
-/* Container for form elements */
-div {
-    margin-bottom: 15px;
-}
-
+﻿
 /* Style for headers */
-h3 {
-    font-size: 24px;
-    color: #4a90e2;
-    margin-bottom: 20px;
+
+.btn {
+    width: auto; /* Ensure the width is auto or use a fixed width */
+    height: auto; /* Ensure height is auto or set a fixed height */
+    padding: 10px 20px; /* Set padding if necessary */
+    display: inline-block; /* Make sure it behaves as a block element */
+    position: relative;
 }
+
+    .btn:hover {
+        background-color: #3d0000 !important;
+    }
 
 /* Label styling */
 label {
@@ -66,4 +62,122 @@ input[type="text"], select, label {
     }
 }
 
-``
+/* General Form Styling */
+form {
+    max-width: 500px; /* Center the form and limit its width */
+    margin: 20px auto; /* Center the form on the page */
+    padding: 20px;
+    background-color: #f9f9f9; /* Subtle background color */
+    border: 1px solid #ddd; /* Light border for structure */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+    /* Form Labels */
+    form label {
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 8px;
+        display: block; /* Ensure labels are above the inputs */
+    }
+
+    /* Input Fields */
+    form input,
+    form select {
+        width: 100%; /* Make inputs take the full width */
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc; /* Light border */
+        border-radius: 4px; /* Slightly rounded inputs */
+        font-size: 1rem;
+        box-sizing: border-box;
+    }
+
+        /* Input Fields: Focus State */
+        form input:focus,
+        form select:focus {
+            border-color: #007bff; /* Blue border on focus */
+            outline: none; /* Remove default outline */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle blue glow */
+        }
+
+    /* Submit Button */
+    form button {
+        width: 100%; /* Full-width button */
+        padding: 12px;
+        background-color: #007bff; /* Primary color */
+        color: #fff; /* White text */
+        font-size: 1rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Smooth hover effect */
+    }
+
+        form button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    form {
+        padding: 15px;
+    }
+
+        form button {
+            font-size: 0.9rem;
+        }
+}
+
+.card {
+    overflow: hidden; /* Prevent content from overflowing the card */
+    height:100%;
+}
+
+.card-header {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align:center;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.BtnForAdd {
+    padding: 10px;
+    text-align: center;
+}
+
+.btn-primary {
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+
+footer {
+    position: fixed; /* Keeps the footer fixed */
+    bottom: 0; /* Sticks it to the bottom of the screen */
+    left: 0; /* Ensures it spans across the full width */
+    width: 100%; /* Ensures the footer spans the entire width of the page */
+    background-color: #f8f9fa; /* Light background color for footer */
+    z-index: 9999; /* Makes sure it appears above other content */
+    padding: 10px 0; /* Adds padding inside the footer */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
+}
+
+.card-footer {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adds space between buttons */
+    padding: 10px;
+}
+
+    .card-footer .btn {
+        width: auto; /* Ensures the button width adjusts according to the content */
+        min-width: 150px; /* Optionally set a min-width for buttons */
+    }

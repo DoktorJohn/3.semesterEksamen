@@ -1,53 +1,105 @@
-﻿.form-section {
+﻿.NameClass {
     display: flex;
-    flex-direction: column; /* Stack the labels vertically */
-    gap: 15px; /* Space between each label */
-    width: 25%; /* Adjust as needed, but now reduced to 50% */
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4.5rem !important; /* Forces spacing between label and input */
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    margin-left: 2rem;
 }
 
-/* Label and input alignment */
-.labelClass {
+.MarriedClass {
     display: flex;
-    align-items: center; /* Align label and input vertically */
-    gap: 10px; /* Space between label text and input */
-    width: 100%; /* Ensure label takes full width */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2.7rem !important; /* Forces spacing between label and input */
+    margin-bottom: 1rem;
+    margin-left: 2rem;
 }
 
-/* Input fields (text and number) */
-.form-section input[type="text"],
-.form-section input[type="number"] {
-    width: 100%; /* Ensure inputs take full width of the container */
-    max-width: 200px; /* Set max-width for consistency */
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
+.ChildrenClass {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.9rem !important; /* Forces spacing between label and input */
+    margin-bottom: 1rem;
+    margin-left: 2rem;
 }
 
-/* Checkbox styling */
-.form-section input[type="checkbox"] {
-    width: auto;
-    height: auto;
-    margin-left: 10px; /* Space between checkbox and label */
+.WillClass {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2.5rem !important; /* Forces spacing between label and input */
+    margin-bottom: 1rem;
+    margin-left: 2rem;
 }
 
-/* Prevent labels from wrapping */
-.labelClass {
-    white-space: nowrap; /* Prevent labels from breaking into multiple lines */
+    .NameClass input[type="text"],
+    .MarriedClass input[type="text"],
+    .ChildrenClass input[type="number"],
+    .labelClass input[type="number"],
+    .labelClass input[type="checkbox"] {
+        margin-left: 0rem !important; /* Adds space between label and input */
+        padding: 0.5rem;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #333; /* Matches dark theme */
+        color: #fff;
+    }
+
+    .labelClass input[type="checkbox"] {
+        width: auto; /* Ensures checkboxes don’t stretch */
+        margin-left: 1rem;
+        gap: 3rem !important;
+    }
+
+.NameClass input[type="text"]:focus,
+.ChildrenClass input[type="text"]:focus,
+.labelClass input[type="number"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+#nameField,
+#marriageField,
+#childrenField,
+#testamentField {
+    margin: 0;
 }
 
 
+.card {
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 2.1);
+    overflow: hidden; /* Prevent content from overflowing the card */
+}
 
+.card-header {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
 
+.card-body {
+    padding: 15px;
+}
 
+.card-footer {
+    padding: 10px;
+    text-align: center;
+}
 
-/* Section title for the inheritance tree */
-.StamtræTitle {
+StamtræTitle {
     margin-top: 25px;
     text-align: center;
     font-size: 30px;
@@ -131,11 +183,6 @@
         color: #4682b4;
         font-weight: bold;
     }
-
-/* Align center for all labels */
-.labelClass {
-    text-align: left;
-}
 
 /* Optional: Focus effect for inputs */
 input:focus {

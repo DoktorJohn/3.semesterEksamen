@@ -87,6 +87,13 @@ C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\Eksamensprojekt Advokat\3.semeste
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\Eksamensprojekt Advokat\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\AdvokatenBlazor.pdb
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\Eksamensprojekt Advokat\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\AdvokatenBlazor.genruntimeconfig.cache
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\Eksamensprojekt Advokat\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\ref\AdvokatenBlazor.dll
+C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\AdvokatenBlazor.csproj.AssemblyReference.cache
+C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\AdvokatenBlazor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\AdvokatenBlazor.AssemblyInfoInputs.cache
+C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\AdvokatenBlazor.AssemblyInfo.cs
+C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\AdvokatenBlazor.csproj.CoreCompileInputs.cache
+C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\AdvokatenBlazor.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\AdvokatenBlazor.sourcelink.json
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Select.Html.dep
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Select.Tools.dep
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\appsettings.Development.json
@@ -105,13 +112,6 @@ C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.0\System.Drawing.Common.dll
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.0\System.Drawing.Common.dll
-C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\AdvokatenBlazor.csproj.AssemblyReference.cache
-C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\AdvokatenBlazor.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\AdvokatenBlazor.AssemblyInfoInputs.cache
-C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\AdvokatenBlazor.AssemblyInfo.cs
-C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\AdvokatenBlazor.csproj.CoreCompileInputs.cache
-C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\AdvokatenBlazor.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\AdvokatenBlazor.sourcelink.json
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\staticwebassets\msbuild.AdvokatenBlazor.Microsoft.AspNetCore.StaticWebAssets.props
