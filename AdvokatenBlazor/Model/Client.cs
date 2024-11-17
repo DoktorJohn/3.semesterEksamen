@@ -33,5 +33,8 @@ namespace AdvokatenBlazor.Model
         [Required]
         public static bool Testament { get; set; }
 
+        public static double TotalValue { get; set; }
+        public static string AssetString { get; set; } = string.Empty;
+
     }
 }

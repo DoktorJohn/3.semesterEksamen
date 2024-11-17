@@ -30,6 +30,7 @@ namespace AdvokatenBlazor.Model
 
         [Required]
         public double InheritancePercentage { get; set; }
+        public double ForcedInheritancePercentage { get; set; }
         [Required]
         public HeirType HeirType { get; set; }
     }

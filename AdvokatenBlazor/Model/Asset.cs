@@ -15,6 +15,7 @@ namespace AdvokatenBlazor.Model
     public class Asset
     {
         public double Value { get; set; }
+
         private int _percentageOwned;
 
         public int PercentageOwned

@@ -1,55 +1,64 @@
-﻿@page "/Stamtræ"
+﻿@page "/"
 @rendermode InteractiveServer
 
 <link rel="stylesheet" href="Stamtrae.css" />
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&display=swap" rel="stylesheet">
 
+<div class="TopBar">
+    <div class="card text-white mb-3">
+        <label class="TitleClass">
+            Modificér dit stamtræ
+        </label>
 
-<div class="card bg-black text-white mb-3" style="max-width: 30rem; height: 15rem; left: 565px;">
-    <label class="NameClass">
-        Hvad er dit navn?
-        <input type="text"  id="nameField" @bind="Client.Name" />
-    </label>
+        <label class="MarriedClass">
+            Har du en ægtefælle?
+            <input type="checkbox" id="marriageField" @onchange="OnMarriedChanged" />
+        </label>
 
-    <label class="MarriedClass">
-        Har du en ægtefælle?
-        <input type="checkbox" id="marriageField" @onchange="OnMarriedChanged" />
-    </label>
+        <label class="ChildrenClass">
+            Hvor mange børn har du?
+            <input type="number" id="childrenField" @onchange="OnKidsAmountChanged" />
+        </label>
 
-    <label class="ChildrenClass">
-        Hvor mange børn har du?
-        <input type="number" id="childrenField" @onchange="OnKidsAmountChanged" />
-    </label>
+        <label class="WillClass">
+            Tilføj andre arvinger
+            <button class="FamilyBtn" @onclick="AddClick">
+                Tilføj
+            </button>
+        </label>
 
-    <label class="WillClass">
-        Har du et testamente?
-        <input type="checkbox" id="testamentField" @bind="Client.Testament" />
-    </label>
-    
+    </div>
 </div>
 
 
-@if (Client.KidsAmount > 0 || Client.Married == true)
+
+@if (Client.KidsAmount > 0 || Client.Married == true || extraFamily > 0)
 {
-    <h4 class="StamtræTitle" style="text-align: center; color: #444;">Dit genererede stamtræ:</h4>
-
-
     <div class="inheritance-tree">
+        @if (Client.Married)
+        {
             <div class="married-grid">
                 <div class="inheritor-box">
                     <h5>Ægtefælle</h5>
                     <label>
-                        Navn:
-                    <input type="text" class="nameTxt" @bind="HeirRepository.Instance.Spouse.Name" />
-                        Arveprocent:
-                        <label style="color:blue">
-                            @InheritanceCalc.CalculateInheritancePercentageForMarried()%
-                        @{
-                            HeirRepository.Instance.Spouse.InheritancePercentage = InheritanceCalc.CalculateInheritancePercentageForMarried();
-                        }
+                        <input type="text" class="nameTxt" @bind="HeirRepository.Instance.Spouse.Name" />
+                        <label class="PercentageTxt" style="color:black">
+                            <label>
+                                Arvefordeling: @InheritanceCalc.CalculateForcedInheritancePercentageForMarried()% - @InheritanceCalc.CalculateInheritancePercentageForMarried()%
+                            </label>
+                            <br />
+                            <label>
+                                Arvebeløb: @InheritanceCalc.CalculateForcedInheritanceAmountForMarried() - @InheritanceCalc.CalculateInheritanceAmountForMarried()
+                            </label>
+                            
+                            @{
+                                HeirRepository.Instance.Spouse.ForcedInheritancePercentage = InheritanceCalc.CalculateForcedInheritancePercentageForMarried();
+                            }
                         </label>
                     </label>
                 </div>
             </div>
+        }
 
         <div class="divider"></div>
 
@@ -62,20 +71,48 @@
                 <div class="inheritor-box">
                     <h5>Barn @(i + 1)</h5>
                     <label>
-                        Navn:
                         <input type="text" class="nameTxt" @bind="heir.Name" />
-                        Arveprocent:
-                        <label class="PercentageTxt" style="color:blue">
-                            @InheritanceCalc.CalculateInheritancePercentageForKid()%
+                        <label class="PercentageTxt" style="color:black">
+                            <label>
+                                Arvefordeling: @InheritanceCalc.CalculateForcedInheritancePercentageForKid()% - @InheritanceCalc.CalculateInheritancePercentageForKid()%
+                            </label>
+                            <br />
+                            <label>
+                                Arvebeløb: @InheritanceCalc.CalculateForcedInheritanceAmountForKid() - @InheritanceCalc.CalculateInheritanceAmountForKid()
+                            </label>
+                            
+                            @{
+                                heir.ForcedInheritancePercentage = InheritanceCalc.CalculateForcedInheritancePercentageForMarried();
+                            }
                         </label>
                     </label>
                 </div>
             </div>
         }
+
+        <div class="divider"></div>
+
+        @for (int i = 0; i < extraFamily; i++)
+        {
+            var heir = new Heir();
+
+            <div class="kids-grid">
+                <div class="inheritor-box">
+                    <h5>Arving @(i + 1)</h5>
+                    <label>
+                        <input type="text" class="nameTxt" @bind="heir.Name" />
+                    </label>
+                </div>
+            </div>
+        }
+
+
     </div>
+
 }
 
 @code {
+    int extraFamily = 0;
 
     private void OnKidsAmountChanged(ChangeEventArgs input)
     {
@@ -99,5 +136,10 @@
         {
             HeirRepository.Instance.DeleteSpouse();
         }
+    }
+
+    private void AddClick()
+    {
+        extraFamily++;
     }
 }

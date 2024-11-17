@@ -3,31 +3,16 @@
 
 <link rel="stylesheet" href="Aktiver.css" />
 
+<div class="TopBar">
+        <label class="AktivTitle">Dine aktiver</label>
+    <label class="text-white mb-3" style="color:#ffaa54!important; max-width: 18rem; left:57%; top:15px; position:absolute;">Samlet formueværdi: @Client.TotalValue</label>
+    <label class="text-white mb-3" style="color:#ffaa54!important; max-width: 18rem; left:57%; top:40px; position:absolute;">Samlet friarvværdi: @TotalInheritance</label>
 
-<div class="row">
-    <div class="col-3">
-        <div class="card bg-black text-white mb-3" style="max-width: 18rem;">
-            <div class="card-header" style="font-size:30px">Dine aktiver</div>
-            <div class="card-body text-white mb-3">
-                <label class="text-white mb-3">Samlet formueværdi: @TotalValue</label>
-                <label class="text-white mb-3">Samlet friarvværdi: @TotalInheritance</label>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-9">
-        <div class="card bg-black text-white mb-3" style="max-width: 50rem;">
-            <div class="card-header" style="font-size:30px">Oversigt over aktiver</div>
-            <div class="card-body text-white mb-3">
-                <label class="text-white mb-3">@AssetOverview</label>
-            </div>
-        </div>
+    <div class="BtnForAdd">
+        <button type="submit" @onclick="AddAsset" class="btn btn-block">Tilføj et aktiv til din formue</button>
     </div>
 </div>
 
-<div class="BtnForAdd">
-    <button type="submit" @onclick="AddAsset" class="btn bg-black btn-block text-white">Tilføj et aktiv til din formue</button>
-</div>
 
 <div class="container mt-4">
 
@@ -37,7 +22,7 @@
             <div class="col">
                 <EditForm Model="asset">
                     <DataAnnotationsValidator />
-                    <div class="card h-100 border-0" style="position: relative;">
+                    <div class="card h-100" style="position: relative;">
                         <div class="card-header bg-black text-white">
                             <h5 class="card-title">Rediger Aktiv</h5>
                             <button type="button" @onclick="() => DeleteCard(asset)" class="btn-close" style="position: absolute; top: -3px; right: 0; background: transparent; border: none; color: red; font-size: 1.5rem;">
@@ -108,35 +93,24 @@
 
 
 @code {
-    double TotalValue = 0;
-    double TotalInheritance = 0;
-    string AssetOverview = string.Empty;
-    List<Asset> usedAssets = new List<Asset>();
+    double TotalInheritance = Client.TotalValue * 0.75;
 
-    void UpdateOverviewString(Asset a)
-    {
-        if (!usedAssets.Contains(a))
-        {
-            AssetOverview += $"Navn på aktiv: {a.Name}{a.Brand}{a.Location} | Aktivs værdi: {a.Value} | Andel af aktiv: {a.PercentageOwned}";
-        }
-        
-        usedAssets.Add(a);
-    }
 
     void Update(Asset a)
     {
-        TotalValue = 0;
-        TotalInheritance = 0;
+        Client.TotalValue = 0;
 
         foreach (var asset in AssetRepository.Instance.assets)
         {
             double percentageOwnedAsDecimal = asset.PercentageOwned / 100.0;
 
-            TotalValue += asset.Value * percentageOwnedAsDecimal;
-            TotalInheritance += asset.Value * percentageOwnedAsDecimal * 0.75;
+            Client.TotalValue += asset.Value * percentageOwnedAsDecimal;
+
+            double percentageToUse = percentageOwnedAsDecimal * 0.75;
+            TotalInheritance += asset.Value * percentageToUse;
         }
 
-        UpdateOverviewString(a);
+        TotalInheritance = Client.TotalValue * 0.75;
     }
 
     void DeleteCard(Asset asset)

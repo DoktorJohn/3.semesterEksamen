@@ -4,6 +4,11 @@
     flex-direction: column;
 }
 
+.px-4[b-xkcyhzx3l1]{
+    padding-right: 0px!important;
+    padding-left: 0rem!important;
+}
+
 main[b-xkcyhzx3l1] {
     flex: 1;
     background-color:whitesmoke;
@@ -17,7 +22,8 @@ main[b-xkcyhzx3l1] {
 }
 
 .sidebar[b-xkcyhzx3l1] {
-    background-image: linear-gradient(180deg, #000000 20%, #333333 90%, #666666 130%, #999999 140%);
+    background-image: linear-gradient(180deg, #00103a 80%, #000f 120%);
+    border-right: 2px solid #ffaa54;
 }
 
 .top-row[b-xkcyhzx3l1] {
@@ -79,8 +85,6 @@ main[b-xkcyhzx3l1] {
         }
 
     .top-row[b-xkcyhzx3l1], article[b-xkcyhzx3l1] {
-        padding-left: 2rem !important;
-        padding-right: 1.5rem !important;
     }
 }
 

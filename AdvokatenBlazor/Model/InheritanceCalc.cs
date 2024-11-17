@@ -22,15 +22,121 @@ namespace AdvokatenBlazor.Model
         {
             if (!Client.Married && Client.KidsAmount > 0)
             {
-                return 100 / (double)Client.KidsAmount;
+                double amount = 100 / (double)Client.KidsAmount;
+                return TruncateToDecimalPlaces(amount, 2);
             }
 
             else if (Client.Married)
             {
-                return 50 / (double)Client.KidsAmount;
+                double amount = 50 / (double)Client.KidsAmount;
+                return TruncateToDecimalPlaces(amount, 2);
             }
 
             return 0;
+        }
+
+        public static double CalculateForcedInheritancePercentageForMarried()
+        {
+            if (Client.KidsAmount <= 0)
+            {
+                return 100 * 0.25;
+            }
+
+            else
+            {
+                return 50 * 0.25;
+            }
+        }
+
+        public static double CalculateForcedInheritancePercentageForKid()
+        {
+            if (!Client.Married && Client.KidsAmount > 0)
+            {
+                double amount = 100 / (double)Client.KidsAmount;
+                double percentageoff = amount * 0.25;
+                return TruncateToDecimalPlaces(percentageoff, 2);
+            }
+            else if (Client.Married)
+            {
+                double amount = 50 / (double)Client.KidsAmount;
+                double percentageoff = amount * 0.25;
+                return TruncateToDecimalPlaces(percentageoff, 2);
+            }
+
+            return 0;
+        }
+
+        public static double CalculateForcedInheritanceAmountForKid()
+        {
+            if (!Client.Married && Client.KidsAmount > 0)
+            {
+                double amount = Client.TotalValue / Client.KidsAmount;
+                double percentageoff = amount * 0.25;
+                return Math.Truncate(percentageoff);
+            }
+
+            else if (Client.Married)
+            {
+                double amount = Client.TotalValue / Client.KidsAmount;
+                double marriedPercent = amount * 0.5;
+                double percentageoff = marriedPercent * 0.25;
+                return Math.Truncate(percentageoff);
+            }
+
+            return 0;
+        }
+
+        public static double CalculateInheritanceAmountForKid()
+        {
+            if (!Client.Married && Client.KidsAmount > 0)
+            {
+                double amount = Client.TotalValue / Client.KidsAmount;
+                return Math.Truncate(amount);
+            }
+
+            else if (Client.Married)
+            {
+                double amount = Client.TotalValue / Client.KidsAmount;
+                double marriedPercent = amount * 0.5;
+                return Math.Truncate(marriedPercent);
+            }
+
+            return 0;
+        }
+
+        public static double CalculateForcedInheritanceAmountForMarried()
+        {
+            if (Client.KidsAmount <= 0)
+            {
+                return Client.TotalValue * 0.25;
+            }
+
+            else
+            {
+                double amount = Client.TotalValue * 0.25;
+                return amount * 0.5;
+            }
+        }
+
+        public static double CalculateInheritanceAmountForMarried()
+        {
+            if (Client.KidsAmount <= 0)
+            {
+                return Client.TotalValue;
+            }
+
+            else
+            {
+                double amount = Client.TotalValue;
+                return amount * 0.5;
+            }
+        }
+
+
+        private static double TruncateToDecimalPlaces(double value, int decimalPlaces)
+        {
+            double factor = Math.Pow(10, decimalPlaces);
+            return Math.Truncate(value * factor) / factor;
         }
     }
 }

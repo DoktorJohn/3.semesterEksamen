@@ -12,21 +12,25 @@
 }
 
 .eksportBtn {
-    background-color: #000000 !important; /* White background */
-    color: #ffffff !important;
+    background-color: #ffaa54 !important; /* White background */
+    color: #00103a !important;
     font-size: 1em !important;
-    padding: 1% 5% !important;
     border: none !important;
-    width: 100%;
+    width: 80%;
     height: 40px;
     border-radius: 5px !important;
     cursor: pointer !important;
     transition: background-color 0.3s ease !important;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 40px;
+    font-family: 'Crimson Pro', serif;
+    margin-left: 10px;
 }
 
     /* Button hover effect */
     .eksportBtn:hover {
-        background-color: #3d0000 !important;
+        background-color: #ffdf32!important;
     }
 
 
@@ -69,6 +73,8 @@
 .nav-item {
     font-size: 0.9rem;
     padding-bottom: 0.5rem;
+    font-family: 'Crimson Pro', serif;
+    font-size:21px;
 }
 
     .nav-item:first-of-type {
@@ -120,10 +126,12 @@
         /* Allow sidebar to scroll for tall menus */
         height: calc(100vh - 3.5rem);
         overflow-y: auto;
+        
     }
 }
 
 
 .logo {
     max-height: 210px;
+    margin-left: 19.7px;
 }

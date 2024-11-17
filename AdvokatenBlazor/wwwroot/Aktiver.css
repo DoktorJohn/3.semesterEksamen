@@ -6,11 +6,19 @@
     height: auto; /* Ensure height is auto or set a fixed height */
     padding: 10px 20px; /* Set padding if necessary */
     display: inline-block; /* Make sure it behaves as a block element */
-    position: relative;
+    position: absolute;
+    top: 160px;
+    left: 48.7%;
+    background-color: #ffaa54 !important;
+    color: #00103a;
+    border-radius: 5px;
+    font-family: 'Crimson Pro', serif;
+    font-weight: 800;
+    font-size: 100%;
 }
 
     .btn:hover {
-        background-color: #3d0000 !important;
+        background-color: #ffdf32!important;
     }
 
 /* Label styling */
@@ -62,16 +70,14 @@ input[type="text"], select, label {
     }
 }
 
+
 /* General Form Styling */
 form {
     max-width: 500px; /* Center the form and limit its width */
     margin: 20px auto; /* Center the form on the page */
     padding: 20px;
-    background-color: #f9f9f9; /* Subtle background color */
-    border: 1px solid #ddd; /* Light border for structure */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
+
 
     /* Form Labels */
     form label {
@@ -129,15 +135,26 @@ form {
         }
 }
 
+.TopBar {
+    background-color: #00103a;
+    width: 100%;
+    height: 230px;
+}
+
 .card {
-    overflow: hidden; /* Prevent content from overflowing the card */
-    height:100%;
+    overflow: hidden;
+    Prevent content from overflowing the card height: 100%;
+    border: 2px solid;
+    border-radius: .5rem !important;
+    border-color: #ffaa54!important;
 }
 
 .card-header {
     font-size: 1.1rem;
     font-weight: bold;
-    text-align:center;
+    text-align: center;
+    background-color: #ffaa54 !important;
+    color: #00103a!important;
 }
 
 .card-body {
@@ -147,6 +164,7 @@ form {
 .BtnForAdd {
     padding: 10px;
     text-align: center;
+    height:50px!important;
 }
 
 .btn-primary {
@@ -181,3 +199,14 @@ footer {
         width: auto; /* Ensures the button width adjusts according to the content */
         min-width: 150px; /* Optionally set a min-width for buttons */
     }
+
+
+.AktivTitle {
+    font-size: 45px;
+    color: #ffaa54;
+    font-weight: 500;
+    position: absolute;
+    left: 44%;
+    top: 0px;
+    font-family: 'Crimson Pro', serif;
+}

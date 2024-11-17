@@ -1,11 +1,12 @@
-﻿.NameClass {
+﻿.TitleClass {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 4.5rem !important; /* Forces spacing between label and input */
     margin-bottom: 1rem;
-    margin-top: 1.5rem;
-    margin-left: 2rem;
+    font-size: 45px;
+    color: #ffaa54;
+    font-weight: 500;
+    font-family: 'Crimson Pro', serif;
 }
 
 .MarriedClass {
@@ -15,6 +16,8 @@
     gap: 2.7rem !important; /* Forces spacing between label and input */
     margin-bottom: 1rem;
     margin-left: 2rem;
+    font-size: 20px;
+    font-family: 'Crimson Pro', serif;
 }
 
 .ChildrenClass {
@@ -24,37 +27,90 @@
     gap: 0.9rem !important; /* Forces spacing between label and input */
     margin-bottom: 1rem;
     margin-left: 2rem;
+    font-size: 20px;
+    font-family: 'Crimson Pro', serif;
 }
 
 .WillClass {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 2.5rem !important; /* Forces spacing between label and input */
+    gap: 3.5rem !important; /* Forces spacing between label and input */
     margin-bottom: 1rem;
     margin-left: 2rem;
+    font-size: 20px;
+    font-family: 'Crimson Pro', serif;
 }
 
-    .NameClass input[type="text"],
-    .MarriedClass input[type="text"],
-    .ChildrenClass input[type="number"],
-    .labelClass input[type="number"],
-    .labelClass input[type="checkbox"] {
-        margin-left: 0rem !important; /* Adds space between label and input */
-        padding: 0.5rem;
-        font-size: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 5px border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #333; /* Matches dark theme */
-        color: #fff;
+.ChildrenClass input[type="number"] {
+    margin-left: 0rem !important; /* Adds space between label and input */
+    padding: 0.5rem;
+    font-size: 1.75rem;
+    width: 5rem;
+    height: 2.5rem;
+    right: 150px !important;
+    font-family: 'Crimson Pro', serif;
+    position: absolute;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffaa54; /* Matches dark theme */
+    color: #00103a;
+}
+
+    .ChildrenClass input[type="number"]:hover {
+        background-color: #ffdf32 !important;
     }
 
-    .labelClass input[type="checkbox"] {
-        width: auto; /* Ensures checkboxes don’t stretch */
-        margin-left: 1rem;
-        gap: 3rem !important;
+.MarriedClass input[type="checkbox"] {
+    position: absolute;
+    right: 45.3% !important;
+    background-color: #ffaa54; /* Matches dark theme */
+    color: #00103a;
+}
+
+.NameClass input[type="text"],
+.MarriedClass input[type="text"],
+.labelClass input[type="number"],
+.labelClass input[type="checkbox"],
+.WillClass input[type="submit"] {
+    margin-left: 0rem !important; /* Adds space between label and input */
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffaa54; /* Matches dark theme */
+    color: #00103a;
+    font-family: 'Crimson Pro', serif;
+}
+
+
+.FamilyBtn {
+    margin-left: 0rem !important; /* Adds space between label and input */
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffaa54; /* Matches dark theme */
+    color: #fff;
+    width: 5rem;
+    height: 2.5rem;
+    text-align: center;
+    right: 150px !important;
+    position: absolute;
+    color: #00103a;
+    font-family: 'Crimson Pro', serif;
+}
+
+    .FamilyBtn:hover {
+        background-color: #ffdf32 !important;
     }
+
+
+.labelClass input[type="checkbox"] {
+    width: auto; /* Ensures checkboxes don’t stretch */
+    margin-left: 1rem;
+    gap: 3rem !important;
+}
 
 .NameClass input[type="text"]:focus,
 .ChildrenClass input[type="text"]:focus,
@@ -78,16 +134,31 @@
     margin: 0;
 }
 
+.TopBar {
+    background-color: #00103a;
+    width: 100%;
+    height: 230px;
+}
 
 .card {
-    border-radius: 10px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 2.1);
-    overflow: hidden; /* Prevent content from overflowing the card */
+    overflow: hidden;
+    background-color: #00103a;
+    height: 220px;
+    width: 25%;
+    margin-top: .35%;
+    margin-left: 31.2%;
+    position: absolute !important;
+    font-family: 'Crimson Pro', serif;
+    font-size: 25px;
+    border: hidden!important;
+    border-radius: 0px!important;
 }
 
 .card-header {
     font-size: 1.1rem;
     font-weight: bold;
+    font-family: 'Crimson Pro', serif;
+    font-size: 25px;
 }
 
 .card-body {
@@ -100,11 +171,21 @@
 }
 
 StamtræTitle {
-    margin-top: 25px;
+    margin-top: 250px;
     text-align: center;
     font-size: 30px;
     color: #444;
     font-weight: bold;
+    font-family: 'Crimson Pro', serif;
+    font-size: 25px;
+}
+
+.PercentageTxt {
+    align-content: center;
+    align-self: center;
+    margin-top: 10px;
+    font-family: 'Crimson Pro', serif;
+    font-size: 20px;
 }
 
 /* Divider line styling */
@@ -127,20 +208,22 @@ StamtræTitle {
 /* Individual inheritor box styling */
 .inheritor-box {
     background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
+    border: 2.5px solid;
+    border-color: #998100;
+    border-radius: 15px;
     padding: 15px;
-    width: 220px;
+    width: 300px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
     /* Styling for each inheritor heading */
     .inheritor-box h5 {
         margin-top: 0;
-        color: #333;
-        font-size: 18px;
+        color: black;
+        font-weight: 400;
+        font-family: 'Crimson Pro', serif;
+        font-size: 25px;
     }
 
     /* Input fields inside inheritor boxes */
@@ -149,7 +232,8 @@ StamtræTitle {
         padding: 5px;
         margin-top: 10px;
         border-radius: 5px;
-        border: 1px solid #ccc;
+        border-color: black;
+        border: .5px solid;
     }
 
     /* Hover effect for inheritor boxes */
