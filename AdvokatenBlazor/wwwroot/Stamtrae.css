@@ -4,6 +4,8 @@
     justify-content: flex-start;
     margin-bottom: 1rem;
     font-size: 45px;
+    left: 46%;
+    position:absolute;
     color: #ffaa54;
     font-weight: 500;
     font-family: 'Crimson Pro', serif;
@@ -15,6 +17,9 @@
     justify-content: flex-start;
     gap: 2.7rem !important; /* Forces spacing between label and input */
     margin-bottom: 1rem;
+    left: 49.3%;
+    top: 7.5%;
+    position: absolute;
     margin-left: 2rem;
     font-size: 20px;
     font-family: 'Crimson Pro', serif;
@@ -26,6 +31,9 @@
     justify-content: flex-start;
     gap: 0.9rem !important; /* Forces spacing between label and input */
     margin-bottom: 1rem;
+    left: 47%;
+    top: 12.5%;
+    position: absolute;
     margin-left: 2rem;
     font-size: 20px;
     font-family: 'Crimson Pro', serif;
@@ -37,6 +45,9 @@
     justify-content: flex-start;
     gap: 3.5rem !important; /* Forces spacing between label and input */
     margin-bottom: 1rem;
+    left: 47%;
+    top: 17.5%;
+    position: absolute;
     margin-left: 2rem;
     font-size: 20px;
     font-family: 'Crimson Pro', serif;
@@ -46,9 +57,9 @@
     margin-left: 0rem !important; /* Adds space between label and input */
     padding: 0.5rem;
     font-size: 1.75rem;
-    width: 5rem;
-    height: 2.5rem;
-    right: 150px !important;
+    width: 3rem;
+    height: 2rem;
+    left: 110%;
     font-family: 'Crimson Pro', serif;
     position: absolute;
     border: 1px solid #ccc;
@@ -63,7 +74,7 @@
 
 .MarriedClass input[type="checkbox"] {
     position: absolute;
-    right: 45.3% !important;
+    right: -20%;
     background-color: #ffaa54; /* Matches dark theme */
     color: #00103a;
 }
@@ -92,10 +103,11 @@
     border-radius: 5px;
     background-color: #ffaa54; /* Matches dark theme */
     color: #fff;
-    width: 5rem;
+    width: 16.90rem;
+    left: 48.70%;
+    top: 17.5%;
     height: 2.5rem;
     text-align: center;
-    right: 150px !important;
     position: absolute;
     color: #00103a;
     font-family: 'Crimson Pro', serif;
@@ -142,32 +154,23 @@
 
 .card {
     overflow: hidden;
-    background-color: #00103a;
-    height: 220px;
-    width: 25%;
-    margin-top: .35%;
-    margin-left: 31.2%;
-    position: absolute !important;
-    font-family: 'Crimson Pro', serif;
-    font-size: 25px;
-    border: hidden!important;
-    border-radius: 0px!important;
+    Prevent content from overflowing the card height: 100%;
+    border: 2px solid;
+    border-radius: .5rem !important;
+    text-align: center;
+    border-color: #ffaa54 !important;
 }
 
 .card-header {
     font-size: 1.1rem;
     font-weight: bold;
-    font-family: 'Crimson Pro', serif;
-    font-size: 25px;
+    text-align: center;
+    background-color: #ffaa54 !important;
+    color: #00103a !important;
 }
 
 .card-body {
     padding: 15px;
-}
-
-.card-footer {
-    padding: 10px;
-    text-align: center;
 }
 
 StamtræTitle {

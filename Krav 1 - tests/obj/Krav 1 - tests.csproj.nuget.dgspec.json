@@ -40,6 +40,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "PDFsharp": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
             "Select.HtmlToPdf.NetCore": {
               "target": "Package",
               "version": "[24.1.0, )"

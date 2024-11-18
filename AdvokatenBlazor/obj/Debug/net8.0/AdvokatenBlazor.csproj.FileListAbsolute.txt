@@ -171,3 +171,11 @@ C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.Semester\3.semesterEksamen\Advo
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.Semester\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\AdvokatenBlazor.pdb
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.Semester\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\AdvokatenBlazor.genruntimeconfig.cache
 C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.Semester\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\ref\AdvokatenBlazor.dll
+C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.Semester\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\PdfSharp.Charting.dll
+C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.Semester\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\PdfSharp.Quality.dll
+C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.Semester\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\PdfSharp.Snippets.dll
+C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.Semester\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\PdfSharp.System.dll
+C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.Semester\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\PdfSharp.WPFonts.dll
+C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.Semester\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\PdfSharp.dll
+C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.Semester\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\de\PdfSharp.Charting.resources.dll
+C:\Users\jonat\OneDrive\Skrivebord\Datamatiker\3.Semester\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\de\PdfSharp.resources.dll

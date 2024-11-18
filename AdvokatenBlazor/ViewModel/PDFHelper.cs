@@ -13,19 +13,18 @@ namespace AdvokatenBlazor.ViewModel
 
             HtmlToConvert +=
                 $"Klientnavn: {Client.Name} <br>" +
-                $"Klient i ægteskab? {Client.Married} <br>" +
-                $"Klient har testamente? {Client.Testament} <br> <br> <br> <br> <br>" +
-                $"Arvinger: <br> <br>";
+                $"Klient i ægteskab? {Client.Married} <br><br><br>";
 
             foreach (var heir in HeirRepository.Instance.Heirs)
             {
                 index++;
 
                 HtmlToConvert +=
-                    $"Arving nummmer {index} <br>" +
-                    $"{heir.Name} <br>" +
-                    $"{heir.HeirType.ToString()} <br>" +
-                    $"{heir.InheritancePercentage}% <br><br>";
+                    $"Arving nummmer: {index} <br>" +
+                    $"Arving navn: {heir.Name} <br>" +
+                    $"Arvingtype: {heir.HeirType} <br>" +
+                    $"Arvefordeling {heir.ForcedInheritancePercentage}% - {heir.InheritancePercentage}% <br>" +
+                    $"Arvebeløb {heir.ForcedInheritanceAmount}DKK - {heir.InheritanceAmount}DKK <br><br>";
             }
         }
 

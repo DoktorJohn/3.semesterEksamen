@@ -34,6 +34,11 @@ namespace AdvokatenBlazor.ViewModel
             return Heirs.Where(s => s.HeirType == HeirType.Kid).ToList();
         }
             
+        public List<Heir> ReturnOther()
+        {
+            return Heirs.Where(s => s.HeirType == HeirType.Other).ToList();
+        }
+
         public void DeleteSpouse()
         {
             var spouse = Heirs.FirstOrDefault(s => s.HeirType == HeirType.Spouse);
@@ -58,7 +63,7 @@ namespace AdvokatenBlazor.ViewModel
                 }
             }
 
-            else
+            else if (type == HeirType.Spouse)
             {
                 if (!Heirs.Any(s => s.HeirType == HeirType.Spouse))
                 {
@@ -67,6 +72,12 @@ namespace AdvokatenBlazor.ViewModel
                     Heirs.Add(h);
                     Spouse = h;
                 }
+            }
+
+            else if (type == HeirType.Other)
+            {
+                    Heir h = new Heir { HeirType = HeirType.Other };
+                    Heirs.Add(h);
             }
 
         }

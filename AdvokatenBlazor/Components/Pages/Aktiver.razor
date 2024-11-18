@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="Aktiver.css" />
 
 <div class="TopBar">
-        <label class="AktivTitle">Dine aktiver</label>
+    <label class="AktivTitle">Dine aktiver</label>
     <label class="text-white mb-3" style="color:#ffaa54!important; max-width: 18rem; left:57%; top:15px; position:absolute;">Samlet formueværdi: @Client.TotalValue</label>
     <label class="text-white mb-3" style="color:#ffaa54!important; max-width: 18rem; left:57%; top:40px; position:absolute;">Samlet friarvværdi: @TotalInheritance</label>
 
@@ -19,12 +19,14 @@
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-5 g-4">
         @foreach (var asset in AssetRepository.Instance.assets)
         {
+            AktivCount++;
+
             <div class="col">
                 <EditForm Model="asset">
                     <DataAnnotationsValidator />
                     <div class="card h-100" style="position: relative;">
                         <div class="card-header bg-black text-white">
-                            <h5 class="card-title">Rediger Aktiv</h5>
+                            <h5 class="card-title">Aktiv @AktivCount</h5>
                             <button type="button" @onclick="() => DeleteCard(asset)" class="btn-close" style="position: absolute; top: -3px; right: 0; background: transparent; border: none; color: red; font-size: 1.5rem;">
                                 X
                             </button>
@@ -94,7 +96,7 @@
 
 @code {
     double TotalInheritance = Client.TotalValue * 0.75;
-
+    int AktivCount = 0;
 
     void Update(Asset a)
     {
