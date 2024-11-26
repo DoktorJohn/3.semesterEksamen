@@ -3,6 +3,9 @@
 
 <link rel="stylesheet" href="Arvefordeling.css" />
 
+@{
+    HeirInheritanceCalc.CalculateCurrentInheritanceAmountForHeir();
+}
 
 <div class="inheritance-tree">
 
@@ -18,20 +21,14 @@
 
                     <label class="PercentageTxt" style="color:black">
                         <input type="text" class="nameTxt" @bind="HeirRepository.Instance.Spouse.Name" />
-                        <label>
-                            Arvefordeling: @InheritanceCalc.CalculateForcedInheritancePercentageForMarried()% - @InheritanceCalc.CalculateInheritancePercentageForMarried()%
-                        </label>
-                        <br />
+                        <br/>
                         <label>
                             Arvebeløb: @InheritanceCalc.CalculateForcedInheritanceAmountForMarried() - @InheritanceCalc.CalculateInheritanceAmountForMarried()
                         </label>
 
-                        @{
-                            HeirRepository.Instance.Spouse.ForcedInheritancePercentage = InheritanceCalc.CalculateForcedInheritancePercentageForMarried();
-                            HeirRepository.Instance.Spouse.InheritancePercentage = InheritanceCalc.CalculateInheritancePercentageForMarried();
-                            HeirRepository.Instance.Spouse.ForcedInheritanceAmount = InheritanceCalc.CalculateForcedInheritanceAmountForMarried();
-                            HeirRepository.Instance.Spouse.InheritanceAmount = InheritanceCalc.CalculateInheritanceAmountForMarried();
-                        }
+                        <label>
+                            Beløb tildelt: @HeirRepository.Instance.Spouse.CurrentInheritanceAmount
+                        </label>
                     </label>
                 </div>
             </div>
@@ -61,13 +58,9 @@
                             <label>
                                 Arvebeløb: @InheritanceCalc.CalculateForcedInheritanceAmountForKid() - @InheritanceCalc.CalculateInheritanceAmountForKid()
                             </label>
-
-                            @{
-                                heir.ForcedInheritancePercentage = InheritanceCalc.CalculateForcedInheritancePercentageForKid();
-                                heir.InheritancePercentage = InheritanceCalc.CalculateInheritancePercentageForKid();
-                                heir.ForcedInheritanceAmount = InheritanceCalc.CalculateForcedInheritanceAmountForKid();
-                                heir.InheritanceAmount = InheritanceCalc.CalculateInheritanceAmountForKid();
-                            }
+                            <label>
+                                Beløb tildelt: @heir.CurrentInheritanceAmount
+                            </label>
                         </label>
                     </label>
                 </div>
@@ -88,6 +81,9 @@
                 <div class="card-body">
                     <label>
                         <input type="text" class="nameTxt" @bind="heir.Name" />
+                    </label>
+                    <label>
+                        Beløb tildelt: @heir.CurrentInheritanceAmount
                     </label>
                 </div>
             </div>

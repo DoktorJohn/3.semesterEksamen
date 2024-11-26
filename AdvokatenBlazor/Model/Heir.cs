@@ -40,6 +40,8 @@ namespace AdvokatenBlazor.Model
         [Required]
         public double ForcedInheritanceAmount { get; set; }
         [Required]
+        public double CurrentInheritanceAmount { get; set; }
+        [Required]
         public HeirType HeirType { get; set; }
     }
 }

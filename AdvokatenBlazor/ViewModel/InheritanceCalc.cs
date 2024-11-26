@@ -1,7 +1,7 @@
 ﻿using AdvokatenBlazor.Model;
 using System.Diagnostics;
 
-namespace AdvokatenBlazor.Model
+namespace AdvokatenBlazor.ViewModel
 {
     public class InheritanceCalc
     {
@@ -95,7 +95,7 @@ namespace AdvokatenBlazor.Model
         public static double CalculateInheritanceAmountForKid()
         {
             double amount = Client.TotalValue * 0.75;
-            double amountWithForced = amount + (Client.TotalValue * 0.125);
+            double amountWithForced = amount + Client.TotalValue * 0.125;
             return Math.Truncate(amountWithForced);
 
         }
@@ -125,7 +125,7 @@ namespace AdvokatenBlazor.Model
             {
                 double amount = Client.TotalValue;
                 double highestAmount = amount * 0.75;
-                double amountWithForced = highestAmount + (Client.TotalValue * 0.125);
+                double amountWithForced = highestAmount + Client.TotalValue * 0.125;
                 return amountWithForced;
             }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CxuKZvKawkGUG+9FihYmbtgFzjAfBpFRuLAKQ0Qk6h4rrdM4qyUKzFw1QLp1vom5SA6PBN5R7L8RMawSYaZfUg==",
+  "dgSpecHash": "YS1UA9nTDfj0bGTxVBJjlmyW0w4KQ99uOWMR8h3JFVyGeDSEcNifuJxRFyM4eMvpg/Lq7D9H7TH2ruhvG9kOMg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\Krav 1 - tests\\Krav 1 - tests.csproj",
+  "projectFilePath": "C:\\Users\\jonat\\Datamatiker\\3.semesterEksamen\\Krav 1 - tests\\Krav 1 - tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jonat\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
