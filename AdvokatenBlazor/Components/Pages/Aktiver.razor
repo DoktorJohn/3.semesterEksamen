@@ -19,15 +19,12 @@
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-5 g-4">
         @foreach (var asset in AssetRepository.Instance.assets)
         {
-            AktivCount++;
-
             <div class="col">
                 <EditForm Model="asset">
                     <DataAnnotationsValidator />
-                    <div class="card h-100" style="position: relative;">
+                    <div class="card h-100" style="width:230px">
                         <div class="card-header bg-black text-white">
-                            <h5 class="card-title">Aktiv @AktivCount</h5>
-                            <button type="button" @onclick="() => DeleteCard(asset)" class="btn-close" style="position: absolute; top: -3px; right: 0; background: transparent; border: none; color: red; font-size: 1.5rem;">
+                            <button type="button" @onclick="() => DeleteCard(asset)" class="btn-close" style="position: absolute; right: 0; background: transparent; border: none; color: red; font-size: 1.5rem;">
                                 X
                             </button>
                         </div>
@@ -85,6 +82,22 @@
                                 <input type="number" id="PercentageOwned" class="form-control" @bind-value="asset.PercentageOwned" @onblur="() => Update(asset)" />
                                 <ValidationMessage For="@(() => asset.PercentageOwned)" />
                             </div>
+
+                            <div class="form-group">
+                                <label for="HeirSelection">Tildel arving og procent</label>
+                                <div class="inputgrouping">
+                                    <select class="form-control" @bind="TempHeirData[asset.Id].SelectedHeirId">
+                                        <option value="">Vælg arving</option>
+                                        @foreach (var heir in HeirRepository.Instance.Heirs)
+                                        {
+                                            <option value="@heir.Id">@heir.Name</option>
+                                        }
+                                    </select>
+                                    <input type="number" class="form-control" placeholder="Procent" min="0" max="100" @bind="TempHeirData[asset.Id].OwnershipPercentage" />
+                                </div>
+                                <button class="AssignBtn" @onclick="() => AssignHeirToAsset(asset)">Tildel arving</button>
+                            </div>
+                            
                         </div>
                     </div>
                 </EditForm>
@@ -97,6 +110,9 @@
 @code {
     double TotalInheritance = Client.TotalValue * 0.75;
     int AktivCount = 0;
+
+
+    private Dictionary<int, TempHeirData> TempHeirData = new Dictionary<int, TempHeirData>();
 
     void Update(Asset a)
     {
@@ -118,13 +134,42 @@
     void DeleteCard(Asset asset)
     {
         AssetRepository.Instance.assets.Remove(asset);
+        TempHeirData.Remove(asset.Id);
         Update(asset);
     }
 
     private void AddAsset()
     {
-        AssetRepository.Instance.assets.Add(new Asset { AssetType = AssetType.None, Value = 0, PercentageOwned = 100 });
+        AktivCount++;
+        AssetRepository.Instance.assets.Add(new Asset { AssetType = AssetType.None, Value = 0, PercentageOwned = 100, Id = AktivCount});
+        TempHeirData[AktivCount] = (0, 0);
     }
 
 
+    private void AssignHeirToAsset(Asset asset)
+    {
+        var assetData = TempHeirData[asset.Id];
+
+        if (assetData.SelectedHeirId > 0 && assetData.OwnershipPercentage > 0)
+        {
+            var selectedHeir = HeirRepository.Instance.Heirs.FirstOrDefault(h => h.Id == assetData.SelectedHeirId);
+
+            if (!asset.HeirPercentage.ContainsKey(selectedHeir))
+            {
+                asset.HeirPercentage[selectedHeir] = assetData.OwnershipPercentage;
+            }
+            else
+            {
+                asset.HeirPercentage[selectedHeir] = assetData.OwnershipPercentage;
+            }
+
+            TempHeirData[asset.Id] = (0, 0);
+        }
+    }
+
+    public class TempHeirData
+    {
+        public int SelectedHeirId { get; set; }
+        public double OwnershipPercentage { get; set; }
+    }
 }

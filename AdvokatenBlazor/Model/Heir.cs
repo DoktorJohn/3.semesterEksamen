@@ -7,6 +7,9 @@ namespace AdvokatenBlazor.Model
     public class Heir
     {
         [Required]
+        public int Id { get; set; }
+
+        [Required]
         private string _name;
 
         public string Name

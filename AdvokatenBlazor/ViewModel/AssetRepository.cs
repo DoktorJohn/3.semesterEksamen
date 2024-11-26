@@ -25,5 +25,12 @@ namespace AdvokatenBlazor.ViewModel
             assets = new List<Asset>();
         }
 
+
+
+        public static void AddHeirToAsset(Asset asset, Heir heir, double percentage)
+        {
+            asset.HeirPercentage.Add(heir, percentage);
+        }
+
     }
 }

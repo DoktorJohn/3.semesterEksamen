@@ -14,6 +14,7 @@ namespace AdvokatenBlazor.Model
 
     public class Asset
     {
+        public int Id { get; set; }
         public double Value { get; set; }
 
         private int _percentageOwned;
@@ -43,5 +44,7 @@ namespace AdvokatenBlazor.Model
         public string? Location { get; set; }
         public string? Brand { get; set; }
         public string? Name { get; set; }
+
+        public Dictionary<Heir, double> HeirPercentage = new Dictionary<Heir, double>();
     }
 }

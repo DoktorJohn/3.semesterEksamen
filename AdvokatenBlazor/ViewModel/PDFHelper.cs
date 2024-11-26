@@ -31,7 +31,7 @@ namespace AdvokatenBlazor.ViewModel
         public static string GenerateFileName()
         {
             Random randomizer = new Random();
-            int num_random = randomizer.Next(1, 1000);
+            int num_random = randomizer.Next(1, 10000);
 
             return $"ArvEksport{Client.Name}_{num_random}";
         }

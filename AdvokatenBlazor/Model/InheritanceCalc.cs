@@ -14,22 +14,25 @@ namespace AdvokatenBlazor.Model
 
             else
             {
-                return 50;
+                return 87.5;
             }
         }
 
         public static double CalculateInheritancePercentageForKid()
         {
-            if (!Client.Married && Client.KidsAmount > 0)
+            if (!Client.Married && Client.KidsAmount == 1)
             {
-                double amount = 100 / (double)Client.KidsAmount;
-                return TruncateToDecimalPlaces(amount, 2);
+                return 100;
+            }
+
+            else if (!Client.Married && Client.KidsAmount > 0)
+            {
+                return 87.5;
             }
 
             else if (Client.Married)
             {
-                double amount = 50 / (double)Client.KidsAmount;
-                return TruncateToDecimalPlaces(amount, 2);
+                return 87.5;
             }
 
             return 0;
@@ -88,20 +91,10 @@ namespace AdvokatenBlazor.Model
 
         public static double CalculateInheritanceAmountForKid()
         {
-            if (!Client.Married && Client.KidsAmount > 0)
-            {
-                double amount = Client.TotalValue / Client.KidsAmount;
-                return Math.Truncate(amount);
-            }
+            double amount = Client.TotalValue * 0.75;
+            double amountWithForced = amount + (Client.TotalValue * 0.125);
+            return Math.Truncate(amountWithForced);
 
-            else if (Client.Married)
-            {
-                double amount = Client.TotalValue / Client.KidsAmount;
-                double marriedPercent = amount * 0.5;
-                return Math.Truncate(marriedPercent);
-            }
-
-            return 0;
         }
 
         public static double CalculateForcedInheritanceAmountForMarried()
@@ -128,7 +121,9 @@ namespace AdvokatenBlazor.Model
             else
             {
                 double amount = Client.TotalValue;
-                return amount * 0.5;
+                double highestAmount = amount * 0.75;
+                double amountWithForced = highestAmount + (Client.TotalValue * 0.125);
+                return amountWithForced;
             }
         }
 

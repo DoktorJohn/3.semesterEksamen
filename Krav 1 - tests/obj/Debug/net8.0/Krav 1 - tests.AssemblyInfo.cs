@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Krav 1 - tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+98608b360fefa19bdd5c891681b535be108bafbb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a4939eabd8d0af63ba2f83720311e6decdd90b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Krav 1 - tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Krav 1 - tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
