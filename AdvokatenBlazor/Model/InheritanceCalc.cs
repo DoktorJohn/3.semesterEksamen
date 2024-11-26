@@ -25,14 +25,17 @@ namespace AdvokatenBlazor.Model
                 return 100;
             }
 
-            else if (!Client.Married && Client.KidsAmount > 0)
+            else if (!Client.Married)
             {
                 return 87.5;
             }
 
             else if (Client.Married)
             {
-                return 87.5;
+                double max_value = 75;
+                double shared_value_with_kids = 12.5 / Client.KidsAmount;
+                double final_amount = 75 + shared_value_with_kids;
+                return TruncateToDecimalPlaces(final_amount, 2);
             }
 
             return 0;

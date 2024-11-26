@@ -35,7 +35,6 @@ input[type="text"], input[type="dropdown"], input[type="checkbox"] {
     border: 1px solid #ccc;
     border-radius: 4px;
     width: 100%;
-    max-width: 300px;
     font-size: 14px;
 }
 
@@ -215,9 +214,13 @@ footer {
     background-color: #ffaa54 !important;
     width: 100%; /* Full-width button */
     padding: 12px;
-    color: #fff; /* White text */
+    color: #00103a;
     font-size: 1rem;
     border: none;
+    margin-bottom: 15px;
+    font-family: 'Crimson Pro', serif;
+    font-weight: 800;
+    font-size: 100%;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease; /* Smooth hover effect */
@@ -226,3 +229,34 @@ footer {
     .AssignBtn:hover {
         background-color: #ffdf32 !important;
     }
+
+.heir-form {
+    margin-top: -0%;
+    height: 100%;
+    width: 150px;
+}
+
+.percentage-form {
+    margin-top: -0%;
+    height:2.63rem;
+}
+
+.AddBtn {
+    background-color: #ffaa54 !important;
+    width: 100%; /* Full-width button */
+    height: 2.63rem; /* Match the height of other elements */
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    color: #00103a;
+    font-size: 1rem;
+    border: none;
+    margin-bottom: 15px;
+    font-family: 'Crimson Pro', serif;
+    font-weight: 800;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    text-align: center; /* Ensures text alignment if the button resizes */
+    padding: 0; /* Removes default padding to prevent layout issues */
+}

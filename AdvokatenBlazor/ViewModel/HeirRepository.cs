@@ -84,5 +84,12 @@ namespace AdvokatenBlazor.ViewModel
             }
 
         }
+
+        public Heir CreatePlaceholderHeir()
+        {
+            Heir heir = new Heir();
+            heir.Id++;
+            return heir;
+        }
     }
 }

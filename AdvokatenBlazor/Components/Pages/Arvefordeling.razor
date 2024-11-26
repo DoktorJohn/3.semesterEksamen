@@ -1,7 +1,99 @@
 ﻿@page "/Arvefordeling"
+@rendermode InteractiveServer
 
-<h3>Arvefordeling</h3>
+<link rel="stylesheet" href="Arvefordeling.css" />
 
+
+<div class="inheritance-tree">
+
+    @if (Client.Married)
+    {
+        <div class="married-grid">
+            <div class="card h-100" style="position: relative; width: 270px;">
+                <div class="card-header bg-black text-white">
+                    <h5>Ægtefælle</h5>
+                </div>
+
+                <div class="card-body">
+
+                    <label class="PercentageTxt" style="color:black">
+                        <input type="text" class="nameTxt" @bind="HeirRepository.Instance.Spouse.Name" />
+                        <label>
+                            Arvefordeling: @InheritanceCalc.CalculateForcedInheritancePercentageForMarried()% - @InheritanceCalc.CalculateInheritancePercentageForMarried()%
+                        </label>
+                        <br />
+                        <label>
+                            Arvebeløb: @InheritanceCalc.CalculateForcedInheritanceAmountForMarried() - @InheritanceCalc.CalculateInheritanceAmountForMarried()
+                        </label>
+
+                        @{
+                            HeirRepository.Instance.Spouse.ForcedInheritancePercentage = InheritanceCalc.CalculateForcedInheritancePercentageForMarried();
+                            HeirRepository.Instance.Spouse.InheritancePercentage = InheritanceCalc.CalculateInheritancePercentageForMarried();
+                            HeirRepository.Instance.Spouse.ForcedInheritanceAmount = InheritanceCalc.CalculateForcedInheritanceAmountForMarried();
+                            HeirRepository.Instance.Spouse.InheritanceAmount = InheritanceCalc.CalculateInheritanceAmountForMarried();
+                        }
+                    </label>
+                </div>
+            </div>
+        </div>
+    }
+
+    @for (int i = 0; i < HeirRepository.Instance.ReturnKids().Count; i++)
+    {
+        var heir = HeirRepository.Instance.ReturnKids()[i];
+        heir.InheritancePercentage = InheritanceCalc.CalculateInheritancePercentageForKid();
+
+        <div class="kids-grid">
+            <div class="card h-100" style="position: relative; width: 270px;">
+                <div class="card-header bg-black text-white">
+                    <h5>Barn @(i + 1)</h5>
+                </div>
+
+                <div class="card-body">
+
+                    <label>
+                        <input type="text" class="nameTxt" @bind="heir.Name" />
+                        <label class="PercentageTxt" style="color:black">
+                            <label>
+                                Arvefordeling: @InheritanceCalc.CalculateForcedInheritancePercentageForKid()% - @InheritanceCalc.CalculateInheritancePercentageForKid()%
+                            </label>
+                            <br />
+                            <label>
+                                Arvebeløb: @InheritanceCalc.CalculateForcedInheritanceAmountForKid() - @InheritanceCalc.CalculateInheritanceAmountForKid()
+                            </label>
+
+                            @{
+                                heir.ForcedInheritancePercentage = InheritanceCalc.CalculateForcedInheritancePercentageForKid();
+                                heir.InheritancePercentage = InheritanceCalc.CalculateInheritancePercentageForKid();
+                                heir.ForcedInheritanceAmount = InheritanceCalc.CalculateForcedInheritanceAmountForKid();
+                                heir.InheritanceAmount = InheritanceCalc.CalculateInheritanceAmountForKid();
+                            }
+                        </label>
+                    </label>
+                </div>
+            </div>
+        </div>
+    }
+
+    @for (int i = 0; i < HeirRepository.Instance.ReturnOther().Count; i++)
+    {
+        var heir = HeirRepository.Instance.ReturnOther()[i];
+
+        <div class="kids-grid">
+            <div class="card h-100" style="position: relative; width: 270px;">
+                <div class="card-header bg-black text-white">
+                    <h5>Arving @(i + 1)</h5>
+                </div>
+
+                <div class="card-body">
+                    <label>
+                        <input type="text" class="nameTxt" @bind="heir.Name" />
+                    </label>
+                </div>
+            </div>
+        </div>
+    }
+</div>
 @code {
 
 }
