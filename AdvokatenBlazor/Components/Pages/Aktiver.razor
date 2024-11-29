@@ -132,8 +132,16 @@
 
     void AddRow(Asset asset)
     {
-        Heir heir = HeirRepository.Instance.CreatePlaceholderHeir();
-        asset.HeirPercentage[heir] = 0;
+        var firstAvailableHeir = HeirRepository.Instance.Heirs
+                                    .FirstOrDefault(h => !asset.HeirPercentage.ContainsKey(h));
+
+        if (firstAvailableHeir != null)
+        {
+            asset.HeirPercentage[firstAvailableHeir] = 0;
+        }
+        else
+        {
+        }
     }
 
     void RemoveRow(Asset asset, Heir heir)

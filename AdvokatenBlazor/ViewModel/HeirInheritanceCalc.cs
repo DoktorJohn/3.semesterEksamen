@@ -7,12 +7,14 @@ namespace AdvokatenBlazor.ViewModel
         {
             foreach (var heir in HeirRepository.Instance.Heirs)
             {
+                heir.CurrentInheritanceAmount = 0;
                 foreach (var asset in AssetRepository.Instance.assets)
                 {
                     if (asset.HeirPercentage.TryGetValue(heir, out double percentage))
                     {
-                        double inheritanceFromAsset = asset.Value * (percentage / 100.0);
-                        heir.CurrentInheritanceAmount += inheritanceFromAsset;
+                        double ClientPercentage = (double)asset.PercentageOwned / 100;
+                        double percentage_multiplicate = (percentage / 100.0) * ClientPercentage;
+                        heir.CurrentInheritanceAmount += asset.Value * percentage_multiplicate;
                     }
                 }
             }

@@ -3,9 +3,6 @@
 
 <link rel="stylesheet" href="Arvefordeling.css" />
 
-@{
-    HeirInheritanceCalc.CalculateCurrentInheritanceAmountForHeir();
-}
 
 <div class="inheritance-tree">
 
@@ -21,7 +18,7 @@
 
                     <label class="PercentageTxt" style="color:black">
                         <input type="text" class="nameTxt" @bind="HeirRepository.Instance.Spouse.Name" />
-                        <br/>
+                        <br />
                         <label>
                             Arvebeløb: @InheritanceCalc.CalculateForcedInheritanceAmountForMarried() - @InheritanceCalc.CalculateInheritanceAmountForMarried()
                         </label>
@@ -92,4 +89,8 @@
 </div>
 @code {
 
+    protected override void OnInitialized()
+    {
+        HeirInheritanceCalc.CalculateCurrentInheritanceAmountForHeir();
+    }
 }
