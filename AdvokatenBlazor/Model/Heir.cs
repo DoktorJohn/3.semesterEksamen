@@ -6,8 +6,9 @@ namespace AdvokatenBlazor.Model
 
     public class Heir
     {
-        [Required]
-        public int Id { get; set; }
+        private static int _idCounter = 1;
+
+        public int Id { get; private set; }
 
         [Required]
         private string _name;
@@ -43,5 +44,15 @@ namespace AdvokatenBlazor.Model
         public double CurrentInheritanceAmount { get; set; }
         [Required]
         public HeirType HeirType { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
+
+        public Heir()
+        {
+            Id = _idCounter++;
+        }
     }
 }

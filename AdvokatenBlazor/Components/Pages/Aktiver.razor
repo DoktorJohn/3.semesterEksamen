@@ -93,25 +93,26 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach (var entry in asset.HeirPercentage)
+                                        @foreach (var row in asset.HeirRows)
                                         {
                                             <tr>
                                                 <td>
-                                                    <select class="heir-form" @bind="entry.Key.Name">
+                                                    <select class="heir-form" @bind="row.SelectedHeirId">
                                                         <option value="">Vælg arving</option>
                                                         @foreach (var heir in HeirRepository.Instance.Heirs)
                                                         {
-                                                            <option value="@heir.Name">@heir.Name</option>
+                                                            <option value="@heir.Id">@heir.Name</option>
                                                         }
                                                     </select>
                                                 </td>
                                                 <td>
-                                                    <input type="number" class="percentage-form" @bind="asset.HeirPercentage[entry.Key]" />
+                                                    <input type="number" class="percentage-form" @bind="row.Percentage" />
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="AddBtn" @onclick="() => RemoveRow(asset, entry.Key)">Slet</button>
+                                                    <button type="button" class="AddBtn" @onclick="() => RemoveRow(asset, row)">Slet</button>
                                                 </td>
                                             </tr>
+
                                         }
                                     </tbody>
                                 </table>
@@ -129,41 +130,21 @@
 @code {
     double TotalInheritance = Client.TotalValue * 0.75;
     int AktivCount = 0;
+    int Number = 1;
 
     void AddRow(Asset asset)
     {
-        var firstAvailableHeir = HeirRepository.Instance.Heirs
-                                    .FirstOrDefault(h => !asset.HeirPercentage.ContainsKey(h));
-
-        if (firstAvailableHeir != null)
-        {
-            asset.HeirPercentage[firstAvailableHeir] = 0;
-        }
-        else
-        {
-        }
-    }
-
-    void RemoveRow(Asset asset, Heir heir)
-    {
-        asset.HeirPercentage.Remove(heir);
-    }
-
-    void UpdateHeir(Asset asset, Heir currentHeir, string newHeirId)
-    {
-        var newHeir = HeirRepository.Instance.Heirs.FirstOrDefault(h => h.Id.ToString() == newHeirId);
-
-        if (newHeir != null && newHeir != currentHeir)
-        {
-            if (asset.HeirPercentage.ContainsKey(newHeir))
+        asset.HeirRows.Add(new HeirRow
             {
-                return;
-            }
+                SelectedHeirId = Number++,
+                Percentage = 0
+            });
+    }
 
-            var percentage = asset.HeirPercentage[currentHeir];
-            asset.HeirPercentage.Remove(currentHeir);
-            asset.HeirPercentage[newHeir] = percentage;
-        }
+
+    void RemoveRow(Asset asset, HeirRow row)
+    {
+        asset.HeirRows.Remove(row);
     }
 
     void Update(Asset a)

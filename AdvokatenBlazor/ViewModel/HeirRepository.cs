@@ -59,7 +59,6 @@ namespace AdvokatenBlazor.ViewModel
                 {
                     Heir h = new Heir { HeirType = HeirType.Kid };
                     h.InheritancePercentage = InheritanceCalc.CalculateInheritancePercentageForKid();
-                    h.Id++;
                     Heirs.Add(h);
                 }
             }
@@ -70,7 +69,6 @@ namespace AdvokatenBlazor.ViewModel
                 {
                     Heir h = new Heir { HeirType = HeirType.Spouse };
                     h.InheritancePercentage = InheritanceCalc.CalculateInheritancePercentageForMarried();
-                    h.Id++;
                     Heirs.Add(h);
                     Spouse = h;
                 }
@@ -79,17 +77,10 @@ namespace AdvokatenBlazor.ViewModel
             else if (type == HeirType.Other)
             {
                     Heir h = new Heir { HeirType = HeirType.Other };
-                    h.Id++;
                     Heirs.Add(h);
             }
 
         }
 
-        public Heir CreatePlaceholderHeir()
-        {
-            Heir heir = new Heir();
-            heir.Id++;
-            return heir;
-        }
     }
 }
