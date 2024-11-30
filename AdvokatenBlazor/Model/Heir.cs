@@ -2,8 +2,6 @@
 
 namespace AdvokatenBlazor.Model
 {
-    public enum HeirType { Spouse, Kid, Other };
-
     public class Heir
     {
         private static int _idCounter = 1;
@@ -33,22 +31,17 @@ namespace AdvokatenBlazor.Model
         }
 
         [Required]
-        public double InheritancePercentage { get; set; }
+        public double MaxInheritancePercentage { get; set; }
         [Required]
-        public double ForcedInheritancePercentage { get; set; }
+        public double MinInheritancePercentage { get; set; }
         [Required]
-        public double InheritanceAmount { get; set; }
+        public double MaxInheritanceAmount { get; set; }
         [Required]
-        public double ForcedInheritanceAmount { get; set; }
+        public double MinInheritanceAmount { get; set; }
         [Required]
         public double CurrentInheritanceAmount { get; set; }
         [Required]
         public HeirType HeirType { get; set; }
-
-        public override string ToString()
-        {
-            return Name;
-        }
 
         public Heir()
         {

@@ -31,7 +31,7 @@
     justify-content: flex-start;
     gap: 0.9rem !important; /* Forces spacing between label and input */
     margin-bottom: 1rem;
-    left: 47%;
+    left: 47.7%;
     top: 12.5%;
     position: absolute;
     margin-left: 2rem;
@@ -104,7 +104,7 @@
     background-color: #ffaa54; /* Matches dark theme */
     color: #fff;
     width: 16.90rem;
-    left: 48.70%;
+    left: 49.4%;
     top: 17.5%;
     height: 2.5rem;
     text-align: center;
@@ -186,7 +186,7 @@ StamtræTitle {
 .PercentageTxt {
     align-content: center;
     align-self: center;
-    margin-top: 10px;
+    margin-top: -10px;
     font-family: 'Crimson Pro', serif;
     font-size: 20px;
 }

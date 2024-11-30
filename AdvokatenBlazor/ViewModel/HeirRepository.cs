@@ -1,4 +1,5 @@
-﻿using AdvokatenBlazor.Model;
+﻿using AdvokatenBlazor.Helper;
+using AdvokatenBlazor.Model;
 
 namespace AdvokatenBlazor.ViewModel
 {
@@ -49,7 +50,7 @@ namespace AdvokatenBlazor.ViewModel
             }
         }
 
-        public void GenerateHeirs(HeirType type)
+        public void GenerateHeir(HeirType type)
         {
             if (type == HeirType.Kid)
             {
@@ -58,7 +59,7 @@ namespace AdvokatenBlazor.ViewModel
                 for (int i = 0; i < Client.KidsAmount; i++)
                 {
                     Heir h = new Heir { HeirType = HeirType.Kid };
-                    h.InheritancePercentage = InheritanceCalc.CalculateInheritancePercentageForKid();
+                    h.MaxInheritancePercentage = KidCalculations.MaxPercentage();
                     Heirs.Add(h);
                 }
             }
@@ -68,7 +69,7 @@ namespace AdvokatenBlazor.ViewModel
                 if (!Heirs.Any(s => s.HeirType == HeirType.Spouse))
                 {
                     Heir h = new Heir { HeirType = HeirType.Spouse };
-                    h.InheritancePercentage = InheritanceCalc.CalculateInheritancePercentageForMarried();
+                    h.MaxInheritancePercentage = SpouseCalculations.MaxPercentage();
                     Heirs.Add(h);
                     Spouse = h;
                 }

@@ -5,8 +5,8 @@
 
 <div class="TopBar">
     <label class="AktivTitle">Dine aktiver</label>
-    <label class="text-white mb-3" style="color:#ffaa54!important; max-width: 18rem; left:57%; top:15px; position:absolute;">Samlet formueværdi: @Client.TotalValue</label>
-    <label class="text-white mb-3" style="color:#ffaa54!important; max-width: 18rem; left:57%; top:40px; position:absolute;">Samlet friarvværdi: @TotalInheritance</label>
+    <label class="text-white mb-3" style="color:#ffaa54!important; max-width: 18rem; left:57%; top:15px; position:absolute;">Samlet formueværdi: @TotalValue</label>
+    <label class="text-white mb-3" style="color:#ffaa54!important; max-width: 18rem; left:57%; top:40px; position:absolute;">Samlet friarvværdi: @ForcedInheritanceValue</label>
 
     <div class="BtnForAdd">
         <button type="submit" @onclick="AddAsset" class="btn btn-block">Tilføj et aktiv til din formue</button>
@@ -128,7 +128,8 @@
 
 
 @code {
-    double TotalInheritance = Client.TotalValue * 0.75;
+    double TotalValue = AssetRepository.ReturnTotalValue();
+    double ForcedInheritanceValue = AssetRepository.ReturnMaxValue();
     int AktivCount = 0;
     int Number = 1;
 
@@ -144,24 +145,13 @@
 
     void RemoveRow(Asset asset, HeirRow row)
     {
-        asset.HeirRows.Remove(row);
+        AssetRepository.RemoveRow(asset, row);
     }
 
     void Update(Asset a)
     {
-        Client.TotalValue = 0;
-
-        foreach (var asset in AssetRepository.Instance.assets)
-        {
-            double percentageOwnedAsDecimal = asset.PercentageOwned / 100.0;
-
-            Client.TotalValue += asset.Value * percentageOwnedAsDecimal;
-
-            double percentageToUse = percentageOwnedAsDecimal * 0.75;
-            TotalInheritance += asset.Value * percentageToUse;
-        }
-
-        TotalInheritance = Client.TotalValue * 0.75;
+        ClientViewModel.UpdateAsset();
+        UpdateNumbers();
     }
 
     void DeleteCard(Asset asset)
@@ -176,9 +166,9 @@
         AssetRepository.Instance.assets.Add(new Asset { AssetType = AssetType.None, Value = 0, PercentageOwned = 100, Id = AktivCount });
     }
 
-
-    private void AssignHeirToAsset(Asset asset)
+    void UpdateNumbers()
     {
-
+        TotalValue = AssetRepository.ReturnTotalValue();
+        ForcedInheritanceValue = AssetRepository.ReturnMaxValue();
     }
 }

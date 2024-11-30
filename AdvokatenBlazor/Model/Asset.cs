@@ -1,18 +1,7 @@
-﻿using AdvokatenBlazor.ViewModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace AdvokatenBlazor.Model
 {
-    public enum AssetType
-    {
-        Property,
-        Vehicle,
-        Item,
-        Stock,
-        Money,
-        None
-    }
-
     public class Asset
     {
         public int Id { get; set; }

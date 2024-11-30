@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "v2xXjiKqRSEj59sND78JJXMMhBa1RHWqRRUak5lluf8=",
+  "Hash": "RMYy8M5oZl2Y8Maki24fPhBt5YgHZrvtV0wltNBP0EU=",
   "Source": "AdvokatenBlazor",
   "BasePath": "_content/AdvokatenBlazor",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "AdvokatenBlazor\\wwwroot",
       "Source": "AdvokatenBlazor",
-      "ContentRoot": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\",
       "BasePath": "_content/AdvokatenBlazor",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\obj\\Debug\\net8.0\\scopedcss\\bundle\\AdvokatenBlazor.styles.css",
+      "Identity": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\obj\\Debug\\net8.0\\scopedcss\\bundle\\AdvokatenBlazor.styles.css",
       "SourceId": "AdvokatenBlazor",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/AdvokatenBlazor",
       "RelativePath": "AdvokatenBlazor.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\obj\\Debug\\net8.0\\scopedcss\\bundle\\AdvokatenBlazor.styles.css"
+      "OriginalItemSpec": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\obj\\Debug\\net8.0\\scopedcss\\bundle\\AdvokatenBlazor.styles.css"
     },
     {
-      "Identity": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\AdvokatenBlazor.bundle.scp.css",
+      "Identity": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\AdvokatenBlazor.bundle.scp.css",
       "SourceId": "AdvokatenBlazor",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/AdvokatenBlazor",
       "RelativePath": "AdvokatenBlazor.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\AdvokatenBlazor.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\AdvokatenBlazor.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Aktiver.css",
+      "Identity": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Aktiver.css",
       "SourceId": "AdvokatenBlazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\",
       "BasePath": "_content/AdvokatenBlazor",
       "RelativePath": "Aktiver.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\Aktiver.css"
     },
     {
-      "Identity": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\app.css",
+      "Identity": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\app.css",
       "SourceId": "AdvokatenBlazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\",
       "BasePath": "_content/AdvokatenBlazor",
       "RelativePath": "app.css",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\app.css"
     },
     {
-      "Identity": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Arvefordeling.css",
+      "Identity": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Arvefordeling.css",
       "SourceId": "AdvokatenBlazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\",
       "BasePath": "_content/AdvokatenBlazor",
       "RelativePath": "Arvefordeling.css",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\Arvefordeling.css"
     },
     {
-      "Identity": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\bootstrap\\bootstrap.min.css",
       "SourceId": "AdvokatenBlazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\",
       "BasePath": "_content/AdvokatenBlazor",
       "RelativePath": "bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "AdvokatenBlazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\",
       "BasePath": "_content/AdvokatenBlazor",
       "RelativePath": "bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\favicon.png",
+      "Identity": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\favicon.png",
       "SourceId": "AdvokatenBlazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\",
       "BasePath": "_content/AdvokatenBlazor",
       "RelativePath": "favicon.png",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.png"
     },
     {
-      "Identity": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Oversigt.css",
+      "Identity": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Oversigt.css",
       "SourceId": "AdvokatenBlazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\",
       "BasePath": "_content/AdvokatenBlazor",
       "RelativePath": "Oversigt.css",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\Oversigt.css"
     },
     {
-      "Identity": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Stamtrae.css",
+      "Identity": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Stamtrae.css",
       "SourceId": "AdvokatenBlazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\",
       "BasePath": "_content/AdvokatenBlazor",
       "RelativePath": "Stamtrae.css",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\Stamtrae.css"
     },
     {
-      "Identity": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Treetrans.png",
+      "Identity": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Treetrans.png",
       "SourceId": "AdvokatenBlazor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\",
       "BasePath": "_content/AdvokatenBlazor",
       "RelativePath": "Treetrans.png",
       "AssetKind": "All",
