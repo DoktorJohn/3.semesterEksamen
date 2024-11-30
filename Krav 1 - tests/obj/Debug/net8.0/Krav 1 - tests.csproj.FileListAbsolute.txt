@@ -542,3 +542,13 @@ C:\Users\jonat\Desktop\Datamatiker\3.semesterEksamen\Krav 1 - tests\obj\Debug\ne
 C:\Users\jonat\Desktop\Datamatiker\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.pdb
 C:\Users\jonat\Desktop\Datamatiker\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.genruntimeconfig.cache
 C:\Users\jonat\Desktop\Datamatiker\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\ref\Krav 1 - tests.dll
+C:\Users\jonat\Documents\Master\3.semesterEksamen\Krav 1 - tests\bin\Debug\net8.0\CoverletSourceRootsMapping_Krav 1 - tests
+C:\Users\jonat\Documents\Master\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.csproj.AssemblyReference.cache
+C:\Users\jonat\Documents\Master\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jonat\Documents\Master\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.AssemblyInfoInputs.cache
+C:\Users\jonat\Documents\Master\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.AssemblyInfo.cs
+C:\Users\jonat\Documents\Master\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.csproj.CoreCompileInputs.cache
+C:\Users\jonat\Documents\Master\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.sourcelink.json
+C:\Users\jonat\Documents\Master\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.dll
+C:\Users\jonat\Documents\Master\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\refint\Krav 1 - tests.dll
+C:\Users\jonat\Documents\Master\3.semesterEksamen\Krav 1 - tests\obj\Debug\net8.0\Krav 1 - tests.pdb

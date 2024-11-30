@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using AdvokatenBlazor.ViewModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace AdvokatenBlazor.Model
 {
@@ -45,6 +46,6 @@ namespace AdvokatenBlazor.Model
         public string? Brand { get; set; }
         public string? Name { get; set; }
 
-        public Dictionary<Heir, double> HeirPercentage = new Dictionary<Heir, double>();
+        public List<HeirRow> HeirRows { get; set; } = new List<HeirRow>();
     }
 }

@@ -276,3 +276,14 @@ input:focus {
     border-color: #4caf50;
     outline: none;
 }
+
+
+.nameTxt {
+    background: transparent; /* Makes the background transparent */
+    border: none; /* Removes the border */
+    color: black; /* Sets the text color */
+    outline: none; /* Optionally removes the focus outline */
+    font-size: 20px; /* You can adjust the font size if needed */
+    font-family: 'Crimson Pro', serif;
+    text-align: center;
+}

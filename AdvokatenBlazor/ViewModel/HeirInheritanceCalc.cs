@@ -8,13 +8,25 @@ namespace AdvokatenBlazor.ViewModel
             foreach (var heir in HeirRepository.Instance.Heirs)
             {
                 heir.CurrentInheritanceAmount = 0;
-                foreach (var asset in AssetRepository.Instance.assets)
+            }
+
+            foreach (var asset in AssetRepository.Instance.assets)
+            {
+                foreach (var heirRow in asset.HeirRows)
                 {
-                    if (asset.HeirPercentage.TryGetValue(heir, out double percentage))
+                    if (heirRow.SelectedHeirId.HasValue)
                     {
-                        double ClientPercentage = (double)asset.PercentageOwned / 100;
-                        double percentage_multiplicate = (percentage / 100.0) * ClientPercentage;
-                        heir.CurrentInheritanceAmount += asset.Value * percentage_multiplicate;
+                        var selectedHeir = HeirRepository.Instance.Heirs
+                            .FirstOrDefault(h => h.Id == heirRow.SelectedHeirId.Value);
+
+                        if (selectedHeir != null)
+                        {
+                            double clientPercentage = asset.PercentageOwned / 100.0;
+                            double heirPercentage = heirRow.Percentage / 100.0;
+                            double effectivePercentage = heirPercentage * clientPercentage;
+
+                            selectedHeir.CurrentInheritanceAmount += asset.Value * effectivePercentage;
+                        }
                     }
                 }
             }
