@@ -3,6 +3,7 @@
 
 <link rel="stylesheet" href="Aktiver.css" />
 
+@* Titel sektion *@
 <div class="TopBar">
     <label class="AktivTitle">Dine aktiver</label>
     <label class="text-white mb-3" style="color:#ffaa54!important; max-width: 18rem; left:57%; top:15px; position:absolute;">Samlet formueværdi: @TotalValue</label>
@@ -13,7 +14,7 @@
     </div>
 </div>
 
-
+@* Vores aktivkort *@
 <div class="container mt-4">
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
@@ -40,6 +41,7 @@
                                 </select>
                             </div>
 
+                            @* Switch extender vores kort alt efter hvilken aktiv type det er *@
                             @switch (asset.AssetType)
                             {
                                 case AssetType.Property:
@@ -133,6 +135,7 @@
     int AktivCount = 0;
     int Number = 1;
 
+    @* Tilføjer et HeirRow objekt til aktivets liste *@
     void AddRow(Asset asset)
     {
         asset.HeirRows.Add(new HeirRow
@@ -142,30 +145,34 @@
             });
     }
 
-
+    @* Fjerner HeirRow objekt fra aktivets liste *@
     void RemoveRow(Asset asset, HeirRow row)
     {
         AssetRepository.RemoveRow(asset, row);
     }
 
+    @* Opdaterer alle tal *@
     void Update(Asset a)
     {
         ClientViewModel.UpdateAsset();
         UpdateNumbers();
     }
 
+    @* Sletter aktivet fra liste og opdaterer alle tal*@
     void DeleteCard(Asset asset)
     {
         AssetRepository.Instance.assets.Remove(asset);
         Update(asset);
     }
 
+    @* Laver et aktiv *@
     private void AddAsset()
     {
         AktivCount++;
         AssetRepository.Instance.assets.Add(new Asset { AssetType = AssetType.None, Value = 0, PercentageOwned = 100, Id = AktivCount });
     }
 
+    @* Opdaterer alle tal *@
     void UpdateNumbers()
     {
         TotalValue = AssetRepository.ReturnTotalValue();
