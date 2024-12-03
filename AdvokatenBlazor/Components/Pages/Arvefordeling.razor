@@ -10,7 +10,7 @@
     @if (Spouse.Name.Length > 0)
     {
         <div class="married-grid">
-            <div class="card h-100" style="position: relative; width: 280px;">
+            <div class="card h-100" style="position: relative; width: 310px;">
                 <div class="card-header bg-black text-white">
                     <h5>@Spouse.Name</h5>
                 </div>
@@ -40,7 +40,7 @@
     @foreach (var kid in HeirRepository.Instance.ReturnKids())
     {
         <div class="kids-grid">
-            <div class="card h-100" style="position: relative; width: 270px;">
+            <div class="card h-100" style="position: relative; width: 310px;">
                 <div class="card-header bg-black text-white">
                     <h5>@kid.Name</h5>
                 </div>
@@ -73,7 +73,7 @@
     @foreach (var other in HeirRepository.Instance.ReturnOther())
     {
         <div class="kids-grid">
-            <div class="card h-100" style="position: relative; width: 270px;">
+            <div class="card h-100" style="position: relative; width: 310px;">
                 <div class="card-header bg-black text-white">
                     <h5>@other.Name</h5>
                 </div>

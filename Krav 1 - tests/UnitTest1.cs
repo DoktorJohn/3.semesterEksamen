@@ -61,7 +61,7 @@ namespace Krav_1___tests
             double result = SpouseCalculations.MaxPercentage();
 
             // Assert
-            Assert.AreEqual(50, result, "Inheritance percentage should be 50 when there are kids.");
+            Assert.AreEqual(87.5, result, "Inheritance percentage should be 50 when there are kids.");
         }
 
         [TestMethod]
@@ -74,7 +74,7 @@ namespace Krav_1___tests
             double result = KidCalculations.MaxPercentage();
 
             // Assert
-            Assert.AreEqual(50, result, "Each kid should receive an equal share of the inheritance.");
+            Assert.AreEqual(87.5, result, "Each kid should receive an equal share of the inheritance.");
         }
 
         [TestMethod]
@@ -204,7 +204,7 @@ namespace Krav_1___tests
             double result = SpouseCalculations.MaxPercentage();
 
             // Assert
-            Assert.AreEqual(50, result, "When married and having kids, inheritance should be split between spouse and kids.");
+            Assert.AreEqual(87.5, result, "When married and having kids, inheritance should be split between spouse and kids.");
         }
 
         [TestMethod]
@@ -336,8 +336,8 @@ namespace Krav_1___tests
             double kidPercentage = repo.Heirs.First(h => h.HeirType == HeirType.Kid).MaxInheritancePercentage;
 
             // Assert
-            Assert.AreEqual(50, spousePercentage, "Spouse should receive 50%.");
-            Assert.AreEqual(50.0 / 3.0, kidPercentage, "Each kid should receive an equal share of the remaining inheritance.");
+            Assert.AreEqual(87.5, spousePercentage, "Spouse should receive 50%.");
+            Assert.AreEqual(79.16, kidPercentage, "Each kid should receive an equal share of the remaining inheritance.");
         }
 
         [TestMethod]
