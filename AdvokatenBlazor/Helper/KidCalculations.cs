@@ -21,7 +21,12 @@ namespace AdvokatenBlazor.Helper
 
         public static double MaxPercentage()
         {
-            if (!Client.Married && Client.KidsAmount == 1)
+            if (Client.KidsAmount == 0)
+            {
+                return 0;
+            }
+
+            else if (!Client.Married && Client.KidsAmount == 1)
             {
                 return 100;
             }

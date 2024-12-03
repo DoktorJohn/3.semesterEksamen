@@ -30,7 +30,7 @@
 
     /* Button hover effect */
     .eksportBtn:hover[b-p06notui4c] {
-        background-color: #ffdf32!important;
+        background-color: #ffdf32 !important;
     }
 
 
@@ -45,7 +45,7 @@
 
 .navbar-brand[b-p06notui4c] {
     font-size: 1.1rem;
-    align-content:center;
+    align-content: center;
 }
 
 .bi[b-p06notui4c] {
@@ -74,7 +74,7 @@
     font-size: 0.9rem;
     padding-bottom: 0.5rem;
     font-family: 'Crimson Pro', serif;
-    font-size:21px;
+    font-size: 21px;
 }
 
     .nav-item:first-of-type[b-p06notui4c] {
@@ -126,7 +126,6 @@
         /* Allow sidebar to scroll for tall menus */
         height: calc(100vh - 3.5rem);
         overflow-y: auto;
-        
     }
 }
 

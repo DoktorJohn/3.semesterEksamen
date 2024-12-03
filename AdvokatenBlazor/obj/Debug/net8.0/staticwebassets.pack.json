@@ -1,43 +1,35 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\AdvokatenBlazor.bundle.scp.css",
+      "Id": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\AdvokatenBlazor.bundle.scp.css",
       "PackagePath": "staticwebassets\\AdvokatenBlazor.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Aktiver.css",
+      "Id": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Aktiver.css",
       "PackagePath": "staticwebassets\\Aktiver.css"
     },
     {
-      "Id": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Arvefordeling.css",
+      "Id": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Arvefordeling.css",
       "PackagePath": "staticwebassets\\Arvefordeling.css"
     },
     {
-      "Id": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Oversigt.css",
+      "Id": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Oversigt.css",
       "PackagePath": "staticwebassets\\Oversigt.css"
     },
     {
-      "Id": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Stamtrae.css",
+      "Id": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Stamtrae.css",
       "PackagePath": "staticwebassets\\Stamtrae.css"
     },
     {
-      "Id": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Treetrans.png",
+      "Id": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\Treetrans.png",
       "PackagePath": "staticwebassets\\Treetrans.png"
     },
     {
-      "Id": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\app.css",
+      "Id": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },
     {
-      "Id": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\bootstrap\\bootstrap.min.css",
-      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
-    },
-    {
-      "Id": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\bootstrap\\bootstrap.min.css.map",
-      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
-    },
-    {
-      "Id": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\favicon.png",
+      "Id": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
