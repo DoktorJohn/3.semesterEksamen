@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "U2ZXqweH8fLLqlz8j5ZovN4p55MCZgxd/X4nBQh7N14F6RYe84MCl8b4j34/w5ZNz6DlOK/Xdvxe7+3XTuKONQ==",
+  "dgSpecHash": "KNG6t33Uxf3vFiBiojLDDVmXPBZrLr9UYb3KI22/5aN71r4fEby27U607eH9Ted6sWx/c+XdPnSnHVJ3J6KUfg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\Krav 1 - tests\\Krav 1 - tests.csproj",
+  "projectFilePath": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\Krav 1 - tests\\Krav 1 - tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jonat\\.nuget\\packages\\blazor.bootstrap\\3.2.0\\blazor.bootstrap.3.2.0.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",

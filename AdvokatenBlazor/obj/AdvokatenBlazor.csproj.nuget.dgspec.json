@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj": {}
+    "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj": {
+    "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj",
+        "projectUniqueName": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj",
         "projectName": "AdvokatenBlazor",
-        "projectPath": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj",
+        "projectPath": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj",
         "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\obj\\",
+        "outputPath": "C:\\Users\\jonat\\Desktop\\Datamatiker\\3.semesterEksamen\\AdvokatenBlazor\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -76,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
