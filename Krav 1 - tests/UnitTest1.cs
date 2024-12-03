@@ -1,3 +1,4 @@
+using AdvokatenBlazor.Helper;
 using AdvokatenBlazor.Model;
 using AdvokatenBlazor.ViewModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -16,7 +17,7 @@ namespace Krav_1___tests
             repo.Heirs.Clear(); // Ensure it's empty
 
             // Act
-            repo.GenerateHeirs(HeirType.Spouse);
+            repo.GenerateHeir(HeirType.Spouse);
 
             // Assert
             Assert.IsTrue(repo.Heirs.Any(h => h.HeirType == HeirType.Spouse), "Spouse should be added.");
@@ -31,7 +32,7 @@ namespace Krav_1___tests
             repo.Heirs.Clear(); // Ensure it's empty
 
             // Act
-            repo.GenerateHeirs(HeirType.Kid);
+            repo.GenerateHeir(HeirType.Kid);
 
             // Assert
             Assert.AreEqual(3, repo.Heirs.Count(h => h.HeirType == HeirType.Kid), "Number of kids generated should match KidsAmount.");
@@ -44,7 +45,7 @@ namespace Krav_1___tests
             Client.KidsAmount = 0;
 
             // Act
-            double result = InheritanceCalc.CalculateInheritancePercentageForMarried();
+            double result = SpouseCalculations.MaxPercentage();
 
             // Assert
             Assert.AreEqual(100, result, "Inheritance percentage should be 100 when no kids.");
@@ -57,7 +58,7 @@ namespace Krav_1___tests
             Client.KidsAmount = 2;
 
             // Act
-            double result = InheritanceCalc.CalculateInheritancePercentageForMarried();
+            double result = SpouseCalculations.MaxPercentage();
 
             // Assert
             Assert.AreEqual(50, result, "Inheritance percentage should be 50 when there are kids.");
@@ -70,7 +71,7 @@ namespace Krav_1___tests
             Client.KidsAmount = 2;
 
             // Act
-            double result = InheritanceCalc.CalculateInheritancePercentageForKid();
+            double result = KidCalculations.MaxPercentage();
 
             // Assert
             Assert.AreEqual(50, result, "Each kid should receive an equal share of the inheritance.");
@@ -82,8 +83,8 @@ namespace Krav_1___tests
             // Arrange
             HeirRepository repo = HeirRepository.Instance;
             repo.Heirs.Clear();
-            repo.GenerateHeirs(HeirType.Kid);
-            repo.GenerateHeirs(HeirType.Spouse);
+            repo.GenerateHeir(HeirType.Kid);
+            repo.GenerateHeir(HeirType.Spouse);
 
             // Act
             var kids = repo.ReturnKids();
@@ -99,7 +100,7 @@ namespace Krav_1___tests
             // Arrange
             HeirRepository repo = HeirRepository.Instance;
             repo.Heirs.Clear();
-            repo.GenerateHeirs(HeirType.Spouse);
+            repo.GenerateHeir(HeirType.Spouse);
 
             // Act
             repo.DeleteSpouse();
@@ -118,8 +119,8 @@ namespace Krav_1___tests
             Client.Married = true;
             Client.Testament = true;
             HeirRepository.Instance.Heirs.Clear();
-            HeirRepository.Instance.GenerateHeirs(HeirType.Spouse);
-            HeirRepository.Instance.GenerateHeirs(HeirType.Kid);
+            HeirRepository.Instance.GenerateHeir(HeirType.Spouse);
+            HeirRepository.Instance.GenerateHeir(HeirType.Kid);
 
             // Act
             PDFHelper.GenerateContent();
@@ -152,7 +153,7 @@ namespace Krav_1___tests
             Client.KidsAmount = 0;
 
             // Act
-            double percentage = InheritanceCalc.CalculateInheritancePercentageForKid();
+            double percentage = KidCalculations.MaxPercentage();
 
             // Assert
             Assert.IsTrue(percentage == 0);
@@ -164,10 +165,10 @@ namespace Krav_1___tests
             // Arrange
             HeirRepository repo = HeirRepository.Instance;
             repo.Heirs.Clear();
-            repo.GenerateHeirs(HeirType.Spouse); // First time, should add Spouse
+            repo.GenerateHeir(HeirType.Spouse); // First time, should add Spouse
 
             // Act
-            repo.GenerateHeirs(HeirType.Spouse); // Second time, should not add another spouse
+            repo.GenerateHeir(HeirType.Spouse); // Second time, should not add another spouse
 
             // Assert
             Assert.AreEqual(1, repo.Heirs.Count(h => h.HeirType == HeirType.Spouse), "There should be only one spouse.");
@@ -180,12 +181,12 @@ namespace Krav_1___tests
             Client.KidsAmount = 2;
             HeirRepository repo = HeirRepository.Instance;
             repo.Heirs.Clear();
-            repo.GenerateHeirs(HeirType.Kid); // Generates 2 kids initially
+            repo.GenerateHeir(HeirType.Kid); // Generates 2 kids initially
 
             // Act
             Client.KidsAmount = 3; // Now set KidsAmount to 3
-            repo.GenerateHeirs(HeirType.Kid); // Generate 3 new kids
-            repo.GenerateHeirs(HeirType.Spouse);
+            repo.GenerateHeir(HeirType.Kid); // Generate 3 new kids
+            repo.GenerateHeir(HeirType.Spouse);
 
             // Assert
             Assert.AreEqual(3, repo.Heirs.Count(h => h.HeirType == HeirType.Kid), "The number of kids generated should now be 3.");
@@ -200,7 +201,7 @@ namespace Krav_1___tests
             Client.Married = true; // Client is married
 
             // Act
-            double result = InheritanceCalc.CalculateInheritancePercentageForMarried();
+            double result = SpouseCalculations.MaxPercentage();
 
             // Assert
             Assert.AreEqual(50, result, "When married and having kids, inheritance should be split between spouse and kids.");
@@ -226,16 +227,16 @@ namespace Krav_1___tests
             Client.Married = true; // Married client
             HeirRepository repo = HeirRepository.Instance;
             repo.Heirs.Clear();
-            repo.GenerateHeirs(HeirType.Spouse); // Add spouse first
-            repo.GenerateHeirs(HeirType.Kid); // Generate 4 kids
+            repo.GenerateHeir(HeirType.Spouse); // Add spouse first
+            repo.GenerateHeir(HeirType.Kid); // Generate 4 kids
 
             // Act
             var kids = repo.ReturnKids();
-            double inheritancePerKid = InheritanceCalc.CalculateInheritancePercentageForKid();
+            double inheritancePerKid = KidCalculations.MaxPercentage();
 
             // Assert
             Assert.AreEqual(4, kids.Count, "The number of kids generated should be equal to KidsAmount.");
-            Assert.IsTrue(kids.All(k => k.InheritancePercentage == inheritancePerKid), "Each kid should have the same inheritance percentage.");
+            Assert.IsTrue(kids.All(k => k.MaxInheritancePercentage == inheritancePerKid), "Each kid should have the same inheritance percentage.");
         }
 
         [TestMethod]
@@ -279,7 +280,7 @@ namespace Krav_1___tests
             repo.Heirs.Clear();
 
             // Act
-            repo.GenerateHeirs(HeirType.Kid);
+            repo.GenerateHeir(HeirType.Kid);
 
             // Assert
             Assert.AreEqual(1000, repo.Heirs.Count(h => h.HeirType == HeirType.Kid), "There should be exactly 1000 kids generated.");
@@ -292,8 +293,8 @@ namespace Krav_1___tests
             Client.Name = "Test Client";
             Client.KidsAmount = 2;
             HeirRepository.Instance.Heirs.Clear();
-            HeirRepository.Instance.GenerateHeirs(HeirType.Spouse);
-            HeirRepository.Instance.GenerateHeirs(HeirType.Kid);
+            HeirRepository.Instance.GenerateHeir(HeirType.Spouse);
+            HeirRepository.Instance.GenerateHeir(HeirType.Kid);
 
             // Act
             string fileName = PDFHelper.GenerateFileName(); // File name should include client name and be non-empty
@@ -327,12 +328,12 @@ namespace Krav_1___tests
             Client.Married = true; // Married client
             HeirRepository repo = HeirRepository.Instance;
             repo.Heirs.Clear();
-            repo.GenerateHeirs(HeirType.Spouse); // Generate 1 spouse
-            repo.GenerateHeirs(HeirType.Kid); // Generate 3 kids
+            repo.GenerateHeir(HeirType.Spouse); // Generate 1 spouse
+            repo.GenerateHeir(HeirType.Kid); // Generate 3 kids
 
             // Act
-            double spousePercentage = repo.Heirs.First(h => h.HeirType == HeirType.Spouse).InheritancePercentage;
-            double kidPercentage = repo.Heirs.First(h => h.HeirType == HeirType.Kid).InheritancePercentage;
+            double spousePercentage = repo.Heirs.First(h => h.HeirType == HeirType.Spouse).MaxInheritancePercentage;
+            double kidPercentage = repo.Heirs.First(h => h.HeirType == HeirType.Kid).MaxInheritancePercentage;
 
             // Assert
             Assert.AreEqual(50, spousePercentage, "Spouse should receive 50%.");
@@ -348,7 +349,7 @@ namespace Krav_1___tests
             repo.Heirs.Clear();
 
             // Act
-            repo.GenerateHeirs(HeirType.Kid); // Generate 10,000 kids
+            repo.GenerateHeir(HeirType.Kid); // Generate 10,000 kids
 
             // Assert
             Assert.AreEqual(10000, repo.Heirs.Count(h => h.HeirType == HeirType.Kid), "There should be 10,000 kids generated.");
@@ -363,7 +364,7 @@ namespace Krav_1___tests
             repo.Heirs.Clear();
 
             // Act - Simulate concurrent access to the GenerateHeirs method.
-            var tasks = Enumerable.Range(0, 10).Select(_ => Task.Run(() => repo.GenerateHeirs(HeirType.Kid))).ToArray();
+            var tasks = Enumerable.Range(0, 10).Select(_ => Task.Run(() => repo.GenerateHeir(HeirType.Kid))).ToArray();
             Task.WhenAll(tasks).Wait(); // Wait for all tasks to complete
 
             // Assert
@@ -388,8 +389,8 @@ namespace Krav_1___tests
             Client.Name = "Test Client";
             Client.KidsAmount = 3;
             HeirRepository.Instance.Heirs.Clear();
-            HeirRepository.Instance.GenerateHeirs(HeirType.Spouse);
-            HeirRepository.Instance.GenerateHeirs(HeirType.Kid);
+            HeirRepository.Instance.GenerateHeir(HeirType.Spouse);
+            HeirRepository.Instance.GenerateHeir(HeirType.Kid);
             string invalidHtml = "<div><h1>Invalid HTML"; // Incomplete HTML for testing
 
             // Act
@@ -405,8 +406,8 @@ namespace Krav_1___tests
         {
             // Arrange & Act - Test for edge case where KidsAmount is set to 0
             Client.KidsAmount = 0;
-            double inheritanceForMarried = InheritanceCalc.CalculateInheritancePercentageForMarried();
-            double inheritanceForKid = InheritanceCalc.CalculateInheritancePercentageForKid();
+            double inheritanceForMarried = SpouseCalculations.MaxPercentage();
+            double inheritanceForKid = KidCalculations.MaxPercentage();
 
             // Assert
             Assert.AreEqual(100, inheritanceForMarried, "If there are no kids, the spouse should receive 100%.");
@@ -421,7 +422,7 @@ namespace Krav_1___tests
             Client.Married = true; // Married client
             HeirRepository repo = HeirRepository.Instance;
             repo.Heirs.Clear();
-            repo.GenerateHeirs(HeirType.Spouse); // Add spouse
+            repo.GenerateHeir(HeirType.Spouse); // Add spouse
 
             // Act
             repo.DeleteSpouse(); // Delete spouse
@@ -437,7 +438,7 @@ namespace Krav_1___tests
             Client.KidsAmount = 2;
             HeirRepository repo = HeirRepository.Instance;
             repo.Heirs.Clear();
-            repo.GenerateHeirs(HeirType.Kid); // Generate kids
+            repo.GenerateHeir(HeirType.Kid); // Generate kids
 
             // Act
             repo.Heirs[0].Name = null; // Assign a null value to the name of the first kid
@@ -453,8 +454,8 @@ namespace Krav_1___tests
             Client.Name = "Test Client";
             Client.KidsAmount = 2;
             HeirRepository.Instance.Heirs.Clear();
-            HeirRepository.Instance.GenerateHeirs(HeirType.Spouse);
-            HeirRepository.Instance.GenerateHeirs(HeirType.Kid);
+            HeirRepository.Instance.GenerateHeir(HeirType.Spouse);
+            HeirRepository.Instance.GenerateHeir(HeirType.Kid);
 
             // Act
             string fileName1 = PDFHelper.GenerateFileName();

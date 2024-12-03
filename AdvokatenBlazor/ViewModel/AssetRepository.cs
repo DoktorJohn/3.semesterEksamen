@@ -25,5 +25,20 @@ namespace AdvokatenBlazor.ViewModel
             assets = new List<Asset>();
         }
 
+
+        public static void RemoveRow(Asset a, HeirRow h)
+        {
+            a.HeirRows.Remove(h);
+        }
+
+        public static double ReturnTotalValue()
+        {
+            return Client.TotalValue;
+        }
+
+        public static double ReturnMaxValue()
+        {
+            return Client.TotalValue * 0.75;
+        }
     }
 }

@@ -6,25 +6,29 @@
 
 <div class="inheritance-tree">
 
-    @if (Client.Married)
+    @* Laver kort af ægtefælle, hvis der findes en ægtefælle *@
+    @if (Spouse.Name.Length > 0)
     {
         <div class="married-grid">
-            <div class="card h-100" style="position: relative; width: 270px;">
+            <div class="card h-100" style="position: relative; width: 280px;">
                 <div class="card-header bg-black text-white">
-                    <h5>Ægtefælle</h5>
+                    <h5>@Spouse.Name</h5>
                 </div>
-
                 <div class="card-body">
-
                     <label class="PercentageTxt" style="color:black">
-                        <input type="text" class="nameTxt" @bind="HeirRepository.Instance.Spouse.Name" />
-                        <br />
+
                         <label>
-                            Arvebeløb: @InheritanceCalc.CalculateForcedInheritanceAmountForMarried() - @InheritanceCalc.CalculateInheritanceAmountForMarried()
+                            <u>
+                                Lovpligtige afgrænsninger
+                            </u>
                         </label>
 
                         <label>
-                            Beløb tildelt: @HeirRepository.Instance.Spouse.CurrentInheritanceAmount
+                            Arvebeløb: @Spouse.MinInheritanceAmount kr - @Spouse.MaxInheritanceAmount kr
+                        </label>
+
+                        <label>
+                            Beløb tildelt: @Spouse.CurrentInheritanceAmount kr
                         </label>
                     </label>
                 </div>
@@ -32,31 +36,31 @@
         </div>
     }
 
-    @for (int i = 0; i < HeirRepository.Instance.ReturnKids().Count; i++)
+    @* Laver at kort for hvert barn i listen af arvinger *@
+    @foreach (var kid in HeirRepository.Instance.ReturnKids())
     {
-        var heir = HeirRepository.Instance.ReturnKids()[i];
-        heir.InheritancePercentage = InheritanceCalc.CalculateInheritancePercentageForKid();
-
         <div class="kids-grid">
             <div class="card h-100" style="position: relative; width: 270px;">
                 <div class="card-header bg-black text-white">
-                    <h5>Barn @(i + 1)</h5>
+                    <h5>@kid.Name</h5>
                 </div>
 
                 <div class="card-body">
 
                     <label>
-                        <input type="text" class="nameTxt" @bind="heir.Name" />
                         <label class="PercentageTxt" style="color:black">
                             <label>
-                                Arvefordeling: @InheritanceCalc.CalculateForcedInheritancePercentageForKid()% - @InheritanceCalc.CalculateInheritancePercentageForKid()%
+                                <u>
+                                    Lovpligtige afgrænsninger
+                                </u>
                             </label>
-                            <br />
+
                             <label>
-                                Arvebeløb: @InheritanceCalc.CalculateForcedInheritanceAmountForKid() - @InheritanceCalc.CalculateInheritanceAmountForKid()
+                                Arvebeløb: @kid.MinInheritanceAmount kr - @kid.MaxInheritanceAmount kr
                             </label>
+
                             <label>
-                                Beløb tildelt: @heir.CurrentInheritanceAmount
+                                Beløb tildelt: @kid.CurrentInheritanceAmount kr
                             </label>
                         </label>
                     </label>
@@ -65,32 +69,41 @@
         </div>
     }
 
-    @for (int i = 0; i < HeirRepository.Instance.ReturnOther().Count; i++)
+    @* Laver at kort for hver 3. parts arving i listen af arvinger *@
+    @foreach (var other in HeirRepository.Instance.ReturnOther())
     {
-        var heir = HeirRepository.Instance.ReturnOther()[i];
-
         <div class="kids-grid">
             <div class="card h-100" style="position: relative; width: 270px;">
                 <div class="card-header bg-black text-white">
-                    <h5>Arving @(i + 1)</h5>
+                    <h5>@other.Name</h5>
                 </div>
 
                 <div class="card-body">
-                    <label>
-                        <input type="text" class="nameTxt" @bind="heir.Name" />
-                    </label>
-                    <label>
-                        Beløb tildelt: @heir.CurrentInheritanceAmount
+                    <label class="PercentageTxt" style="color:black">
+                        <label>
+                            <u>
+                                Lovpligtige afgrænsninger
+                            </u>
+                        </label>
+
+                        <label>
+                            Arvebeløb: 0 - @OtherAmount
+                        </label>
+
+                        <label>
+                            Beløb tildelt: @other.CurrentInheritanceAmount
+                        </label>
+
                     </label>
                 </div>
             </div>
         </div>
     }
-</div>
-@code {
 
-    protected override void OnInitialized()
-    {
-        HeirInheritanceCalc.CalculateCurrentInheritanceAmountForHeir();
-    }
+
+</div>
+
+@code {
+    Heir Spouse = HeirRepository.Instance.Spouse;
+    double OtherAmount = Client.TotalValue * 0.75;
 }

@@ -186,7 +186,7 @@ StamtræTitle {
 .PercentageTxt {
     align-content: center;
     align-self: center;
-    margin-top: 10px;
+    margin-top: -10px;
     font-family: 'Crimson Pro', serif;
     font-size: 20px;
 }
