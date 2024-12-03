@@ -1,67 +1,32 @@
 ﻿.TitleClass {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-bottom: 1rem;
     font-size: 45px;
-    left: 46%;
-    position:absolute;
     color: #ffaa54;
     font-weight: 500;
     font-family: 'Crimson Pro', serif;
 }
 
 .MarriedClass {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 2.7rem !important; /* Forces spacing between label and input */
-    margin-bottom: 1rem;
-    left: 49.3%;
-    top: 7.5%;
-    position: absolute;
-    margin-left: 2rem;
     font-size: 20px;
     font-family: 'Crimson Pro', serif;
 }
 
 .ChildrenClass {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0.9rem !important; /* Forces spacing between label and input */
-    margin-bottom: 1rem;
-    left: 47.7%;
-    top: 12.5%;
-    position: absolute;
-    margin-left: 2rem;
     font-size: 20px;
     font-family: 'Crimson Pro', serif;
 }
 
 .WillClass {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 3.5rem !important; /* Forces spacing between label and input */
-    margin-bottom: 1rem;
-    left: 47%;
-    top: 17.5%;
-    position: absolute;
-    margin-left: 2rem;
     font-size: 20px;
     font-family: 'Crimson Pro', serif;
 }
 
 .ChildrenClass input[type="number"] {
-    margin-left: 0rem !important; /* Adds space between label and input */
     padding: 0.5rem;
     font-size: 1.75rem;
+    margin-left:5px!important;
     width: 3rem;
     height: 2rem;
-    left: 110%;
     font-family: 'Crimson Pro', serif;
-    position: absolute;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #ffaa54; /* Matches dark theme */
@@ -73,10 +38,9 @@
     }
 
 .MarriedClass input[type="checkbox"] {
-    position: absolute;
-    right: -20%;
     background-color: #ffaa54; /* Matches dark theme */
     color: #00103a;
+    margin-left:5px!important;
 }
 
 .NameClass input[type="text"],
@@ -96,19 +60,13 @@
 
 
 .FamilyBtn {
-    margin-left: 0rem !important; /* Adds space between label and input */
     padding: 0.5rem;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #ffaa54; /* Matches dark theme */
     color: #fff;
-    width: 16.90rem;
-    left: 49.4%;
-    top: 17.5%;
-    height: 2.5rem;
-    text-align: center;
-    position: absolute;
+    width: 16rem;
     color: #00103a;
     font-family: 'Crimson Pro', serif;
 }
@@ -150,6 +108,11 @@
     background-color: #00103a;
     width: 100%;
     height: 230px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
 }
 
 .card {

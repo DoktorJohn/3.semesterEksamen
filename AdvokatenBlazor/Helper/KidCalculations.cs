@@ -1,17 +1,24 @@
 ﻿using AdvokatenBlazor.Model;
+using AdvokatenBlazor.ViewModel;
 using System.Diagnostics;
 
 namespace AdvokatenBlazor.Helper
 {
     public class KidCalculations
     {
-        public static void CalculateAll(Heir h)
+        public static void CalculateAll()
         {
-            h.MaxInheritancePercentage = MaxPercentage();
-            h.MinInheritancePercentage = MinPercentage();
-            h.MaxInheritanceAmount = MaxAmount();
-            h.MinInheritanceAmount = MinAmount();
+            foreach (Heir kid in HeirRepository.Instance.Heirs.Where(x => x.HeirType == HeirType.Kid))
+            {
+                kid.MaxInheritancePercentage = MaxPercentage();
+                kid.MinInheritancePercentage = MinPercentage();
+                kid.MaxInheritanceAmount = MaxAmount();
+                kid.MinInheritanceAmount = MinAmount();
+                AmountCalculations.CalculateCurrentAmount();
+            }
+            
         }
+
         public static double MaxPercentage()
         {
             if (!Client.Married && Client.KidsAmount == 1)
@@ -89,5 +96,7 @@ namespace AdvokatenBlazor.Helper
             double factor = Math.Pow(10, decimalPlaces);
             return Math.Truncate(value * factor) / factor;
         }
+
+        
     }
 }

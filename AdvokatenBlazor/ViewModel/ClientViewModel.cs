@@ -1,4 +1,5 @@
-﻿using AdvokatenBlazor.Model;
+﻿using AdvokatenBlazor.Helper;
+using AdvokatenBlazor.Model;
 
 namespace AdvokatenBlazor.ViewModel
 {
@@ -90,6 +91,8 @@ namespace AdvokatenBlazor.ViewModel
 
                 Client.TotalValue += asset.Value * percentageOwnedAsDecimal;
             }
+
+            AmountCalculations.CalculateCurrentAmount();
 
         }
     }

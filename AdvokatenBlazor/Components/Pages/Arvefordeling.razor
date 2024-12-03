@@ -9,8 +9,6 @@
     @* Laver kort af ægtefælle, hvis der findes en ægtefælle *@
     @if (Spouse.Name.Length > 0)
     {
-        CalculateSpouseValues();
-
         <div class="married-grid">
             <div class="card h-100" style="position: relative; width: 280px;">
                 <div class="card-header bg-black text-white">
@@ -26,11 +24,11 @@
                         </label>
 
                         <label>
-                            Arvebeløb: @Spouse.MinInheritanceAmount - @Spouse.MaxInheritanceAmount
+                            Arvebeløb: @Spouse.MinInheritanceAmount kr - @Spouse.MaxInheritanceAmount kr
                         </label>
 
                         <label>
-                            Beløb tildelt: @Spouse.CurrentInheritanceAmount
+                            Beløb tildelt: @Spouse.CurrentInheritanceAmount kr
                         </label>
                     </label>
                 </div>
@@ -41,8 +39,6 @@
     @* Laver at kort for hvert barn i listen af arvinger *@
     @foreach (var kid in HeirRepository.Instance.ReturnKids())
     {
-        CalculateHeirValues(kid);
-
         <div class="kids-grid">
             <div class="card h-100" style="position: relative; width: 270px;">
                 <div class="card-header bg-black text-white">
@@ -60,11 +56,11 @@
                             </label>
 
                             <label>
-                                Arvebeløb: @kid.MinInheritanceAmount - @kid.MaxInheritanceAmount
+                                Arvebeløb: @kid.MinInheritanceAmount kr - @kid.MaxInheritanceAmount kr
                             </label>
 
                             <label>
-                                Beløb tildelt: @kid.CurrentInheritanceAmount
+                                Beløb tildelt: @kid.CurrentInheritanceAmount kr
                             </label>
                         </label>
                     </label>
@@ -110,20 +106,4 @@
 @code {
     Heir Spouse = HeirRepository.Instance.Spouse;
     double OtherAmount = Client.TotalValue * 0.75;
-
-
-    protected override void OnInitialized()
-    {
-        AmountCalculations.CalculateCurrentAmount();
-    }
-
-    void CalculateHeirValues(Heir h)
-    {
-        KidCalculations.CalculateAll(h);
-    }
-
-    void CalculateSpouseValues()
-    {
-        SpouseCalculations.CalculateAll();
-    }
 }

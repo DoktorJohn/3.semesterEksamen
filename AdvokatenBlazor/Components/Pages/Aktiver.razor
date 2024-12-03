@@ -6,8 +6,8 @@
 @* Titel sektion *@
 <div class="TopBar">
     <label class="AktivTitle">Dine aktiver</label>
-    <label class="text-white mb-3" style="color:#ffaa54!important; max-width: 18rem; left:57%; top:15px; position:absolute;">Samlet formueværdi: @TotalValue</label>
-    <label class="text-white mb-3" style="color:#ffaa54!important; max-width: 18rem; left:57%; top:40px; position:absolute;">Samlet friarvværdi: @ForcedInheritanceValue</label>
+    <label class="text-white mb-3" style="color:#ffaa54!important; max-width: 18rem; left:57%; top:15px; position:absolute;">Samlet formueværdi: @TotalValue kr</label>
+    <label class="text-white mb-3" style="color:#ffaa54!important; max-width: 18rem; left:57%; top:40px; position:absolute;">Samlet friarvværdi: @ForcedInheritanceValue kr</label>
 
     <div class="BtnForAdd">
         <button type="submit" @onclick="AddAsset" class="btn btn-block">Tilføj et aktiv til din formue</button>
@@ -31,13 +31,13 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="AssetType">Vælg aktivtype</label>
+                                <label for="AssetType" style="text-align:center;">Vælg aktivtype</label>
                                 <select @bind="asset.AssetType" class="form-control">
-                                    <option value="Property">Ejendom</option>
-                                    <option value="Vehicle">Køretøj</option>
-                                    <option value="Item">Diverse ting</option>
-                                    <option value="Stock">Værdipapirer</option>
-                                    <option value="Money">Likvide midler</option>
+                                    <option value="Property" style="text-align:center;">Ejendom</option>
+                                    <option value="Vehicle" style="text-align:center;">Køretøj</option>
+                                    <option value="Item" style="text-align:center;">Diverse ting</option>
+                                    <option value="Stock" style="text-align:center;">Værdipapirer</option>
+                                    <option value="Money" style="text-align:center;">Likvide midler</option>
                                 </select>
                             </div>
 
@@ -45,43 +45,43 @@
                             @switch (asset.AssetType)
                             {
                                 case AssetType.Property:
-                                    <div class="form-group">
+                                    <div class="form-group" style="text-align:center;">
                                         <label for="Location">Addresse</label>
-                                        <input type="text" id="Location" class="form-control" @bind="asset.Location" />
+                                        <input type="text" style="text-align:center;" id="Location" class="form-control" @bind="asset.Location" />
                                     </div>
                                     break;
 
                                 case AssetType.Vehicle:
 
-                                    <div class="form-group">
-                                        <label for="Brand">Brand</label>
-                                        <input type="text" id="Brand" class="form-control" @bind="asset.Brand" />
+                                    <div class="form-group" style="text-align:center;">
+                                        <label for="Brand" >Brand</label>
+                                        <input type="text" style="text-align:center;" id="Brand" class="form-control" @bind="asset.Brand" />
                                     </div>
                                     break;
 
                                 case AssetType.Item:
 
-                                    <div class="form-group">
+                                    <div class="form-group" style="text-align:center;">
                                         <label for="Name">Navn</label>
-                                        <input type="text" id="Name" class="form-control" @bind="asset.Name" />
+                                        <input type="text" style="text-align:center;" id="Name" class="form-control" @bind="asset.Name" />
                                     </div>
                                     break;
 
                                 case AssetType.Stock:
-                                    <div class="form-group">
+                                    <div class="form-group" style="text-align:center;">
                                         <label for="Name">Værdipapir</label>
-                                        <input type="text" id="Name" class="form-control" @bind="asset.Name" />
+                                        <input type="text" id="Name" class="form-control" style="text-align:center;" @bind="asset.Name" />
                                     </div>
                                     break;
                             }
 
-                            <div class="form-group">
+                            <div class="form-group" style="text-align:center;">
                                 <label for="Value">Samlet værdi</label>
-                                <input type="number" id="Value" class="form-control" @bind="asset.Value" @onblur="() => Update(asset)" />
+                                <input type="number" style="text-align:center;" id="Value" class="form-control" @bind="asset.Value" @onblur="() => Update(asset)" />
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="text-align:center;">
                                 <label for="PercentageOwned">Ejerandel i procent</label>
-                                <input type="number" id="PercentageOwned" class="form-control" @bind-value="asset.PercentageOwned" @onblur="() => Update(asset)" />
+                                <input type="number" style="text-align:center;" id="PercentageOwned" class="form-control" @bind-value="asset.PercentageOwned" @onblur="() => Update(asset)" />
                                 <ValidationMessage For="@(() => asset.PercentageOwned)" />
                             </div>
 
@@ -103,12 +103,12 @@
                                                         <option value="">Vælg arving</option>
                                                         @foreach (var heir in HeirRepository.Instance.Heirs)
                                                         {
-                                                            <option value="@heir.Id">@heir.Name</option>
+                                                            <option value="@heir.Id" @onblur="() => Update(asset)">@heir.Name</option>
                                                         }
                                                     </select>
                                                 </td>
                                                 <td>
-                                                    <input type="number" class="percentage-form" @bind="row.Percentage" />
+                                                    <input type="number" class="percentage-form" @bind="row.Percentage" @onblur="() => Update(asset)"/>
                                                 </td>
                                                 <td>
                                                     <button type="button" class="AddBtn" @onclick="() => RemoveRow(asset, row)">Slet</button>
@@ -156,7 +156,9 @@
     {
         ClientViewModel.UpdateAsset();
         UpdateNumbers();
+        SpouseCalculations.CalculateAll();
     }
+
 
     @* Sletter aktivet fra liste og opdaterer alle tal*@
     void DeleteCard(Asset asset)

@@ -11,6 +11,7 @@ namespace AdvokatenBlazor.Helper
             HeirRepository.Instance.Spouse.MaxInheritancePercentage = MaxPercentage();
             HeirRepository.Instance.Spouse.MinInheritanceAmount = MinAmount();
             HeirRepository.Instance.Spouse.MaxInheritanceAmount = MaxAmount();
+            AmountCalculations.CalculateCurrentAmount();
         }
         public static double MaxPercentage()
         {
@@ -67,5 +68,6 @@ namespace AdvokatenBlazor.Helper
                 return amountWithForced;
             }
         }
+
     }
 }

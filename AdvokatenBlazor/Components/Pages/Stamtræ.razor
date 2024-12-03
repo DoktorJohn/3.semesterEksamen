@@ -66,7 +66,7 @@
     @* Børnekort genereres for hvert barnearving der er i vores liste af børnearvinger. *@
     @foreach (var heir in HeirRepository.Instance.ReturnKids())
     {
-        CalculateKidHeritance(heir);
+        CalculateKidHeritance();
 
         <div class="kids-grid">
             <div class="card h-100" style="position: relative; width: 280px;">
@@ -168,9 +168,9 @@
     }
 
     //Udregner alle ægtefælle properties
-    private void CalculateKidHeritance(Heir h)
+    private void CalculateKidHeritance()
     {
-        KidCalculations.CalculateAll(h);
+        KidCalculations.CalculateAll();
         Spouse = HeirRepository.Instance.Spouse;
     }
 }
