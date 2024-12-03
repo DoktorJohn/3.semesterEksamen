@@ -46,4 +46,7 @@
       <Link>Select.Html.dep</Link>
     </Content>
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)blazor.bootstrap\3.2.0\buildTransitive\Blazor.Bootstrap.props" Condition="Exists('$(NuGetPackageRoot)blazor.bootstrap\3.2.0\buildTransitive\Blazor.Bootstrap.props')" />
+  </ImportGroup>
 </Project>

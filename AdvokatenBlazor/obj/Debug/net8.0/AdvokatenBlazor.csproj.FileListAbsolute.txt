@@ -329,3 +329,14 @@ C:\Users\jonat\Desktop\Datamatiker\3.semesterEksamen\AdvokatenBlazor\obj\Debug\n
 C:\Users\jonat\Desktop\Datamatiker\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\AdvokatenBlazor.pdb
 C:\Users\jonat\Desktop\Datamatiker\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\AdvokatenBlazor.genruntimeconfig.cache
 C:\Users\jonat\Desktop\Datamatiker\3.semesterEksamen\AdvokatenBlazor\obj\Debug\net8.0\ref\AdvokatenBlazor.dll
+C:\Users\jonat\Documents\Master\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\BlazorBootstrap.dll
+C:\Users\jonat\Documents\Master\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\jonat\Documents\Master\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+C:\Users\jonat\Documents\Master\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\jonat\Documents\Master\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\jonat\Documents\Master\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\jonat\Documents\Master\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\jonat\Documents\Master\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\jonat\Documents\Master\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\jonat\Documents\Master\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\jonat\Documents\Master\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.JSInterop.dll

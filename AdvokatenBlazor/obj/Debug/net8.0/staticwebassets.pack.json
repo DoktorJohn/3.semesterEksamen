@@ -29,14 +29,6 @@
       "PackagePath": "staticwebassets\\app.css"
     },
     {
-      "Id": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\bootstrap\\bootstrap.min.css",
-      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
-    },
-    {
-      "Id": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\bootstrap\\bootstrap.min.css.map",
-      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
-    },
-    {
       "Id": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
