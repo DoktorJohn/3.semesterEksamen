@@ -1,4 +1,11 @@
-﻿.TitleClass {
+﻿.container {
+    display: flex;
+    width: 100vw; /* Ensure it spans the entire viewport width */
+    margin: 25px;
+    padding: 0;
+}
+
+.TitleClass {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -207,6 +214,14 @@ StamtræTitle {
     justify-content: center;
     margin-top: 20px;
     width: 50%;
+    height: 20%;
+}
+
+.chart-div {
+    flex: 0 0 50%; /* Occupies the remaining 50% */
+    display: flex; /* Optional, for layout purposes */
+    align-items: center; /* Example vertical centering */
+    justify-content: center; /* Example horizontal centering */
 }
 
 /* Individual inheritor box styling */

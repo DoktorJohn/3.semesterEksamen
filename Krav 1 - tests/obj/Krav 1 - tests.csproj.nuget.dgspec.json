@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\Krav 1 - tests\\Krav 1 - tests.csproj": {}
+    "C:\\Users\\jonat\\Documents\\Datamatiker\\Master\\3.semesterEksamen\\Krav 1 - tests\\Krav 1 - tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj": {
+    "C:\\Users\\jonat\\Documents\\Datamatiker\\Master\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj",
+        "projectUniqueName": "C:\\Users\\jonat\\Documents\\Datamatiker\\Master\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj",
         "projectName": "AdvokatenBlazor",
-        "projectPath": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj",
+        "projectPath": "C:\\Users\\jonat\\Documents\\Datamatiker\\Master\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj",
         "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\obj\\",
+        "outputPath": "C:\\Users\\jonat\\Documents\\Datamatiker\\Master\\3.semesterEksamen\\AdvokatenBlazor\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Blazor.Bootstrap": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
             "PDFsharp": {
               "target": "Package",
               "version": "[6.1.1, )"
@@ -76,14 +80,14 @@
         }
       }
     },
-    "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\Krav 1 - tests\\Krav 1 - tests.csproj": {
+    "C:\\Users\\jonat\\Documents\\Datamatiker\\Master\\3.semesterEksamen\\Krav 1 - tests\\Krav 1 - tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\Krav 1 - tests\\Krav 1 - tests.csproj",
+        "projectUniqueName": "C:\\Users\\jonat\\Documents\\Datamatiker\\Master\\3.semesterEksamen\\Krav 1 - tests\\Krav 1 - tests.csproj",
         "projectName": "Krav 1 - tests",
-        "projectPath": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\Krav 1 - tests\\Krav 1 - tests.csproj",
+        "projectPath": "C:\\Users\\jonat\\Documents\\Datamatiker\\Master\\3.semesterEksamen\\Krav 1 - tests\\Krav 1 - tests.csproj",
         "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\Krav 1 - tests\\obj\\",
+        "outputPath": "C:\\Users\\jonat\\Documents\\Datamatiker\\Master\\3.semesterEksamen\\Krav 1 - tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -100,8 +104,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj": {
-                "projectPath": "C:\\Users\\jonat\\Documents\\Master\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj"
+              "C:\\Users\\jonat\\Documents\\Datamatiker\\Master\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj": {
+                "projectPath": "C:\\Users\\jonat\\Documents\\Datamatiker\\Master\\3.semesterEksamen\\AdvokatenBlazor\\AdvokatenBlazor.csproj"
               }
             }
           }
@@ -116,6 +120,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Blazor.Bootstrap": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
             "MSTest.TestAdapter": {
               "target": "Package",
               "version": "[3.0.4, )"

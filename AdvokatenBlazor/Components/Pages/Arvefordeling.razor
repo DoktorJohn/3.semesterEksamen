@@ -1,53 +1,87 @@
 ﻿@page "/Arvefordeling"
 @rendermode InteractiveServer
+@inject ChartService ChartService
 
 <link rel="stylesheet" href="Arvefordeling.css" />
 
 
-<div class="inheritance-tree">
 
-    @* Laver kort af ægtefælle, hvis der findes en ægtefælle *@
-    @if (Spouse.Name.Length > 0)
-    {
-        <div class="married-grid">
-            <div class="card h-100" style="position: relative; width: 310px;">
-                <div class="card-header bg-black text-white">
-                    <h5>@Spouse.Name</h5>
-                </div>
-                <div class="card-body">
-                    <label class="PercentageTxt" style="color:black">
+<div class="container">
+    <div class="inheritance-tree">
 
-                        <label>
-                            <u>
-                                Lovpligtige afgrænsninger
-                            </u>
+        @* Laver kort af ægtefælle, hvis der findes en ægtefælle *@
+        @if (Spouse.Name.Length > 0)
+        {
+            <div class="married-grid">
+                <div class="card h-100" style="position: relative; width: 310px;">
+                    <div class="card-header bg-black text-white">
+                        <h5>@Spouse.Name</h5>
+                    </div>
+                    <div class="card-body">
+                        <label class="PercentageTxt" style="color:black">
+
+                            <label>
+                                <u>
+                                    Lovpligtige afgrænsninger
+                                </u>
+                            </label>
+
+                            <label>
+                                Arvebeløb: @Spouse.MinInheritanceAmount kr - @Spouse.MaxInheritanceAmount kr
+                            </label>
+
+                            <label>
+                                Beløb tildelt: @Spouse.CurrentInheritanceAmount kr
+                            </label>
                         </label>
-
-                        <label>
-                            Arvebeløb: @Spouse.MinInheritanceAmount kr - @Spouse.MaxInheritanceAmount kr
-                        </label>
-
-                        <label>
-                            Beløb tildelt: @Spouse.CurrentInheritanceAmount kr
-                        </label>
-                    </label>
+                    </div>
                 </div>
             </div>
-        </div>
-    }
+        }
 
-    @* Laver at kort for hvert barn i listen af arvinger *@
-    @foreach (var kid in HeirRepository.Instance.ReturnKids())
-    {
-        <div class="kids-grid">
-            <div class="card h-100" style="position: relative; width: 310px;">
-                <div class="card-header bg-black text-white">
-                    <h5>@kid.Name</h5>
+        @* Laver at kort for hvert barn i listen af arvinger *@
+        @foreach (var kid in HeirRepository.Instance.ReturnKids())
+        {
+            <div class="kids-grid">
+                <div class="card h-100" style="position: relative; width: 310px;">
+                    <div class="card-header bg-black text-white">
+                        <h5>@kid.Name</h5>
+                    </div>
+
+                    <div class="card-body">
+
+                        <label>
+                            <label class="PercentageTxt" style="color:black">
+                                <label>
+                                    <u>
+                                        Lovpligtige afgrænsninger
+                                    </u>
+                                </label>
+
+                                <label>
+                                    Arvebeløb: @kid.MinInheritanceAmount kr - @kid.MaxInheritanceAmount kr
+                                </label>
+
+                                <label>
+                                    Beløb tildelt: @kid.CurrentInheritanceAmount kr
+                                </label>
+                            </label>
+                        </label>
+                    </div>
                 </div>
+            </div>
+        }
 
-                <div class="card-body">
+        @* Laver at kort for hver 3. parts arving i listen af arvinger *@
+        @foreach (var other in HeirRepository.Instance.ReturnOther())
+        {
+            <div class="kids-grid">
+                <div class="card h-100" style="position: relative; width: 310px;">
+                    <div class="card-header bg-black text-white">
+                        <h5>@other.Name</h5>
+                    </div>
 
-                    <label>
+                    <div class="card-body">
                         <label class="PercentageTxt" style="color:black">
                             <label>
                                 <u>
@@ -56,54 +90,63 @@
                             </label>
 
                             <label>
-                                Arvebeløb: @kid.MinInheritanceAmount kr - @kid.MaxInheritanceAmount kr
+                                Arvebeløb: 0 - @OtherAmount
                             </label>
 
                             <label>
-                                Beløb tildelt: @kid.CurrentInheritanceAmount kr
+                                Beløb tildelt: @other.CurrentInheritanceAmount
                             </label>
+
                         </label>
-                    </label>
+                    </div>
                 </div>
             </div>
-        </div>
-    }
+        }
+    </div>
 
-    @* Laver at kort for hver 3. parts arving i listen af arvinger *@
-    @foreach (var other in HeirRepository.Instance.ReturnOther())
-    {
-        <div class="kids-grid">
-            <div class="card h-100" style="position: relative; width: 310px;">
-                <div class="card-header bg-black text-white">
-                    <h5>@other.Name</h5>
-                </div>
-
-                <div class="card-body">
-                    <label class="PercentageTxt" style="color:black">
-                        <label>
-                            <u>
-                                Lovpligtige afgrænsninger
-                            </u>
-                        </label>
-
-                        <label>
-                            Arvebeløb: 0 - @OtherAmount
-                        </label>
-
-                        <label>
-                            Beløb tildelt: @other.CurrentInheritanceAmount
-                        </label>
-
-                    </label>
-                </div>
-            </div>
-        </div>
-    }
-
+    <div class="chart-div">
+        <PieChart @ref="pieChart" Width="400" />
+    </div>
 
 </div>
 
 @code {
     Heir Spouse = HeirRepository.Instance.Spouse;
+    List<Asset> assets = AssetRepository.Instance.assets;
     double OtherAmount = Client.TotalValue * 0.75;
+
+    private PieChart pieChart = default!;
+    private PieChartOptions pieChartOptions = default!;
+    private ChartData chartData = default!;
+    private string[]? backgroundColors;
+
+    private int datasetsCount = 0;
+    private int dataLabelsCount = 0;
+
+    private Random random = new();
+
+    protected override void OnInitialized()
+    {
+        var labels = ChartService.GetDefaultDataLabels(assets);
+        var datasets = ChartService.GetDefaultDataSets(assets, 1);
+        chartData = new ChartData { Labels = labels, Datasets = datasets };
+
+        pieChartOptions = new();
+        pieChartOptions.Responsive = true;
+        pieChartOptions.Plugins.Title!.Text = "Samlet arv";
+        pieChartOptions.Plugins.Title!.Font = new ChartFont();
+        pieChartOptions.Plugins.Title.Font.Size = 24;
+        pieChartOptions.Plugins.Title.Display = true;
+    }
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await pieChart.InitializeAsync(chartData, pieChartOptions);
+        }
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+
+}
 }

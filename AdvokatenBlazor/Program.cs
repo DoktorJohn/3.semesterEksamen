@@ -1,7 +1,10 @@
 using AdvokatenBlazor.Components;
+using AdvokatenBlazor.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddBlazorBootstrap();
+builder.Services.AddScoped<ChartService>();
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
