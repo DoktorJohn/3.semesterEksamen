@@ -213,14 +213,14 @@ StamtræTitle {
     gap: 20px;
     justify-content: center;
     margin-top: 20px;
-    width: 50%;
+    width: 50%;     
     height: 20%;
 }
 
 .chart-div {
     flex: 0 0 50%; /* Occupies the remaining 50% */
     display: flex; /* Optional, for layout purposes */
-    align-items: center; /* Example vertical centering */
+    /*align-items: center;*/ /* Example vertical centering */
     justify-content: center; /* Example horizontal centering */
 }
 

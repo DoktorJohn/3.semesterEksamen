@@ -149,6 +149,9 @@
     void RemoveRow(Asset asset, HeirRow row)
     {
         AssetRepository.RemoveRow(asset, row);
+
+        SpouseCalculations.CalculateAll();
+        KidCalculations.CalculateAll();
     }
 
     @* Opdaterer alle tal *@

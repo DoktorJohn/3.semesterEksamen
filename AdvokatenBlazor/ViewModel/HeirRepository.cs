@@ -7,8 +7,8 @@ namespace AdvokatenBlazor.ViewModel
     {
         public List<Heir> Heirs { get; set; }
         public Heir Spouse { get; set; }
-        
-        
+
+
         private static HeirRepository instance;
         public static HeirRepository Instance
         {
@@ -32,9 +32,19 @@ namespace AdvokatenBlazor.ViewModel
 
         public List<Heir> ReturnKids()
         {
-            return Heirs.Where(s => s.HeirType == HeirType.Kid).ToList();
+            List<Heir> heirList = new List<Heir>();
+
+            foreach (var heir in Heirs)
+            {
+                if (heir != null && heir.HeirType == HeirType.Kid)
+                {
+                    heirList.Add(heir);
+                }
+            }
+
+            return heirList;
         }
-            
+
         public List<Heir> ReturnOther()
         {
             return Heirs.Where(s => s.HeirType == HeirType.Other).ToList();
@@ -54,14 +64,9 @@ namespace AdvokatenBlazor.ViewModel
         {
             if (type == HeirType.Kid)
             {
-                Heirs.RemoveAll(h => h.HeirType == HeirType.Kid);
-
-                for (int i = 0; i < Client.KidsAmount; i++)
-                {
-                    Heir h = new Heir { HeirType = HeirType.Kid };
-                    h.MaxInheritancePercentage = KidCalculations.MaxPercentage();
-                    Heirs.Add(h);
-                }
+                Heir h = new Heir { HeirType = HeirType.Kid };
+                h.MaxInheritancePercentage = KidCalculations.MaxPercentage();
+                Heirs.Add(h);
             }
 
             else if (type == HeirType.Spouse)
@@ -77,10 +82,20 @@ namespace AdvokatenBlazor.ViewModel
 
             else if (type == HeirType.Other)
             {
-                    Heir h = new Heir { HeirType = HeirType.Other };
-                    Heirs.Add(h);
+                Heir h = new Heir { HeirType = HeirType.Other };
+                Heirs.Add(h);
             }
 
+        }
+
+        public void DeleteKid(Heir heir)
+        {
+            Heirs.Remove(heir);
+
+            foreach (var h in Heirs)
+            {
+                h.MaxInheritancePercentage -= KidCalculations.MaxPercentage();
+            }
         }
 
     }

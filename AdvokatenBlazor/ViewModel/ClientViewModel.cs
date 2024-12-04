@@ -75,10 +75,16 @@ namespace AdvokatenBlazor.ViewModel
         }
 
         //Sætter kundes antal af børn og genererer et barn.
-        public void SetNumberOfKids(int numberOfKids)
+        public void CreateKid(int numberOfKids)
         {
             KidsAmount = numberOfKids;
             HeirRepository.Instance.GenerateHeir(HeirType.Kid);
+        }
+
+        public void DeleteKid(Heir h, int numberOfKids)
+        {
+            KidsAmount = numberOfKids;
+            HeirRepository.Instance.DeleteKid(h);
         }
 
         public static void UpdateAsset()
