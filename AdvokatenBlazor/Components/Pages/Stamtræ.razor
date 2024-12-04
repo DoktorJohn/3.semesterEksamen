@@ -16,10 +16,10 @@
         <input type="checkbox" id="marriageField" @onchange="OnMarriedChanged" checked="@isMarried" />
     </label>
 
-    <label class="ChildrenClass">
-        Hvor mange børn har du?
-        <input type="number" id="childrenField" value="@kidsAmount" @onchange="OnKidsAmountChanged" min="0" />
-    </label>
+    <button class="FamilyBtn" @onclick="OnKidsAmountChanged">
+        Tilføj barn
+    </button>
+
     <button class="FamilyBtn" @onclick="AddClick">
         Tilføj andre arvinger
     </button>
@@ -71,6 +71,9 @@
         <div class="kids-grid">
             <div class="card h-100" style="position: relative; width: 280px;">
                 <div class="card-header bg-black text-white">
+                    <button type="button" @onclick="() => DeleteCard(heir)" class="btn-close" style="position: absolute; right: 0; background: transparent; border: none; color: red; font-size: 1.5rem;">
+                        X
+                    </button>
                     <input type="text" class="nameTxt" @bind="heir.Name" placeholder="Navngiv barn" />
                 </div>
 
@@ -137,11 +140,12 @@
     Heir Spouse = HeirRepository.Instance.Spouse;
 
     // Sætter antallet af børn, alt efter hvad brugeren har skrevet af tal i vores inputfelt.
-    private void OnKidsAmountChanged(ChangeEventArgs input)
+    private void OnKidsAmountChanged()
     {
-        int kidsAmount = Int32.Parse(input.Value.ToString());
+        int kidsCreated = HeirRepository.Instance.ReturnKids().Count() + 1;
 
-        ClientViewModel.Instance.SetNumberOfKids(kidsAmount);
+        ClientViewModel.Instance.CreateKid(kidsCreated);
+
     }
 
     //Sætter ægtefællestatus for kunden til true, og generer derefter en ægtefælle fra metode i vores viewmodel.
@@ -152,6 +156,12 @@
             ClientViewModel.Instance.SetMaritalStatus((bool)input.Value);
             isMarried = ClientViewModel.Instance.IsMarried;
         }
+    }
+
+    private void DeleteCard(Heir heir)
+    {
+        int kidsCreated = HeirRepository.Instance.ReturnKids().Count() - 1;
+        ClientViewModel.Instance.DeleteKid(heir, kidsCreated);
     }
 
     //Genererer en ny "other" arving

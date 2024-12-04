@@ -1,14 +1,12 @@
 ﻿using AdvokatenBlazor.Model;
+using AdvokatenBlazor.ViewModel;
 using BlazorBootstrap;
 
 namespace AdvokatenBlazor.Service
 {
     public class ChartService
     {
-
         private readonly string[] _backgroundColors;
-        private int _datasetsCount = 0;
-        private int _dataLabelsCount = 0;
         private readonly Random _random = new();
 
         public ChartService()
@@ -16,36 +14,61 @@ namespace AdvokatenBlazor.Service
             _backgroundColors = ColorUtility.CategoricalTwelveColors;
         }
 
-        public List<IChartDataset> GetDefaultDataSets(List<Asset> assets, int numberOfDatasets)
+        public List<IChartDataset> GetDefaultDataSets(List<Asset> assets, int numberOfDatasets, int dataCount)
         {
             var datasets = new List<IChartDataset>();
 
             for (var index = 0; index < numberOfDatasets; index++)
             {
-                datasets.Add(GetRandomPieChartDataset(assets));
+                datasets.Add(GetRandomPieChartDataset(assets, dataCount));
             }
 
             return datasets;
         }
 
-        private PieChartDataset GetRandomPieChartDataset(List<Asset> assets)
+        public List<IChartDataset> GetDefaultDataSets(List<Heir> heirs, int numberOfDatasets, int dataCount)
         {
-            _datasetsCount += 1;
+            var datasets = new List<IChartDataset>();
+
+            for (var index = 0; index < numberOfDatasets; index++)
+            {
+                datasets.Add(GetRandomPieChartDataset(heirs, dataCount));
+            }
+
+            return datasets;
+        }
+
+        private PieChartDataset GetRandomPieChartDataset(List<Asset> assets, int dataCount)
+        {
             return new PieChartDataset
             {
                 Data = GetData(assets),
-                BackgroundColor = GetRandomBackgroundColors()
+                BackgroundColor = GetRandomBackgroundColors(dataCount)
+            };
+        }
+
+        private PieChartDataset GetRandomPieChartDataset(List<Heir> heirs, int dataCount)
+        {
+            return new PieChartDataset
+            {
+                Data = GetData(heirs),
+                BackgroundColor = GetRandomBackgroundColors(dataCount)
             };
         }
 
         private List<double?> GetData(List<Asset> assets)
         {
-            return assets.Select(asset => (double?)asset.Value).ToList();
+            return assets.Select(asset => ((double?)asset.Value) * ((double)asset.PercentageOwned / 100)).ToList();
+        }
+
+        private List<double?> GetData(List<Heir> heirs)
+        {
+            return heirs.Select(heirs => (double?)heirs.CurrentInheritanceAmount).ToList();
         }
 
         public List<string> GetDefaultDataLabels(List<Asset> assets)
         {
-            var labels = assets.Select(asset =>
+            return assets.Select(asset =>
             {
                 return asset.AssetType switch
                 {
@@ -57,14 +80,16 @@ namespace AdvokatenBlazor.Service
                     _ => "Ukendt"
                 };
             }).ToList();
-
-            _dataLabelsCount = labels.Count; // Set the count here.
-            return labels;
         }
 
-        private List<string> GetRandomBackgroundColors()
+        public List<string> GetDefaultDataLabelsForHeirs()
         {
-            return _backgroundColors.Take(_dataLabelsCount).ToList();
+            return HeirRepository.Instance.Heirs.Select(heir => heir.Name).ToList();
+        }
+
+        private List<string> GetRandomBackgroundColors(int count)
+        {
+            return _backgroundColors.Take(count).ToList();
         }
     }
 }
