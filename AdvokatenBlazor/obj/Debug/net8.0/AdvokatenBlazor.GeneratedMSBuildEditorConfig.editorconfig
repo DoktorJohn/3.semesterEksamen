@@ -30,10 +30,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBcnZlZm9yZGVsaW5nLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jonat/Documents/Datamatiker/Master/3.semesterEksamen/AdvokatenBlazor/Components/Pages/Eksport.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFa3Nwb3J0LnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/jonat/Documents/Datamatiker/Master/3.semesterEksamen/AdvokatenBlazor/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

@@ -33,6 +33,20 @@
                             <label>
                                 Beløb tildelt: @Spouse.CurrentInheritanceAmount kr
                             </label>
+
+                            @if (Spouse.CurrentInheritanceAmount < Spouse.MinInheritanceAmount)
+                            {
+                                <label style="color:red;">
+                                    <u style="font-weight:600">Advarsel</u>: Arvelod er mindre end den legale afgrænsning!
+                                </label>
+                            }
+
+                            @if (Spouse.CurrentInheritanceAmount > Spouse.MaxInheritanceAmount)
+                            {
+                                <label style="color:red;">
+                                    <u style="font-weight:600">Advarsel</u>: Arvelod er højere end den legale afgrænsning!
+                                </label>
+                            }
                         </label>
                     </div>
                 </div>
@@ -65,6 +79,20 @@
                                 <label>
                                     Beløb tildelt: @kid.CurrentInheritanceAmount kr
                                 </label>
+
+                                @if (kid.CurrentInheritanceAmount < kid.MinInheritanceAmount)
+                                {
+                                    <label style="color:red;">
+                                        <u style="font-weight:600">Advarsel</u>: Arvelod er mindre end den legale afgrænsning!
+                                    </label>
+                                }
+
+                                @if (kid.CurrentInheritanceAmount > kid.MaxInheritanceAmount)
+                                {
+                                    <label style="color:red;">
+                                        <u style="font-weight:600">Advarsel</u>: Arvelod er højere end den legale afgrænsning!
+                                    </label>
+                                }
                             </label>
                         </label>
                     </div>
@@ -97,6 +125,14 @@
                                 Beløb tildelt: @other.CurrentInheritanceAmount
                             </label>
 
+                            @if (other.CurrentInheritanceAmount > @OtherAmount)
+                            {
+                                <label style="color:red;">
+                                    <u style="font-weight:600">Advarsel</u>: Arvelod er højere end den legale afgrænsning!
+                                </label>
+                            }
+
+
                         </label>
                     </div>
                 </div>
@@ -105,7 +141,11 @@
     </div>
 
     <div class="chart-div">
-        <PieChart @ref="pieChart" Width="400" />
+        <PieChart @ref="pieChart1" Width="400" />
+    </div>
+
+    <div class="chart-div">
+        <PieChart @ref="pieChart2" Width="400" />
     </div>
 
 </div>
@@ -113,36 +153,55 @@
 @code {
     Heir Spouse = HeirRepository.Instance.Spouse;
     List<Asset> assets = AssetRepository.Instance.assets;
+    List<Heir> heirs = HeirRepository.Instance.Heirs;
     double OtherAmount = Client.TotalValue * 0.75;
 
-    private PieChart pieChart = default!;
-    private PieChartOptions pieChartOptions = default!;
-    private ChartData chartData = default!;
-    private string[]? backgroundColors;
+    private PieChart pieChart1 = default!;
+    private PieChart pieChart2 = default!;
 
-    private int datasetsCount = 0;
-    private int dataLabelsCount = 0;
+    private PieChartOptions pieChartOptions1 = default!;
+    private PieChartOptions pieChartOptions2 = default!;
 
-    private Random random = new();
+    private ChartData chartData1 = default!;
+    private ChartData chartData2 = default!;
+
+    
 
     protected override void OnInitialized()
     {
-        var labels = ChartService.GetDefaultDataLabels(assets);
-        var datasets = ChartService.GetDefaultDataSets(assets, 1);
-        chartData = new ChartData { Labels = labels, Datasets = datasets };
+        var labels1 = ChartService.GetDefaultDataLabels(assets);
+        var datasets1 = ChartService.GetDefaultDataSets(assets, 1, labels1.Count); // Pass the correct count
+        chartData1 = new ChartData { Labels = labels1, Datasets = datasets1 };
 
-        pieChartOptions = new();
-        pieChartOptions.Responsive = true;
-        pieChartOptions.Plugins.Title!.Text = "Samlet arv";
-        pieChartOptions.Plugins.Title!.Font = new ChartFont();
-        pieChartOptions.Plugins.Title.Font.Size = 24;
-        pieChartOptions.Plugins.Title.Display = true;
+        pieChartOptions1 = new();
+        pieChartOptions1.Responsive = true;
+        pieChartOptions1.Plugins.Title!.Text = "Oversigt over aktiver";
+        pieChartOptions1.Plugins.Title!.Font = new ChartFont();
+        pieChartOptions1.Plugins.Title.Font.Size = 24;
+        pieChartOptions1.Plugins.Title.Display = true;
+
+
+        var labels2 = ChartService.GetDefaultDataLabelsForHeirs();
+        var datasets2 = ChartService.GetDefaultDataSets(heirs, 1, labels2.Count); // Pass the correct count
+        chartData2 = new ChartData { Labels = labels2, Datasets = datasets2 };
+
+        pieChartOptions2 = new();
+        pieChartOptions2.Responsive = true;
+        pieChartOptions2.Plugins.Title!.Text = "Arvefordeling";
+        pieChartOptions2.Plugins.Title!.Font = new ChartFont();
+        pieChartOptions2.Plugins.Title.Font.Size = 24;
+        pieChartOptions2.Plugins.Title.Display = true;
     }
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
-            await pieChart.InitializeAsync(chartData, pieChartOptions);
+            // Initialize the first chart
+            await pieChart1.InitializeAsync(chartData1, pieChartOptions1);
+
+            // Initialize the second chart
+            await pieChart2.InitializeAsync(chartData2, pieChartOptions2);
         }
         await base.OnAfterRenderAsync(firstRender);
     }

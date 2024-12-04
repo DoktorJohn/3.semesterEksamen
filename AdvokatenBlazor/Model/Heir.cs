@@ -4,7 +4,7 @@ namespace AdvokatenBlazor.Model
 {
     public class Heir
     {
-        private static int _idCounter = 1;
+        private static int _idCounter = 0;
 
         public int Id { get; private set; }
 
