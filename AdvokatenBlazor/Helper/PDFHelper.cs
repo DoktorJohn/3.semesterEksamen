@@ -10,11 +10,13 @@ namespace AdvokatenBlazor.Helper
 
         public static void GenerateContent()
         {
+            HtmlToConvert = string.Empty;
+
             int index = 0;
 
             HtmlToConvert +=
                 $"Klientnavn: {Client.Name} <br>" +
-                $"Klient i ægteskab? {Client.Married} <br><br><br>";
+                $"Klient i ægteskab? {(Client.Married == false ? "Nej" : "Ja")} <br><br><br>";
 
             foreach (var heir in HeirRepository.Instance.Heirs)
             {
@@ -23,9 +25,11 @@ namespace AdvokatenBlazor.Helper
                 HtmlToConvert +=
                     $"Arving nummmer: {index} <br>" +
                     $"Arving navn: {heir.Name} <br>" +
-                    $"Arvingtype: {heir.HeirType} <br>" +
+                    $"Arvingtype: {HeirToString.Stringify(heir.HeirType)} <br>" +
+                    $"<u>Legale afgrænsninger</u> <br>" +
                     $"Arvefordeling {heir.MinInheritancePercentage}% - {heir.MaxInheritancePercentage}% <br>" +
-                    $"Arvebeløb {heir.MinInheritanceAmount}DKK - {heir.MaxInheritanceAmount}DKK <br><br>";
+                    $"Arvebeløb {heir.MinInheritanceAmount}DKK - {heir.MaxInheritanceAmount}DKK <br>" +
+                    $"Arv tildelt {heir.CurrentInheritanceAmount}DKK <br><br>";
             }
         }
 

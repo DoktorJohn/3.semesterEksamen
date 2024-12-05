@@ -13,7 +13,7 @@
         @if (Spouse.Name.Length > 0)
         {
             <div class="married-grid">
-                <div class="card h-100" style="position: relative; width: 310px;">
+                <div class="card h-100" style="position: relative; width: 320px;">
                     <div class="card-header bg-black text-white">
                         <h5>@Spouse.Name</h5>
                     </div>
@@ -136,17 +136,19 @@
                         </label>
                     </div>
                 </div>
+                
             </div>
         }
     </div>
 
-    <div class="chart-div">
-        <PieChart @ref="pieChart1" Width="400" />
-    </div>
-
-    <div class="chart-div">
-        <PieChart @ref="pieChart2" Width="400" />
-    </div>
+        <div class="chart-div">
+            <PieChart @ref="pieChart1" Width="400"  />
+        </div>
+    
+        <div class="chart-div">
+            <PieChart @ref="pieChart2" Width="400" />
+        </div>
+    
 
 </div>
 

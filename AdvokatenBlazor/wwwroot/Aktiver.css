@@ -21,13 +21,31 @@
         background-color: #ffdf32!important;
     }
 
-/* Label styling */
-label {
-    display: block;
-    font-weight: bold;
-    color: #555;
-    margin-bottom: 8px;
+
+.AssetBtn {
+    width: auto; /* Ensure the width is auto or use a fixed width */
+    height: auto; /* Ensure height is auto or set a fixed height */
+    padding: 10px 20px; /* Set padding if necessary */
+    display: inline-block; /* Make sure it behaves as a block element */
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    background-color: #ffaa54 !important;
+    color: #00103a;
+    border-radius: 5px;
+    font-family: 'Crimson Pro', serif;
+    font-weight: 800;
+    font-size: 100%;
 }
+
+
+    /* Label styling */
+    label {
+        display: block;
+        font-weight: bold;
+        color: #555;
+        margin-bottom: 8px;
+    }
 
 /* Input fields styling */
 input[type="text"], input[type="dropdown"], input[type="checkbox"] {
@@ -163,7 +181,7 @@ form {
 
 .BtnForAdd {
     padding: 10px;
-    text-align: center;
+    text-align: center!important;
     height:50px!important;
 }
 
