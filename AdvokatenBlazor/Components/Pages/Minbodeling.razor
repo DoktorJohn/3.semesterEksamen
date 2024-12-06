@@ -1,0 +1,109 @@
+﻿@page "/Minbodeling"
+@rendermode InteractiveServer
+
+<link rel="stylesheet" href="Minbodeling.css" />
+
+<div class="table table-striped">
+    <table style="border-collapse: collapse; width: 87.5%;text-align: center;">
+        <thead>
+            <tr style="background-color: #f2f2f2;">
+                <th style="padding: 8px; border: 1px solid #ddd;">Aktiv</th>
+
+                @foreach (var heir in HeirRepository.Instance.Heirs)
+                {
+                    <th style="padding: 8px; border: 1px solid #ddd;">@heir.Name</th>
+                }
+
+                <th>Passiv</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var asset in AssetRepository.Instance.assets)
+            {
+                <tr>
+                    <!-- Display asset name or details -->
+                    <td style="padding: 8px; border: 1px solid #ddd;">
+                        @{
+                            if (asset.AssetType == AssetType.Item || asset.AssetType == AssetType.Stock)
+                            {
+                                <label>@asset.Name</label>
+                            }
+                            else if (asset.AssetType == AssetType.Property)
+                            {
+                                <label>@asset.Location</label>
+                            }
+                            else if (asset.AssetType == AssetType.Vehicle)
+                            {
+                                <label>@asset.Brand</label>
+                            }
+                            else if (asset.AssetType == AssetType.Money)
+                            {
+                                <label>Likvide midler</label>
+                            }
+                        }
+                    </td>
+
+                    <!-- Generate a column for each heir with calculated values -->
+                    @foreach (var heir in HeirRepository.Instance.Heirs)
+                    {
+                        <td style="padding: 8px; border: 1px solid #ddd;">
+                            @{
+                                // Find the corresponding row for the current heir
+                                var heirRow = asset.HeirRows.FirstOrDefault(row => row.SelectedHeirId == heir.Id);
+                                if (heirRow != null)
+                                {
+                                    double percentage = (double)heirRow.Percentage / 100;
+                                    double calculated = asset.Value * percentage;
+                                    double percentageAsset = (double)asset.PercentageOwned / 100;
+                                    double sum = calculated * percentageAsset;
+
+                                    <label>@sum.ToString("N2")</label>
+                                }
+                                else
+                                {
+                                    <label>-</label> <!-- Display a dash if no value exists -->
+                                }
+                            }
+                        </td>
+                    }
+
+                    <td>
+                        @{
+                            double calcpercentage = (double)asset.PercentageOwned / 100;
+                            double debtsum = asset.Debt * calcpercentage;
+
+                            <label>-@debtsum.ToString("N2")</label>
+                        }
+
+                    </td>
+                </tr>
+
+
+            }
+            <tr style="background-color: #e6e6e6; font-weight: bold;">
+                <td style="padding: 8px; border: 1px solid #ddd;">Opgjort bodel</td>
+
+                <!-- Calculate totals for each heir -->
+                @foreach (var heir in HeirRepository.Instance.Heirs)
+                {
+                    <td style="padding: 8px; border: 1px solid #ddd;">
+                        <label>@heir.CurrentInheritanceAmount.ToString("N2")</label>
+                    </td>
+                }
+
+                <!-- Total passive (debt) -->
+                <td style="padding: 8px; border: 1px solid #ddd;">
+
+                    <label></label>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+</div>
+
+@code {
+
+}

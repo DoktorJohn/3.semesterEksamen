@@ -98,5 +98,15 @@ namespace AdvokatenBlazor.ViewModel
             }
         }
 
+        public void DeleteOther(Heir heir)
+        {
+            Heirs.Remove(heir);
+
+            foreach (var h in Heirs)
+            {
+                h.MaxInheritancePercentage -= KidCalculations.MaxPercentage();
+            }
+        }
+
     }
 }

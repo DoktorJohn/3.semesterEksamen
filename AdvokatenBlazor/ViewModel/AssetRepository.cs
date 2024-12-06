@@ -33,27 +33,12 @@ namespace AdvokatenBlazor.ViewModel
 
         public double ReturnTotalValue()
         {
-            double debt = 0;
-
-            foreach (var a in assets)
-            {
-                debt += a.Debt;
-            }
-
-            return Client.TotalValue - debt;
+            return Client.TotalValue;
         }
 
         public double ReturnMaxValue()
         {
-            double debt = 0;
-
-            foreach (var a in assets)
-            {
-                debt += a.Debt;
-            }
-
-
-            return (Client.TotalValue - debt) * 0.75;
+            return Client.TotalValue* 0.75;
         }
     }
 }

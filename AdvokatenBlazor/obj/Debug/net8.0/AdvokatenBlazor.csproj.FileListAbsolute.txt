@@ -390,3 +390,14 @@ C:\Users\jonat\Documents\Datamatiker\Master\3.semesterEksamen\AdvokatenBlazor\bi
 C:\Users\jonat\Documents\Datamatiker\Master\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\jonat\Documents\Datamatiker\Master\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\jonat\Documents\Datamatiker\Master\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.JSInterop.dll
+C:\Users\jonat\Desktop\Datamatiker\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\BlazorBootstrap.dll
+C:\Users\jonat\Desktop\Datamatiker\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\jonat\Desktop\Datamatiker\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+C:\Users\jonat\Desktop\Datamatiker\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\jonat\Desktop\Datamatiker\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\jonat\Desktop\Datamatiker\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\jonat\Desktop\Datamatiker\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\jonat\Desktop\Datamatiker\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\jonat\Desktop\Datamatiker\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\jonat\Desktop\Datamatiker\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\jonat\Desktop\Datamatiker\3.semesterEksamen\AdvokatenBlazor\bin\Debug\net8.0\Microsoft.JSInterop.dll

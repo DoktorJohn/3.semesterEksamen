@@ -15,10 +15,10 @@ namespace AdvokatenBlazor.Helper
             // Begin building the HTML string for the table
             HtmlToConvert += @"
 <div class='table table-striped'>
-    <table style='border-collapse: collapse; width: 100%; text-align: left;'>
+    <table style='border-collapse: collapse; width: 100%; text-align: center;'>
         <thead>
             <tr style='background-color: #f2f2f2;'>
-                <th style='padding: 8px; border: 1px solid #ddd;'>Aktiv/passiv</th>";
+                <th style='padding: 8px; border: 1px solid #ddd;'>Aktiv</th>";
 
             // Add headers for each heir
             foreach (var heir in HeirRepository.Instance.Heirs)
@@ -73,14 +73,12 @@ namespace AdvokatenBlazor.Helper
                     if (heirRow != null)
                     {
                         double percentage = (double)heirRow.Percentage / 100;
-                        double calculatedShare = asset.Value * percentage;
-                        double calculatedDebtShare = asset.Debt * percentage; // Share of debt for this heir
-                        double netValue = calculatedShare - calculatedDebtShare;
+                        double calculated = asset.Value * percentage;
+                        double percentageAsset = (double)asset.PercentageOwned / 100;
+                        double sum = calculated * percentageAsset;
 
-                        HtmlToConvert += netValue.ToString("N2");
+                        HtmlToConvert += sum.ToString("N2");
 
-                        // Add the net value to the heir total
-                        heirTotals[heir.Id] += netValue;
                     }
                     else
                     {
@@ -90,11 +88,11 @@ namespace AdvokatenBlazor.Helper
                     HtmlToConvert += "</td>";
                 }
 
+                double calcpercentage = (double)asset.PercentageOwned / 100;
+                double debtsum = asset.Debt * calcpercentage;
                 // Add the passive (debt) column
-                HtmlToConvert += $"<td style='padding: 8px; border: 1px solid #ddd;'>-{asset.Debt.ToString("N2")}</td>";
+                HtmlToConvert += $"<td style='padding: 8px; border: 1px solid #ddd;'>-{debtsum.ToString("N2")}</td>";
 
-                // Add to total passive
-                totalPassive += asset.Debt;
 
                 HtmlToConvert += "</tr>";
             }
@@ -108,7 +106,7 @@ namespace AdvokatenBlazor.Helper
             // Total for each heir
             foreach (var heir in HeirRepository.Instance.Heirs)
             {
-                HtmlToConvert += $"<td style='padding: 8px; border: 1px solid #ddd;'>{heirTotals[heir.Id].ToString("N2")}</td>";
+                HtmlToConvert += $"<td style='padding: 8px; border: 1px solid #ddd;'>{heir.CurrentInheritanceAmount.ToString("N2")}</td>";
             }
 
             // Total passive (empty cell for this row)

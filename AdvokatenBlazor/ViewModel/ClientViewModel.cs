@@ -87,6 +87,17 @@ namespace AdvokatenBlazor.ViewModel
             HeirRepository.Instance.DeleteKid(h);
         }
 
+        public void DeleteSpouse()
+        {
+            HeirRepository.Instance.DeleteSpouse();
+            IsMarried = false;
+        }
+
+        public void DeleteOther(Heir h)
+        {
+            HeirRepository.Instance.DeleteOther(h);
+        }
+
         public static void UpdateAsset()
         {
             Client.TotalValue = 0;
@@ -94,8 +105,10 @@ namespace AdvokatenBlazor.ViewModel
             foreach (var asset in AssetRepository.Instance.assets)
             {
                 double percentageOwnedAsDecimal = asset.PercentageOwned / 100.0;
+                double assetWorth = asset.Value - asset.Debt;
 
-                Client.TotalValue += asset.Value * percentageOwnedAsDecimal;
+
+                Client.TotalValue += assetWorth * percentageOwnedAsDecimal;
             }
 
             AmountCalculations.CalculateCurrentAmount();
