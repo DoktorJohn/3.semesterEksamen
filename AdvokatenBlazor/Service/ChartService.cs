@@ -58,7 +58,7 @@ namespace AdvokatenBlazor.Service
 
         private List<double?> GetData(List<Asset> assets)
         {
-            return assets.Select(asset => ((double?)asset.Value) * ((double)asset.PercentageOwned / 100)).ToList();
+            return assets.Select(asset => ((double?)asset.Value - asset.Debt) * ((double)asset.PercentageOwned / 100)).ToList();
         }
 
         private List<double?> GetData(List<Heir> heirs)

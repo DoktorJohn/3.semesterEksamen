@@ -6,8 +6,8 @@
 @* Titel sektion *@
 <div class="TopBar">
     <label class="AktivTitle">Dine aktiver</label>
-    <label class="text-white mb-3" style="color:#ffaa54!important; max-width: 18rem; left:57%; top:15px; position:absolute;">Samlet formueværdi: @TotalValue kr</label>
-    <label class="text-white mb-3" style="color:#ffaa54!important; max-width: 18rem; left:57%; top:40px; position:absolute;">Samlet friarvværdi: @ForcedInheritanceValue kr</label>
+    <label class="text-white mb-3" style="color:#ffaa54!important; max-width: 18rem; left:57%; top:15px; position:absolute;">Samlet formueværdi: @TotalValue.ToString("N2") kr</label>
+    <label class="text-white mb-3" style="color:#ffaa54!important; max-width: 18rem; left:57%; top:40px; position:absolute;">Samlet friarvværdi: @ForcedInheritanceValue.ToString("N2") kr</label>
 
     <button type="submit" @onclick="AddAsset" class="AssetBtn" style="position:absolute;">Tilføj et aktiv til din formue</button>
 </div>
@@ -74,6 +74,11 @@
                             }
 
                             <div class="form-group" style="text-align:center;">
+                                <label for="Debt">Gæld i aktivet</label>
+                                <input type="number" style="text-align:center;" id="Debt" class="form-control" @bind="asset.Debt" @onblur="() => Update(asset)" />
+                            </div>
+
+                            <div class="form-group" style="text-align:center;">
                                 <label for="Value">Samlet værdi</label>
                                 <input type="number" style="text-align:center;" id="Value" class="form-control" @bind="asset.Value" @onblur="() => Update(asset)"/>
                             </div>
@@ -129,8 +134,8 @@
 
 
 @code {
-    double TotalValue = AssetRepository.ReturnTotalValue();
-    double ForcedInheritanceValue = AssetRepository.ReturnMaxValue();
+    double TotalValue = AssetRepository.Instance.ReturnTotalValue();
+    double ForcedInheritanceValue = AssetRepository.Instance.ReturnMaxValue();
     int AktivCount = 0;
     int Number = 1;
     private string rawInput;
@@ -179,7 +184,7 @@
     @* Opdaterer alle tal *@
     void UpdateNumbers()
     {
-        TotalValue = AssetRepository.ReturnTotalValue();
-        ForcedInheritanceValue = AssetRepository.ReturnMaxValue();
+        TotalValue = AssetRepository.Instance.ReturnTotalValue();
+        ForcedInheritanceValue = AssetRepository.Instance.ReturnMaxValue();
     }
 }

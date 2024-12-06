@@ -25,8 +25,9 @@ namespace AdvokatenBlazor.Helper
                             double clientPercentage = asset.PercentageOwned / 100.0;
                             double heirPercentage = heirRow.Percentage / 100.0;
                             double effectivePercentage = heirPercentage * clientPercentage;
+                            double valueMinusDebt = asset.Value - asset.Debt;
 
-                            selectedHeir.CurrentInheritanceAmount += asset.Value * effectivePercentage;
+                            selectedHeir.CurrentInheritanceAmount += valueMinusDebt * effectivePercentage;
                         }
                     }
                 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AdvokatenBlazor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bfd59f7c7b8e495e648367a057ae9ddd0e2ffe2c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3dd63ef2c5782adb597af206b3b1e8958fbfc4e")]
 [assembly: System.Reflection.AssemblyProductAttribute("AdvokatenBlazor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AdvokatenBlazor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

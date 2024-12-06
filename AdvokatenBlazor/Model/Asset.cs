@@ -30,6 +30,7 @@ namespace AdvokatenBlazor.Model
         }
 
         public AssetType AssetType { get; set; }
+        public double Debt {  get; set; }
 
         public string? Location { get; set; }
         public string? Brand { get; set; }

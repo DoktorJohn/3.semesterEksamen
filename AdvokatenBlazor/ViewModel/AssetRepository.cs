@@ -31,14 +31,29 @@ namespace AdvokatenBlazor.ViewModel
             a.HeirRows.Remove(h);
         }
 
-        public static double ReturnTotalValue()
+        public double ReturnTotalValue()
         {
-            return Client.TotalValue;
+            double debt = 0;
+
+            foreach (var a in assets)
+            {
+                debt += a.Debt;
+            }
+
+            return Client.TotalValue - debt;
         }
 
-        public static double ReturnMaxValue()
+        public double ReturnMaxValue()
         {
-            return Client.TotalValue * 0.75;
+            double debt = 0;
+
+            foreach (var a in assets)
+            {
+                debt += a.Debt;
+            }
+
+
+            return (Client.TotalValue - debt) * 0.75;
         }
     }
 }

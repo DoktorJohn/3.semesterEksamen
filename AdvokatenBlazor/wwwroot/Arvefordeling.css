@@ -220,7 +220,6 @@ StamtræTitle {
 .chart-div {
     flex: 0 0 50%; /* Occupies the remaining 50% */
     display: flex; /* Optional, for layout purposes */
-    /*align-items: center;*/ /* Example vertical centering */
     justify-content: center; /* Example horizontal centering */
 }
 
@@ -291,4 +290,15 @@ StamtræTitle {
 input:focus {
     border-color: #4caf50;
     outline: none;
+}
+
+
+.table
+{
+    font-size: 20px;
+    position:absolute;
+    width: 30%;
+    height: 30%;
+    top:600px;
+    left: 40%;
 }
