@@ -30,9 +30,33 @@
         </div>
 
         <div class="nav-item px-3">
-        <button class="eksportBtn" @onclick="PDFHelper.MakePDF">
-            Gem & eksporter
+            <button class="eksportBtn" @onclick="CreatePDF">
+                @BtnText
         </button>
         </div>
     </nav>
 </div>
+
+
+@code{
+    private string BtnText = "Gem & eksporter";
+
+    private async void CreatePDF()
+    {
+        BtnText = "Gemmer...";
+        StateHasChanged();
+
+        await Task.Run(() =>
+        {
+            PDFHelper.MakePDF();
+        });
+
+        BtnText = "Data gemt!";
+        StateHasChanged();
+
+        await Task.Delay(2500);
+
+        BtnText = "Gem & eksporter";
+        StateHasChanged();
+    }
+}

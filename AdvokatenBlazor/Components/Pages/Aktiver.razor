@@ -6,8 +6,8 @@
 @* Titel sektion *@
 <div class="TopBar">
     <label class="AktivTitle">Mine aktiver</label>
-    <label class="text-white mb-3" style="color:#ffaa54!important;">Samlet formueværdi: @TotalValue.ToString("N2") kr</label>
-    <label class="text-white mb-3" style="color:#ffaa54!important;">Samlet friarvværdi: @ForcedInheritanceValue.ToString("N2") kr</label>
+    <label class="ValueClass">Samlet formueværdi: @TotalValue.ToString("N2") kr</label>
+    <label class="ValueClass">Samlet friarvværdi: @ForcedInheritanceValue.ToString("N2") kr</label>
 
     <button type="submit" @onclick="AddAsset" class="AssetBtn">Tilføj et aktiv til din formue</button>
 </div>

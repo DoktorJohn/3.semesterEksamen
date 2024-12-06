@@ -63,11 +63,11 @@
 .FamilyBtn {
     padding: 10px 20px;
     font-size: 100%;
-    border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #ffaa54; /* Matches dark theme */
     color: #fff;
     width: 15rem;
+    margin-top:10px;
     color: #00103a;
     font-weight: 800;
     font-family: 'Crimson Pro', serif;
@@ -108,13 +108,18 @@
 
 .TopBar {
     background-color: #00103a;
-    width: 100%;
-    height: 230px;
     display: flex;
-    flex-direction:column;
     justify-content: center;
     align-items: center;
-    gap:10px;
+    position: relative;
+    height: 225px; /* Adjust as needed */
+}
+
+.barContent {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+    text-align: center; /* Center the text */
 }
 
 .card {
