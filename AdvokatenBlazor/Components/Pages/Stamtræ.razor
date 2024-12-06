@@ -8,7 +8,7 @@
 @* Top menu i HTMLen *@
 <div class="TopBar">
     <label class="TitleClass">
-        Modificér dit stamtræ
+        Mit stamtræ
     </label>
 
     <label class="MarriedClass">
@@ -39,6 +39,9 @@
         <div class="married-grid">
             <div class="card h-100" style="position: relative; width: 280px;">
                 <div class="card-header bg-black text-white">
+                    <button type="button" @onclick="() => DeleteSpouseCard()" class="btn-close" style="position:absolute; right:10px; top:0px; background: transparent; border: none; color: red; font-size: 1.5rem;">
+                        X
+                    </button>
                     <input type="text" class="nameTxt" @bind="Spouse.Name" placeholder="Navngiv ægtefælle" />
                 </div>
                 <div class="card-body">
@@ -71,7 +74,7 @@
         <div class="kids-grid">
             <div class="card h-100" style="position: relative; width: 280px;">
                 <div class="card-header bg-black text-white">
-                    <button type="button" @onclick="() => DeleteCard(heir)" class="btn-close" style="position: absolute; right: 0; background: transparent; border: none; color: red; font-size: 1.5rem;">
+                    <button type="button" @onclick="() => DeleteKidCard(heir)" class="btn-close" style="position:absolute; right:10px; top:0px; background: transparent; border: none; color: red; font-size: 1.5rem;">
                         X
                     </button>
                     <input type="text" class="nameTxt" @bind="heir.Name" placeholder="Navngiv barn" />
@@ -106,6 +109,9 @@
         <div class="kids-grid">
             <div class="card h-100" style="position: relative; width: 280px;">
                 <div class="card-header bg-black text-white">
+                    <button type="button" @onclick="() => DeleteOtherCard(other)" class="btn-close" style="position:absolute; right:10px; top:0px; background: transparent; border: none; color: red; font-size: 1.5rem;">
+                        X
+                    </button>
                     <input type="text" class="nameTxt" @bind="other.Name" placeholder="Navngiv ekstern arving" />
                 </div>
 
@@ -158,10 +164,21 @@
         }
     }
 
-    private void DeleteCard(Heir heir)
+    private void DeleteKidCard(Heir heir)
     {
         int kidsCreated = HeirRepository.Instance.ReturnKids().Count() - 1;
         ClientViewModel.Instance.DeleteKid(heir, kidsCreated);
+    }
+
+    private void DeleteSpouseCard()
+    {
+        ClientViewModel.Instance.DeleteSpouse();
+        isMarried = false;
+    }
+
+    private void DeleteOtherCard(Heir heir)
+    {
+        ClientViewModel.Instance.DeleteOther(heir);
     }
 
     //Genererer en ny "other" arving

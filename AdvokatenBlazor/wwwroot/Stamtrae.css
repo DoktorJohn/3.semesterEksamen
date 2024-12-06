@@ -8,6 +8,7 @@
 .MarriedClass {
     font-size: 20px;
     font-family: 'Crimson Pro', serif;
+    color: #ffaa54;
 }
 
 .ChildrenClass {
@@ -60,14 +61,15 @@
 
 
 .FamilyBtn {
-    padding: 0.5rem;
-    font-size: 1rem;
+    padding: 10px 20px;
+    font-size: 100%;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #ffaa54; /* Matches dark theme */
     color: #fff;
-    width: 16rem;
+    width: 15rem;
     color: #00103a;
+    font-weight: 800;
     font-family: 'Crimson Pro', serif;
 }
 
@@ -149,6 +151,7 @@ StamtræTitle {
 .PercentageTxt {
     align-content: center;
     align-self: center;
+    color: #00103a!important;
     margin-top: -10px;
     font-family: 'Crimson Pro', serif;
     font-size: 20px;
@@ -244,9 +247,13 @@ input:focus {
 .nameTxt {
     background: transparent; /* Makes the background transparent */
     border: none; /* Removes the border */
-    color: black; /* Sets the text color */
+    color: #00103a; /* Sets the text color */
     outline: none; /* Optionally removes the focus outline */
     font-size: 20px; /* You can adjust the font size if needed */
     font-family: 'Crimson Pro', serif;
     text-align: center;
 }
+
+    .nameTxt::placeholder {
+        color: #00103a;
+    }

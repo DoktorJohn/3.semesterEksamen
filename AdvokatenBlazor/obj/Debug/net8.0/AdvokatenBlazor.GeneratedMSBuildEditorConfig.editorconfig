@@ -9,47 +9,51 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AdvokatenBlazor
 build_property.RootNamespace = AdvokatenBlazor
-build_property.ProjectDir = C:\Users\jonat\Documents\Datamatiker\Master\3.semesterEksamen\AdvokatenBlazor\
+build_property.ProjectDir = C:\Users\jonat\Desktop\Datamatiker\3.semesterEksamen\AdvokatenBlazor\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\jonat\Documents\Datamatiker\Master\3.semesterEksamen\AdvokatenBlazor
+build_property.MSBuildProjectDirectory = C:\Users\jonat\Desktop\Datamatiker\3.semesterEksamen\AdvokatenBlazor
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/jonat/Documents/Datamatiker/Master/3.semesterEksamen/AdvokatenBlazor/Components/App.razor]
+[C:/Users/jonat/Desktop/Datamatiker/3.semesterEksamen/AdvokatenBlazor/Components/App.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jonat/Documents/Datamatiker/Master/3.semesterEksamen/AdvokatenBlazor/Components/Pages/Aktiver.razor]
+[C:/Users/jonat/Desktop/Datamatiker/3.semesterEksamen/AdvokatenBlazor/Components/Pages/Aktiver.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBa3RpdmVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jonat/Documents/Datamatiker/Master/3.semesterEksamen/AdvokatenBlazor/Components/Pages/Arvefordeling.razor]
+[C:/Users/jonat/Desktop/Datamatiker/3.semesterEksamen/AdvokatenBlazor/Components/Pages/Arvefordeling.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBcnZlZm9yZGVsaW5nLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jonat/Documents/Datamatiker/Master/3.semesterEksamen/AdvokatenBlazor/Components/Pages/Error.razor]
+[C:/Users/jonat/Desktop/Datamatiker/3.semesterEksamen/AdvokatenBlazor/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jonat/Documents/Datamatiker/Master/3.semesterEksamen/AdvokatenBlazor/Components/Pages/Stamtræ.razor]
+[C:/Users/jonat/Desktop/Datamatiker/3.semesterEksamen/AdvokatenBlazor/Components/Pages/Minbodeling.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNaW5ib2RlbGluZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jonat/Desktop/Datamatiker/3.semesterEksamen/AdvokatenBlazor/Components/Pages/Stamtræ.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTdGFtdHLDpi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jonat/Documents/Datamatiker/Master/3.semesterEksamen/AdvokatenBlazor/Components/Routes.razor]
+[C:/Users/jonat/Desktop/Datamatiker/3.semesterEksamen/AdvokatenBlazor/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jonat/Documents/Datamatiker/Master/3.semesterEksamen/AdvokatenBlazor/Components/_Imports.razor]
+[C:/Users/jonat/Desktop/Datamatiker/3.semesterEksamen/AdvokatenBlazor/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jonat/Documents/Datamatiker/Master/3.semesterEksamen/AdvokatenBlazor/Components/Layout/MainLayout.razor]
+[C:/Users/jonat/Desktop/Datamatiker/3.semesterEksamen/AdvokatenBlazor/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-xkcyhzx3l1
 
-[C:/Users/jonat/Documents/Datamatiker/Master/3.semesterEksamen/AdvokatenBlazor/Components/Layout/NavMenu.razor]
+[C:/Users/jonat/Desktop/Datamatiker/3.semesterEksamen/AdvokatenBlazor/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-p06notui4c
