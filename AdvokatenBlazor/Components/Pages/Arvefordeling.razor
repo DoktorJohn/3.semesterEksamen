@@ -142,16 +142,19 @@
     </div>
 
 
+    @if (AssetRepository.Instance.assets.Count > 0)
+    {
+        <div class="chart-div">
+            <PieChart @ref="pieChart1" Width="400" />
+        </div>
+
+        <div class="chart-div">
+            <PieChart @ref="pieChart2" Width="400" />
+        </div>
+    }
 
 
-
-    <div class="chart-div">
-        <PieChart @ref="pieChart1" Width="400" />
-    </div>
-
-    <div class="chart-div">
-        <PieChart @ref="pieChart2" Width="400" />
-    </div>
+    
 
 
 </div>
@@ -205,11 +208,15 @@
     {
         if (firstRender)
         {
-            // Initialize the first chart
-            await pieChart1.InitializeAsync(chartData1, pieChartOptions1);
+            if (AssetRepository.Instance.assets.Count > 0)
+            {
+                // Initialize the first chart
+                await pieChart1.InitializeAsync(chartData1, pieChartOptions1);
 
-            // Initialize the second chart
-            await pieChart2.InitializeAsync(chartData2, pieChartOptions2);
+                // Initialize the second chart
+                await pieChart2.InitializeAsync(chartData2, pieChartOptions2);
+            }
+            
         }
         await base.OnAfterRenderAsync(firstRender);
     }

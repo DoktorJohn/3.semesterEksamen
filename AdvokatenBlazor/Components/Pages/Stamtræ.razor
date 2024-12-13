@@ -7,25 +7,24 @@
 
 @* Top menu i HTMLen *@
 <div class="TopBar">
-    <label class="TitleClass">
-        Mit stamtræ
-    </label>
+    <div class="barContent">
+        <label class="TitleClass">
+            Mit stamtræ
+        </label>
+        <label class="MarriedClass">
+            Har du en ægtefælle?
+            <input type="checkbox" id="marriageField" @onchange="OnMarriedChanged" checked="@isMarried" />
+        </label>
 
-    <label class="MarriedClass">
-        Har du en ægtefælle?
-        <input type="checkbox" id="marriageField" @onchange="OnMarriedChanged" checked="@isMarried" />
-    </label>
+        <button class="FamilyBtn" @onclick="OnKidsAmountChanged">
+            Tilføj barn
+        </button>
 
-    <button class="FamilyBtn" @onclick="OnKidsAmountChanged">
-        Tilføj barn
-    </button>
-
-    <button class="FamilyBtn" @onclick="AddClick">
-        Tilføj andre arvinger
-    </button>
-
+        <button class="FamilyBtn" @onclick="AddClick">
+            Tilføj andre arvinger
+        </button>
+    </div>
 </div>
-
 
 @* HTML for vores arvinger *@
 <div class="inheritance-tree">
@@ -62,9 +61,11 @@
                 </div>
             </div>
         </div>
+
+        <div class="divider"></div>
     }
 
-    <div class="divider"></div>
+    
 
     @* Børnekort genereres for hvert barnearving der er i vores liste af børnearvinger. *@
     @foreach (var heir in HeirRepository.Instance.ReturnKids())
@@ -100,8 +101,11 @@
         </div>
     }
 
-
-    <div class="divider"></div>
+    @if (HeirRepository.Instance.ReturnKids().Count > 0)
+    {
+        <div class="divider"></div>
+    }
+    
 
     @* Andre arvinger genereres fra vores liste af arvigner med enum = Other *@
     @foreach (var other in HeirRepository.Instance.ReturnOther())
